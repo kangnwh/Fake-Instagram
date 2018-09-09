@@ -32,7 +32,7 @@ cat ~/.ssh/id_rsa.pub
 Clone code to your own computer
 ```shell
 cd <your_project_folder>
-git clone ssh://kangnwh@vs-ssh.visualstudio.com:v3/kangnwh/SNSApp/SNSApp
+git clone kangnwh@vs-ssh.visualstudio.com:v3/kangnwh/SNSApp/SNSApp
 ```   
 
 ### Install/Update 3rd packages
