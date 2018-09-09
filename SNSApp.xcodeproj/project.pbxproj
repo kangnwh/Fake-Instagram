@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072427592144F95A001D0F40 /* AppDelegate.swift */; };
-		0724275C2144F95A001D0F40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724275B2144F95A001D0F40 /* ViewController.swift */; };
+		0724275C2144F95A001D0F40 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724275B2144F95A001D0F40 /* LoginViewController.swift */; };
 		0724275F2144F95A001D0F40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0724275D2144F95A001D0F40 /* Main.storyboard */; };
 		072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 072427602144F95A001D0F40 /* SNSApp.xcdatamodeld */; };
 		072427642144F95C001D0F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072427632144F95C001D0F40 /* Assets.xcassets */; };
 		072427672144F95C001D0F40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072427652144F95C001D0F40 /* LaunchScreen.storyboard */; };
 		072427722144F95C001D0F40 /* SNSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072427712144F95C001D0F40 /* SNSAppTests.swift */; };
 		0724277D2144F95C001D0F40 /* SNSAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724277C2144F95C001D0F40 /* SNSAppUITests.swift */; };
+		0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724278B2144FE17001D0F40 /* UIFuncs.swift */; };
+		0724278E2144FF3A001D0F40 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0724278D2144FF3A001D0F40 /* Podfile */; };
+		2493885B81FB03B9AF667DA9 /* Pods_SNSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3416517569D00D4515C9862D /* Pods_SNSApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		072427562144F95A001D0F40 /* SNSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072427592144F95A001D0F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0724275B2144F95A001D0F40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0724275B2144F95A001D0F40 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0724275E2144F95A001D0F40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		072427612144F95A001D0F40 /* SNSApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SNSApp.xcdatamodel; sourceTree = "<group>"; };
 		072427632144F95C001D0F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		072427782144F95C001D0F40 /* SNSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0724277C2144F95C001D0F40 /* SNSAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSAppUITests.swift; sourceTree = "<group>"; };
 		0724277E2144F95C001D0F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0724278B2144FE17001D0F40 /* UIFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFuncs.swift; sourceTree = "<group>"; };
+		0724278D2144FF3A001D0F40 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		3416517569D00D4515C9862D /* Pods_SNSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8387B34DC79832AEED72CA9 /* Pods-SNSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E0249FA00AFD46D3C16D1B9E /* Pods-SNSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2493885B81FB03B9AF667DA9 /* Pods_SNSApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +88,13 @@
 		0724274D2144F959001D0F40 = {
 			isa = PBXGroup;
 			children = (
+				0724278D2144FF3A001D0F40 /* Podfile */,
 				072427582144F95A001D0F40 /* SNSApp */,
 				072427702144F95C001D0F40 /* SNSAppTests */,
 				0724277B2144F95C001D0F40 /* SNSAppUITests */,
 				072427572144F95A001D0F40 /* Products */,
+				786DC01C71ACB476AEB55E94 /* Pods */,
+				147A19DEE9D1D6D47A4AA6D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +111,9 @@
 		072427582144F95A001D0F40 /* SNSApp */ = {
 			isa = PBXGroup;
 			children = (
+				0724278A2144FDFA001D0F40 /* CommonFuncs */,
 				072427592144F95A001D0F40 /* AppDelegate.swift */,
-				0724275B2144F95A001D0F40 /* ViewController.swift */,
+				0724275B2144F95A001D0F40 /* LoginViewController.swift */,
 				0724275D2144F95A001D0F40 /* Main.storyboard */,
 				072427632144F95C001D0F40 /* Assets.xcassets */,
 				072427652144F95C001D0F40 /* LaunchScreen.storyboard */,
@@ -128,6 +141,31 @@
 			path = SNSAppUITests;
 			sourceTree = "<group>";
 		};
+		0724278A2144FDFA001D0F40 /* CommonFuncs */ = {
+			isa = PBXGroup;
+			children = (
+				0724278B2144FE17001D0F40 /* UIFuncs.swift */,
+			);
+			path = CommonFuncs;
+			sourceTree = "<group>";
+		};
+		147A19DEE9D1D6D47A4AA6D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3416517569D00D4515C9862D /* Pods_SNSApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		786DC01C71ACB476AEB55E94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8387B34DC79832AEED72CA9 /* Pods-SNSApp.debug.xcconfig */,
+				E0249FA00AFD46D3C16D1B9E /* Pods-SNSApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 072427812144F95C001D0F40 /* Build configuration list for PBXNativeTarget "SNSApp" */;
 			buildPhases = (
+				A19264201CF8BF1E075096A7 /* [CP] Check Pods Manifest.lock */,
 				072427522144F959001D0F40 /* Sources */,
 				072427532144F959001D0F40 /* Frameworks */,
 				072427542144F959001D0F40 /* Resources */,
+				C569942ED3E7970CBB726942 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +274,7 @@
 			files = (
 				072427672144F95C001D0F40 /* LaunchScreen.storyboard in Resources */,
 				072427642144F95C001D0F40 /* Assets.xcassets in Resources */,
+				0724278E2144FF3A001D0F40 /* Podfile in Resources */,
 				0724275F2144F95A001D0F40 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,13 +295,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A19264201CF8BF1E075096A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SNSApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C569942ED3E7970CBB726942 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		072427522144F959001D0F40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */,
-				0724275C2144F95A001D0F40 /* ViewController.swift in Sources */,
+				0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */,
+				0724275C2144F95A001D0F40 /* LoginViewController.swift in Sources */,
 				0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +519,7 @@
 		};
 		072427822144F95C001D0F40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8387B34DC79832AEED72CA9 /* Pods-SNSApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,12 +532,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		072427832144F95C001D0F40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0249FA00AFD46D3C16D1B9E /* Pods-SNSApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -462,7 +551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
