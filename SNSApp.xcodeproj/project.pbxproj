@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072427592144F95A001D0F40 /* AppDelegate.swift */; };
+		0724275C2144F95A001D0F40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724275B2144F95A001D0F40 /* ViewController.swift */; };
+		0724275F2144F95A001D0F40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0724275D2144F95A001D0F40 /* Main.storyboard */; };
+		072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 072427602144F95A001D0F40 /* SNSApp.xcdatamodeld */; };
+		072427642144F95C001D0F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072427632144F95C001D0F40 /* Assets.xcassets */; };
+		072427672144F95C001D0F40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072427652144F95C001D0F40 /* LaunchScreen.storyboard */; };
+		072427722144F95C001D0F40 /* SNSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072427712144F95C001D0F40 /* SNSAppTests.swift */; };
+		0724277D2144F95C001D0F40 /* SNSAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724277C2144F95C001D0F40 /* SNSAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0724276E2144F95C001D0F40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0724274E2144F959001D0F40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 072427552144F959001D0F40;
+			remoteInfo = SNSApp;
+		};
+		072427792144F95C001D0F40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0724274E2144F959001D0F40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 072427552144F959001D0F40;
+			remoteInfo = SNSApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		072427562144F95A001D0F40 /* SNSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		072427592144F95A001D0F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0724275B2144F95A001D0F40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0724275E2144F95A001D0F40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		072427612144F95A001D0F40 /* SNSApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SNSApp.xcdatamodel; sourceTree = "<group>"; };
+		072427632144F95C001D0F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		072427662144F95C001D0F40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		072427682144F95C001D0F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0724276D2144F95C001D0F40 /* SNSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		072427712144F95C001D0F40 /* SNSAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSAppTests.swift; sourceTree = "<group>"; };
+		072427732144F95C001D0F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		072427782144F95C001D0F40 /* SNSAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNSAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0724277C2144F95C001D0F40 /* SNSAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSAppUITests.swift; sourceTree = "<group>"; };
+		0724277E2144F95C001D0F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		072427532144F959001D0F40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0724276A2144F95C001D0F40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072427752144F95C001D0F40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0724274D2144F959001D0F40 = {
+			isa = PBXGroup;
+			children = (
+				072427582144F95A001D0F40 /* SNSApp */,
+				072427702144F95C001D0F40 /* SNSAppTests */,
+				0724277B2144F95C001D0F40 /* SNSAppUITests */,
+				072427572144F95A001D0F40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		072427572144F95A001D0F40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				072427562144F95A001D0F40 /* SNSApp.app */,
+				0724276D2144F95C001D0F40 /* SNSAppTests.xctest */,
+				072427782144F95C001D0F40 /* SNSAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		072427582144F95A001D0F40 /* SNSApp */ = {
+			isa = PBXGroup;
+			children = (
+				072427592144F95A001D0F40 /* AppDelegate.swift */,
+				0724275B2144F95A001D0F40 /* ViewController.swift */,
+				0724275D2144F95A001D0F40 /* Main.storyboard */,
+				072427632144F95C001D0F40 /* Assets.xcassets */,
+				072427652144F95C001D0F40 /* LaunchScreen.storyboard */,
+				072427682144F95C001D0F40 /* Info.plist */,
+				072427602144F95A001D0F40 /* SNSApp.xcdatamodeld */,
+			);
+			path = SNSApp;
+			sourceTree = "<group>";
+		};
+		072427702144F95C001D0F40 /* SNSAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				072427712144F95C001D0F40 /* SNSAppTests.swift */,
+				072427732144F95C001D0F40 /* Info.plist */,
+			);
+			path = SNSAppTests;
+			sourceTree = "<group>";
+		};
+		0724277B2144F95C001D0F40 /* SNSAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0724277C2144F95C001D0F40 /* SNSAppUITests.swift */,
+				0724277E2144F95C001D0F40 /* Info.plist */,
+			);
+			path = SNSAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		072427552144F959001D0F40 /* SNSApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072427812144F95C001D0F40 /* Build configuration list for PBXNativeTarget "SNSApp" */;
+			buildPhases = (
+				072427522144F959001D0F40 /* Sources */,
+				072427532144F959001D0F40 /* Frameworks */,
+				072427542144F959001D0F40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SNSApp;
+			productName = SNSApp;
+			productReference = 072427562144F95A001D0F40 /* SNSApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0724276C2144F95C001D0F40 /* SNSAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072427842144F95C001D0F40 /* Build configuration list for PBXNativeTarget "SNSAppTests" */;
+			buildPhases = (
+				072427692144F95C001D0F40 /* Sources */,
+				0724276A2144F95C001D0F40 /* Frameworks */,
+				0724276B2144F95C001D0F40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0724276F2144F95C001D0F40 /* PBXTargetDependency */,
+			);
+			name = SNSAppTests;
+			productName = SNSAppTests;
+			productReference = 0724276D2144F95C001D0F40 /* SNSAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		072427772144F95C001D0F40 /* SNSAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072427872144F95C001D0F40 /* Build configuration list for PBXNativeTarget "SNSAppUITests" */;
+			buildPhases = (
+				072427742144F95C001D0F40 /* Sources */,
+				072427752144F95C001D0F40 /* Frameworks */,
+				072427762144F95C001D0F40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0724277A2144F95C001D0F40 /* PBXTargetDependency */,
+			);
+			name = SNSAppUITests;
+			productName = SNSAppUITests;
+			productReference = 072427782144F95C001D0F40 /* SNSAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0724274E2144F959001D0F40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Kang Ning";
+				TargetAttributes = {
+					072427552144F959001D0F40 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					0724276C2144F95C001D0F40 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 072427552144F959001D0F40;
+					};
+					072427772144F95C001D0F40 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 072427552144F959001D0F40;
+					};
+				};
+			};
+			buildConfigurationList = 072427512144F959001D0F40 /* Build configuration list for PBXProject "SNSApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0724274D2144F959001D0F40;
+			productRefGroup = 072427572144F95A001D0F40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				072427552144F959001D0F40 /* SNSApp */,
+				0724276C2144F95C001D0F40 /* SNSAppTests */,
+				072427772144F95C001D0F40 /* SNSAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		072427542144F959001D0F40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072427672144F95C001D0F40 /* LaunchScreen.storyboard in Resources */,
+				072427642144F95C001D0F40 /* Assets.xcassets in Resources */,
+				0724275F2144F95A001D0F40 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0724276B2144F95C001D0F40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072427762144F95C001D0F40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		072427522144F959001D0F40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */,
+				0724275C2144F95A001D0F40 /* ViewController.swift in Sources */,
+				0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072427692144F95C001D0F40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				072427722144F95C001D0F40 /* SNSAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		072427742144F95C001D0F40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0724277D2144F95C001D0F40 /* SNSAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0724276F2144F95C001D0F40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 072427552144F959001D0F40 /* SNSApp */;
+			targetProxy = 0724276E2144F95C001D0F40 /* PBXContainerItemProxy */;
+		};
+		0724277A2144F95C001D0F40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 072427552144F959001D0F40 /* SNSApp */;
+			targetProxy = 072427792144F95C001D0F40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0724275D2144F95A001D0F40 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0724275E2144F95A001D0F40 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		072427652144F95C001D0F40 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				072427662144F95C001D0F40 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0724277F2144F95C001D0F40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		072427802144F95C001D0F40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		072427822144F95C001D0F40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBZ584P6FG;
+				INFOPLIST_FILE = SNSApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		072427832144F95C001D0F40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBZ584P6FG;
+				INFOPLIST_FILE = SNSApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		072427852144F95C001D0F40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBZ584P6FG;
+				INFOPLIST_FILE = SNSAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNSApp.app/SNSApp";
+			};
+			name = Debug;
+		};
+		072427862144F95C001D0F40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBZ584P6FG;
+				INFOPLIST_FILE = SNSAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNSApp.app/SNSApp";
+			};
+			name = Release;
+		};
+		072427882144F95C001D0F40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBZ584P6FG;
+				INFOPLIST_FILE = SNSAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SNSApp;
+			};
+			name = Debug;
+		};
+		072427892144F95C001D0F40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBZ584P6FG;
+				INFOPLIST_FILE = SNSAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SNSApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		072427512144F959001D0F40 /* Build configuration list for PBXProject "SNSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0724277F2144F95C001D0F40 /* Debug */,
+				072427802144F95C001D0F40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072427812144F95C001D0F40 /* Build configuration list for PBXNativeTarget "SNSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072427822144F95C001D0F40 /* Debug */,
+				072427832144F95C001D0F40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072427842144F95C001D0F40 /* Build configuration list for PBXNativeTarget "SNSAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072427852144F95C001D0F40 /* Debug */,
+				072427862144F95C001D0F40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072427872144F95C001D0F40 /* Build configuration list for PBXNativeTarget "SNSAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072427882144F95C001D0F40 /* Debug */,
+				072427892144F95C001D0F40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		072427602144F95A001D0F40 /* SNSApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				072427612144F95A001D0F40 /* SNSApp.xcdatamodel */,
+			);
+			currentVersion = 072427612144F95A001D0F40 /* SNSApp.xcdatamodel */;
+			path = SNSApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0724274E2144F959001D0F40 /* Project object */;
+}
