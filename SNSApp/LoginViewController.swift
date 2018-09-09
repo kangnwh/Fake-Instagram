@@ -9,7 +9,12 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var usernameText: UITextField!
+    
+    @IBOutlet weak var passwordText: UITextField!
+    
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var registerButton: UIButton!
@@ -26,6 +31,22 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func login(_ sender: Any) {
+        let username = usernameText.text ?? "Non"
+        let password = passwordText.text ?? "Non"
+        
+        UIFuncs.popUp(title: "Login !", info: "Username:" + username + "\npassword:" + password, type: UIFuncs.BlockPopType.process, sender: self){
+            print("login clicked")
+        }
+    }
+    
+    
+    @IBAction func register(_ sender: Any) {
+        
+        UIFuncs.popUp(title: "Register!", info: "嘻嘻哈哈嘿??" , type: UIFuncs.BlockPopType.warning, sender: self){
+            print("register clicked")
+        }
+    }
+    
 }
 
