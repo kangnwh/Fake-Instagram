@@ -54,6 +54,7 @@
 		0724277E2144F95C001D0F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0724278B2144FE17001D0F40 /* UIFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFuncs.swift; sourceTree = "<group>"; };
 		0724278D2144FF3A001D0F40 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		0724278F21450166001D0F40 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3416517569D00D4515C9862D /* Pods_SNSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8387B34DC79832AEED72CA9 /* Pods-SNSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E0249FA00AFD46D3C16D1B9E /* Pods-SNSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		0724274D2144F959001D0F40 = {
 			isa = PBXGroup;
 			children = (
+				0724278F21450166001D0F40 /* README.md */,
 				0724278D2144FF3A001D0F40 /* Podfile */,
 				072427582144F95A001D0F40 /* SNSApp */,
 				072427702144F95C001D0F40 /* SNSAppTests */,
