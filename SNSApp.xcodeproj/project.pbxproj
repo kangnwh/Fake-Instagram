@@ -17,6 +17,19 @@
 		0724277D2144F95C001D0F40 /* SNSAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724277C2144F95C001D0F40 /* SNSAppUITests.swift */; };
 		0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724278B2144FE17001D0F40 /* UIFuncs.swift */; };
 		0724278E2144FF3A001D0F40 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0724278D2144FF3A001D0F40 /* Podfile */; };
+		079A1DBF2158897D00CD57DC /* WebAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */; };
+		079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DC12158AEEB00CD57DC /* SignupFormController.swift */; };
+		079A1DC42158AF3100CD57DC /* BaseFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DC32158AF3100CD57DC /* BaseFormController.swift */; };
+		079A1DC82158B32200CD57DC /* FormSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DC52158B32200CD57DC /* FormSectionTitle.swift */; };
+		079A1DC92158B32200CD57DC /* FormSectionTItle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DC62158B32200CD57DC /* FormSectionTItle.xib */; };
+		079A1DCC2158C9F900CD57DC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DCB2158C9F900CD57DC /* SignupViewController.swift */; };
+		079A1DCF2158E51D00CD57DC /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DCE2158E51D00CD57DC /* DateHelper.swift */; };
+		079A1DD12158F19800CD57DC /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DD02158F19700CD57DC /* AppDelegateExtension.swift */; };
+		079A1DD52158F38500CD57DC /* UserFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DD32158F38500CD57DC /* UserFeed.storyboard */; };
+		079A1DE22158F4E200CD57DC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DD82158F4E100CD57DC /* Profile.storyboard */; };
+		079A1DE42158F4E200CD57DC /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DDB2158F4E100CD57DC /* Discover.storyboard */; };
+		079A1DE52158F4E200CD57DC /* Upload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DDD2158F4E100CD57DC /* Upload.storyboard */; };
+		079A1DE82158F4E200CD57DC /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DE12158F4E100CD57DC /* Activity.storyboard */; };
 		2493885B81FB03B9AF667DA9 /* Pods_SNSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3416517569D00D4515C9862D /* Pods_SNSApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +66,21 @@
 		0724277C2144F95C001D0F40 /* SNSAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSAppUITests.swift; sourceTree = "<group>"; };
 		0724277E2144F95C001D0F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0724278B2144FE17001D0F40 /* UIFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFuncs.swift; sourceTree = "<group>"; };
-		0724278D2144FF3A001D0F40 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		0724278D2144FF3A001D0F40 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0724278F21450166001D0F40 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIHandler.swift; sourceTree = "<group>"; };
+		079A1DC12158AEEB00CD57DC /* SignupFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormController.swift; sourceTree = "<group>"; };
+		079A1DC32158AF3100CD57DC /* BaseFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormController.swift; sourceTree = "<group>"; };
+		079A1DC52158B32200CD57DC /* FormSectionTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
+		079A1DC62158B32200CD57DC /* FormSectionTItle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormSectionTItle.xib; sourceTree = "<group>"; };
+		079A1DCB2158C9F900CD57DC /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		079A1DCE2158E51D00CD57DC /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		079A1DD02158F19700CD57DC /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
+		079A1DD32158F38500CD57DC /* UserFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserFeed.storyboard; sourceTree = "<group>"; };
+		079A1DD82158F4E100CD57DC /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		079A1DDB2158F4E100CD57DC /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		079A1DDD2158F4E100CD57DC /* Upload.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Upload.storyboard; sourceTree = "<group>"; };
+		079A1DE12158F4E100CD57DC /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		3416517569D00D4515C9862D /* Pods_SNSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8387B34DC79832AEED72CA9 /* Pods-SNSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E0249FA00AFD46D3C16D1B9E /* Pods-SNSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,9 +139,15 @@
 		072427582144F95A001D0F40 /* SNSApp */ = {
 			isa = PBXGroup;
 			children = (
+				079A1DDF2158F4E100CD57DC /* Activity */,
+				079A1DD92158F4E100CD57DC /* Discover */,
+				079A1DD72158F4E100CD57DC /* Profile */,
+				079A1DDC2158F4E100CD57DC /* Upload */,
+				079A1DD22158F38500CD57DC /* UserFeed */,
+				079A1DCD2158C9FD00CD57DC /* LoginSignup */,
+				079A1DC02158AEBB00CD57DC /* Forms */,
 				0724278A2144FDFA001D0F40 /* CommonFuncs */,
 				072427592144F95A001D0F40 /* AppDelegate.swift */,
-				0724275B2144F95A001D0F40 /* LoginViewController.swift */,
 				0724275D2144F95A001D0F40 /* Main.storyboard */,
 				072427632144F95C001D0F40 /* Assets.xcassets */,
 				072427652144F95C001D0F40 /* LaunchScreen.storyboard */,
@@ -147,8 +179,71 @@
 			isa = PBXGroup;
 			children = (
 				0724278B2144FE17001D0F40 /* UIFuncs.swift */,
+				079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */,
+				079A1DCE2158E51D00CD57DC /* DateHelper.swift */,
+				079A1DD02158F19700CD57DC /* AppDelegateExtension.swift */,
 			);
 			path = CommonFuncs;
+			sourceTree = "<group>";
+		};
+		079A1DC02158AEBB00CD57DC /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				079A1DC52158B32200CD57DC /* FormSectionTitle.swift */,
+				079A1DC62158B32200CD57DC /* FormSectionTItle.xib */,
+				079A1DC12158AEEB00CD57DC /* SignupFormController.swift */,
+				079A1DC32158AF3100CD57DC /* BaseFormController.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		079A1DCD2158C9FD00CD57DC /* LoginSignup */ = {
+			isa = PBXGroup;
+			children = (
+				0724275B2144F95A001D0F40 /* LoginViewController.swift */,
+				079A1DCB2158C9F900CD57DC /* SignupViewController.swift */,
+			);
+			path = LoginSignup;
+			sourceTree = "<group>";
+		};
+		079A1DD22158F38500CD57DC /* UserFeed */ = {
+			isa = PBXGroup;
+			children = (
+				079A1DD32158F38500CD57DC /* UserFeed.storyboard */,
+			);
+			path = UserFeed;
+			sourceTree = "<group>";
+		};
+		079A1DD72158F4E100CD57DC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				079A1DD82158F4E100CD57DC /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		079A1DD92158F4E100CD57DC /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				079A1DDB2158F4E100CD57DC /* Discover.storyboard */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		079A1DDC2158F4E100CD57DC /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				079A1DDD2158F4E100CD57DC /* Upload.storyboard */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		079A1DDF2158F4E100CD57DC /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				079A1DE12158F4E100CD57DC /* Activity.storyboard */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		147A19DEE9D1D6D47A4AA6D4 /* Frameworks */ = {
@@ -277,7 +372,13 @@
 				072427672144F95C001D0F40 /* LaunchScreen.storyboard in Resources */,
 				072427642144F95C001D0F40 /* Assets.xcassets in Resources */,
 				0724278E2144FF3A001D0F40 /* Podfile in Resources */,
+				079A1DC92158B32200CD57DC /* FormSectionTItle.xib in Resources */,
+				079A1DE52158F4E200CD57DC /* Upload.storyboard in Resources */,
+				079A1DE82158F4E200CD57DC /* Activity.storyboard in Resources */,
 				0724275F2144F95A001D0F40 /* Main.storyboard in Resources */,
+				079A1DE22158F4E200CD57DC /* Profile.storyboard in Resources */,
+				079A1DD52158F38500CD57DC /* UserFeed.storyboard in Resources */,
+				079A1DE42158F4E200CD57DC /* Discover.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,14 +424,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
@@ -347,10 +448,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079A1DCC2158C9F900CD57DC /* SignupViewController.swift in Sources */,
 				072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */,
 				0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */,
 				0724275C2144F95A001D0F40 /* LoginViewController.swift in Sources */,
+				079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */,
+				079A1DCF2158E51D00CD57DC /* DateHelper.swift in Sources */,
+				079A1DC82158B32200CD57DC /* FormSectionTitle.swift in Sources */,
 				0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */,
+				079A1DBF2158897D00CD57DC /* WebAPIHandler.swift in Sources */,
+				079A1DD12158F19800CD57DC /* AppDelegateExtension.swift in Sources */,
+				079A1DC42158AF3100CD57DC /* BaseFormController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +641,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -552,7 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = unimelb.mobile.group1.SNSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

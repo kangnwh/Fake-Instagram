@@ -29,6 +29,15 @@ public class UIFuncs{
         }
     }
     
+    static func setWarning(layer:CALayer){
+        layer.borderWidth = CGFloat(2)
+        layer.borderColor = #colorLiteral(red: 1, green: 0.0862745098, blue: 0.3294117647, alpha: 1)
+    }
+    
+    static func setNormal(layer:CALayer){
+        layer.borderWidth = CGFloat(0)
+    }
+    
 //
 //    // popup windows
 //    static func popWarningWindow(info:String){
@@ -110,9 +119,10 @@ public class UIFuncs{
         config.duration = .forever
         config.presentationStyle = .center
         config.presentationContext = .automatic
+
         
         loadingLabel.id = id
-        loadingLabel.configureTheme(.success)
+        loadingLabel.configureTheme(.info)
         loadingLabel.configureDropShadow()
         
         loadingLabel.configureContent(title: title, body: body, iconImage: nil, iconText: iconText, buttonImage: nil, buttonTitle: "OK", buttonTapHandler: { button in

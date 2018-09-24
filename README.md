@@ -33,7 +33,7 @@ Clone code to your own computer
 ```shell
 cd <your_project_folder>
 git clone kangnwh@vs-ssh.visualstudio.com:v3/kangnwh/SNSApp/SNSApp
-```   
+```
 
 ### Install/Update 3rd packages
 ```shell
@@ -45,3 +45,11 @@ pod update  # if Podfile changes
 
 #### workplace 
 Open [this](https://kangnwh.visualstudio.com/SNSApp/SNSApp%20Team/_dashboards/SNSApp%20Team/df984ad3-1ac5-48f8-a201-35c3e1f8b705) for our project dashboard
+
+
+
+CLIENT INFO
+CLIENT ID    63cdf28a654e4edcb1978dbc1ea6791d
+SUPPORT EMAIL    ningk1@student.unimelb.edu.au
+CLIENT STATUS    Sandbox Mode
+
