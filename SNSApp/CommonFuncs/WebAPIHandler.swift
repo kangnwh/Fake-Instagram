@@ -16,10 +16,11 @@ struct WebAPIJSONHeader{
 }
 
 struct WebAPIUrls{
-    public static let IP = "13.211.229.245"
+    public static let IP = "127.0.0.1" //"13.211.229.245"
     public static let baseURL = "https://\(IP):5001/api"
     public static let loginURL = baseURL + "/login/login"
     public static let signupURL = baseURL + "/login/sign-up"
+    public static let postURL = baseURL + "/upload/upload"
 }
 
 
@@ -33,15 +34,18 @@ public class WebAPIHandler {
     
     public var token : String?
     
-    private let headers:HTTPHeaders = [
+    private let jsonHeader:HTTPHeaders = [
+        "Accept": "application/json",
+        "Content-Type":"application/json"
+    ]
+    
+    private let formHeader:HTTPHeaders = [
         "Accept": "application/json",
         "Content-Type":"application/json"
     ]
     private let _httpManager : SessionManager =  {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             WebAPIUrls.IP: .disableEvaluation
-//            "13.211.229.245:5001": .disableEvaluation,
-//            "13.211.229.245": .disableEvaluation
 
         ]
         
@@ -60,13 +64,13 @@ public class WebAPIHandler {
                                  callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
         
         let loginInfo: Parameters = [WebAPIJSONHeader.USERNAME: username, WebAPIJSONHeader.PASSWORD:password]
-        //UIFuncs.popUp(title: "Processing", info: "Login, please wait", type: .process, sender: viewController, callback: {})
+    
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.loginURL,
                           method: HTTPMethod.post,
                           parameters: loginInfo,
                           encoding: JSONEncoding.default,
-                          headers: headers)
+                          headers: jsonHeader)
                     .validate()
                     .responseJSON { (response) in
             UIFuncs.dismissLoadingLabel()
@@ -84,12 +88,22 @@ public class WebAPIHandler {
                              method: HTTPMethod.post,
                              parameters: data,
                              encoding: JSONEncoding.default,
-                             headers: headers)
+                             headers: jsonHeader)
             .validate()
             .responseJSON { (response) in
                 UIFuncs.dismissLoadingLabel()
                 callback(response)
         }
     }
+    
+    public func upload(image: UIImage,comment: String,location: String ){
+        let imageData = image.pngData()!
+        
+        Alamofire.upload(imageData, to: WebAPIUrls.postURL).responseJSON { response in
+            debugPrint(response)
+        }
+    }
+    
+    
 
 }

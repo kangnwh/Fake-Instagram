@@ -30,6 +30,8 @@
 		079A1DE42158F4E200CD57DC /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DDB2158F4E100CD57DC /* Discover.storyboard */; };
 		079A1DE52158F4E200CD57DC /* Upload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DDD2158F4E100CD57DC /* Upload.storyboard */; };
 		079A1DE82158F4E200CD57DC /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DE12158F4E100CD57DC /* Activity.storyboard */; };
+		07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DB80216311E600D778B5 /* UploadViewController.swift */; };
+		07C4DB832163166E00D778B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DB822163166E00D778B5 /* Log.swift */; };
 		2493885B81FB03B9AF667DA9 /* Pods_SNSApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3416517569D00D4515C9862D /* Pods_SNSApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,8 @@
 		079A1DDB2158F4E100CD57DC /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		079A1DDD2158F4E100CD57DC /* Upload.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Upload.storyboard; sourceTree = "<group>"; };
 		079A1DE12158F4E100CD57DC /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		07C4DB80216311E600D778B5 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		07C4DB822163166E00D778B5 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3416517569D00D4515C9862D /* Pods_SNSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8387B34DC79832AEED72CA9 /* Pods-SNSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E0249FA00AFD46D3C16D1B9E /* Pods-SNSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */,
 				079A1DCE2158E51D00CD57DC /* DateHelper.swift */,
 				079A1DD02158F19700CD57DC /* AppDelegateExtension.swift */,
+				07C4DB822163166E00D778B5 /* Log.swift */,
 			);
 			path = CommonFuncs;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				079A1DDD2158F4E100CD57DC /* Upload.storyboard */,
+				07C4DB80216311E600D778B5 /* UploadViewController.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -449,6 +455,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				079A1DCC2158C9F900CD57DC /* SignupViewController.swift in Sources */,
+				07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */,
+				07C4DB832163166E00D778B5 /* Log.swift in Sources */,
 				072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */,
 				0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */,
 				0724275C2144F95A001D0F40 /* LoginViewController.swift in Sources */,

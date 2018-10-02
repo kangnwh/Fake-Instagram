@@ -13,30 +13,95 @@
         <!--Upload-->
         <scene sceneID="aav-6g-dNl">
             <objects>
-                <viewController id="H9o-Fd-ID4" sceneMemberID="viewController">
+                <viewController id="H9o-Fd-ID4" customClass="UploadViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="doL-JD-IcQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoD-7o-dUt">
-                                <rect key="frame" x="160" y="323" width="55" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="waH-Rd-80V" userLabel="WholeStack">
+                                <rect key="frame" x="37.5" y="10" width="300" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8G-Z2-3GD">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="388"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eNM-3O-Sih" userLabel="SelectStack">
+                                        <rect key="frame" x="14" y="388" width="272" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGs-f7-D0Q">
+                                                <rect key="frame" x="0.0" y="17.5" width="131" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Select from Library">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="choosePhoto:" destination="H9o-Fd-ID4" eventType="touchUpInside" id="Crz-bp-hff"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icT-X0-Ibn">
+                                                <rect key="frame" x="141" y="17.5" width="131" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Take a photo">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="takePhoto:" destination="H9o-Fd-ID4" eventType="touchUpInside" id="j8U-6v-6Yh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dWJ-cy-Rjy" userLabel="ContextStack">
+                                        <rect key="frame" x="0.0" y="453" width="300" height="164"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Provide your comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vFC-VE-is0">
+                                                <rect key="frame" x="0.0" y="67" width="145" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input location (first version)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sfd-2b-tIl">
+                                                <rect key="frame" x="155" y="67" width="145" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIF-SN-pZt">
+                                        <rect key="frame" x="0.0" y="617" width="300" height="30"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Upload"/>
+                                        <connections>
+                                            <action selector="upload:" destination="H9o-Fd-ID4" eventType="touchUpInside" id="1aF-U0-v4m"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kIF-SN-pZt" firstAttribute="width" secondItem="waH-Rd-80V" secondAttribute="width" id="WE2-9w-DOa"/>
+                                    <constraint firstItem="dWJ-cy-Rjy" firstAttribute="width" secondItem="waH-Rd-80V" secondAttribute="width" id="bIC-eP-VZJ"/>
+                                    <constraint firstItem="l8G-Z2-3GD" firstAttribute="height" secondItem="waH-Rd-80V" secondAttribute="height" multiplier="0.6" id="sD2-m0-iWb"/>
+                                    <constraint firstItem="eNM-3O-Sih" firstAttribute="height" secondItem="waH-Rd-80V" secondAttribute="height" multiplier="0.1" id="w65-t9-69Y"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zoD-7o-dUt" firstAttribute="centerX" secondItem="doL-JD-IcQ" secondAttribute="centerX" id="0vO-af-OjD"/>
-                            <constraint firstItem="zoD-7o-dUt" firstAttribute="centerY" secondItem="doL-JD-IcQ" secondAttribute="centerY" id="zco-Sk-hDT"/>
+                            <constraint firstItem="waH-Rd-80V" firstAttribute="height" secondItem="xgi-Uu-ZgW" secondAttribute="height" id="9Fa-k3-sW2"/>
+                            <constraint firstItem="waH-Rd-80V" firstAttribute="centerX" secondItem="doL-JD-IcQ" secondAttribute="centerX" id="KWs-hN-14f"/>
+                            <constraint firstItem="waH-Rd-80V" firstAttribute="centerY" secondItem="doL-JD-IcQ" secondAttribute="centerY" id="gcE-nz-ht9"/>
+                            <constraint firstItem="waH-Rd-80V" firstAttribute="width" secondItem="xgi-Uu-ZgW" secondAttribute="width" multiplier="0.8" id="lqu-53-gcC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xgi-Uu-ZgW"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="uploadIcon" id="uvU-vT-Jsh"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="vFC-VE-is0" id="hOJ-He-wGG"/>
+                        <outlet property="imageView" destination="l8G-Z2-3GD" id="a9W-wn-Jev"/>
+                        <outlet property="locationTextView" destination="Sfd-2b-tIl" id="b7m-DG-1JD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL9-Ec-s46" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346" y="1943"/>
+            <point key="canvasLocation" x="-346.39999999999998" y="1942.5787106446778"/>
         </scene>
     </scenes>
     <resources>
