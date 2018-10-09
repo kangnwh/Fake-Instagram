@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0710174A21636ADD008C27FD /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0710174921636ADD008C27FD /* MyExtensions.swift */; };
 		0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072427592144F95A001D0F40 /* AppDelegate.swift */; };
 		0724275C2144F95A001D0F40 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724275B2144F95A001D0F40 /* LoginViewController.swift */; };
 		0724275F2144F95A001D0F40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0724275D2144F95A001D0F40 /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 		0724277D2144F95C001D0F40 /* SNSAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724277C2144F95C001D0F40 /* SNSAppUITests.swift */; };
 		0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724278B2144FE17001D0F40 /* UIFuncs.swift */; };
 		0724278E2144FF3A001D0F40 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0724278D2144FF3A001D0F40 /* Podfile */; };
+		074194C2216C54EE00B1B58B /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194C1216C54EE00B1B58B /* UserProfileViewController.swift */; };
+		074194C4216C575000B1B58B /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194C3216C575000B1B58B /* StatisticsModel.swift */; };
+		074194C7216C683A00B1B58B /* ImageListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194C6216C683A00B1B58B /* ImageListModel.swift */; };
 		079A1DBF2158897D00CD57DC /* WebAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */; };
 		079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DC12158AEEB00CD57DC /* SignupFormController.swift */; };
 		079A1DC42158AF3100CD57DC /* BaseFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DC32158AF3100CD57DC /* BaseFormController.swift */; };
@@ -53,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0710174921636ADD008C27FD /* MyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
+		0710174B2164250E008C27FD /* kn_todo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = kn_todo.md; sourceTree = "<group>"; };
 		072427562144F95A001D0F40 /* SNSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072427592144F95A001D0F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0724275B2144F95A001D0F40 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +76,9 @@
 		0724278B2144FE17001D0F40 /* UIFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFuncs.swift; sourceTree = "<group>"; };
 		0724278D2144FF3A001D0F40 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0724278F21450166001D0F40 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		074194C1216C54EE00B1B58B /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		074194C3216C575000B1B58B /* StatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsModel.swift; sourceTree = "<group>"; };
+		074194C6216C683A00B1B58B /* ImageListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListModel.swift; sourceTree = "<group>"; };
 		079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIHandler.swift; sourceTree = "<group>"; };
 		079A1DC12158AEEB00CD57DC /* SignupFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormController.swift; sourceTree = "<group>"; };
 		079A1DC32158AF3100CD57DC /* BaseFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormController.swift; sourceTree = "<group>"; };
@@ -119,6 +128,7 @@
 		0724274D2144F959001D0F40 = {
 			isa = PBXGroup;
 			children = (
+				0710174B2164250E008C27FD /* kn_todo.md */,
 				0724278F21450166001D0F40 /* README.md */,
 				0724278D2144FF3A001D0F40 /* Podfile */,
 				072427582144F95A001D0F40 /* SNSApp */,
@@ -143,6 +153,7 @@
 		072427582144F95A001D0F40 /* SNSApp */ = {
 			isa = PBXGroup;
 			children = (
+				074194C5216C680800B1B58B /* JsonModels */,
 				079A1DDF2158F4E100CD57DC /* Activity */,
 				079A1DD92158F4E100CD57DC /* Discover */,
 				079A1DD72158F4E100CD57DC /* Profile */,
@@ -187,8 +198,18 @@
 				079A1DCE2158E51D00CD57DC /* DateHelper.swift */,
 				079A1DD02158F19700CD57DC /* AppDelegateExtension.swift */,
 				07C4DB822163166E00D778B5 /* Log.swift */,
+				0710174921636ADD008C27FD /* MyExtensions.swift */,
 			);
 			path = CommonFuncs;
+			sourceTree = "<group>";
+		};
+		074194C5216C680800B1B58B /* JsonModels */ = {
+			isa = PBXGroup;
+			children = (
+				074194C3216C575000B1B58B /* StatisticsModel.swift */,
+				074194C6216C683A00B1B58B /* ImageListModel.swift */,
+			);
+			path = JsonModels;
 			sourceTree = "<group>";
 		};
 		079A1DC02158AEBB00CD57DC /* Forms */ = {
@@ -222,6 +243,7 @@
 		079A1DD72158F4E100CD57DC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				074194C1216C54EE00B1B58B /* UserProfileViewController.swift */,
 				079A1DD82158F4E100CD57DC /* Profile.storyboard */,
 			);
 			path = Profile;
@@ -431,15 +453,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SNSApp/Pods-SNSApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,11 +487,15 @@
 				0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */,
 				0724275C2144F95A001D0F40 /* LoginViewController.swift in Sources */,
 				079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */,
+				074194C7216C683A00B1B58B /* ImageListModel.swift in Sources */,
+				0710174A21636ADD008C27FD /* MyExtensions.swift in Sources */,
 				079A1DCF2158E51D00CD57DC /* DateHelper.swift in Sources */,
+				074194C2216C54EE00B1B58B /* UserProfileViewController.swift in Sources */,
 				079A1DC82158B32200CD57DC /* FormSectionTitle.swift in Sources */,
 				0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */,
 				079A1DBF2158897D00CD57DC /* WebAPIHandler.swift in Sources */,
 				079A1DD12158F19800CD57DC /* AppDelegateExtension.swift in Sources */,
+				074194C4216C575000B1B58B /* StatisticsModel.swift in Sources */,
 				079A1DC42158AF3100CD57DC /* BaseFormController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

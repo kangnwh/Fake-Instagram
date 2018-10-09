@@ -5,6 +5,7 @@ pod 'SwiftMessages', '5.0.0'
 pod 'FCAlertView'
 pod 'Eureka', '4.1.0'
 pod 'Alamofire', '~> 4.7'
+pod 'AlamofireObjectMapper', '~> 5.0'
 
 post_install do |installer|
     installer.pods_project.build_configurations.each do |config|

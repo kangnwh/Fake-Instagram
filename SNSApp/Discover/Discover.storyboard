@@ -17,26 +17,14 @@
                     <view key="view" contentMode="scaleToFill" id="6IO-JL-f1B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xu3-l6-L7i">
-                                <rect key="frame" x="154" y="323" width="67" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Xu3-l6-L7i" firstAttribute="centerY" secondItem="6IO-JL-f1B" secondAttribute="centerY" id="E0N-GF-gmh"/>
-                            <constraint firstItem="Xu3-l6-L7i" firstAttribute="centerX" secondItem="6IO-JL-f1B" secondAttribute="centerX" id="I7n-vN-mGh"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lT5-j0-Apa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" image="discoverIcon" id="YPv-8m-J7W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53Q-fw-nkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1039" y="1934"/>
+            <point key="canvasLocation" x="-1039.2" y="1933.5832083958023"/>
         </scene>
     </scenes>
     <resources>

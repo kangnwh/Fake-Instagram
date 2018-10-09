@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>SNSApp needs to use your location information to your post</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>SNSApp needs to use your location information to your post</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>SNSApp needs to use your location information to your post</string>
 	<key>NSCameraUsageDescription</key>
 	<string>SNSApp needs to use your camera to upload images</string>
 	<key>NSPhotoLibraryUsageDescription</key>

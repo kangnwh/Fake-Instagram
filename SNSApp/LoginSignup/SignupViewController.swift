@@ -59,7 +59,7 @@ class SignupViewController: UIViewController {
                         return
                         
                     case .success(let value):
-                        WebAPIHandler.shared.token = "Bearer \((value as! String))"
+                        WebAPIHandler.shared.setToken(token: (value as! String))
                             self.navigationController?.popViewController(animated: true)
                         self.launchMain()
                     }

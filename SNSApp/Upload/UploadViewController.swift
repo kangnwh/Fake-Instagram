@@ -9,21 +9,54 @@
 import UIKit
 import PhotosUI
 
-class UploadViewController: UIViewController {
+class UploadViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
     private var selectedImage: UIImage?
     
-    @IBOutlet weak var locationTextView: UITextField!
+    @IBOutlet weak var isUseLocation: UISwitch!
+    let locationManager = CLLocationManager()
+    
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextField!
+    var currentLocation:(address:String,lati:CLLocationDegrees?,logi:CLLocationDegrees?) = (address:"Not Provided",lati:nil,logi:nil){
+        didSet{
+            if isUseLocation.isOn{
+                addressLabel.text = currentLocation.address
+            }else{
+                addressLabel.text = ""
+            }
+        }
+    }
+    
+    @IBOutlet var viewsNeedBorder: [UIView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        contentTextView.delegate = self
+        locationManager.delegate = self
+        
+        UIFuncs.setBorder(views: viewsNeedBorder, width: 2, cornerRadius: 15, color: UIColor.white.cgColor)
+        
+        
+        
+        // add tap gesture for image view to allow select image
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.showActionSheet))
+        
+        // add it to the image view;
+        imageView.addGestureRecognizer(tapGesture)
+        // make sure imageView can be interacted with by user
+        imageView.isUserInteractionEnabled = true
+        
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
     /*
     // MARK: - Navigation
@@ -35,26 +68,64 @@ class UploadViewController: UIViewController {
     }
     */
     
-    @IBAction func choosePhoto(_ sender: Any) {
-        self.checkPermission(hanler: self.photoLibrary)
-        
-        
-    }
     
     
-    @IBAction func takePhoto(_ sender: Any) {
-        self.checkPermission(hanler: self.camera)
+    
+    @IBAction func useMyLocation(_ sender: UISwitch) {
+        if sender.isOn{
+            if checkLocationPermission(){
+                self.getLocationAsyn()
+            }else{
+                sender.isOn = false
+            }
+        }else{
+            self.currentLocation = (address:"Not Provided",lati:nil,logi:nil)
+        }
     }
+    
+    public func checkLocationPermission() -> Bool{
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        switch authorizationStatus{
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .authorizedWhenInUse:
+                return true
+            case .authorizedAlways:
+                locationManager.startUpdatingLocation()
+                return true
+            case .restricted:
+                return false
+            case .denied:
+                 UIFuncs.popUp(title: "Opps", info: "This app does not have the permission to get your location information, please go to settings=>privacy to grant permission", type: .caution, sender: self, callback: {})
+                return false
+        }
+        
+        return false
+    }
+    
     
     @IBAction func upload(_ sender: Any) {
-        if let image = selectedImage,
-            let content = contentTextView.text,
-        let location = locationTextView.text{
-            WebAPIHandler.shared.upload(image: selectedImage!, comment: "<#T##String#>", location: "<#T##String#>")
+ 
+        var postText = ""
+        if let content = contentTextView.text{
+            postText = content
+        }
+        
+        if let image = selectedImage{
+            
+            WebAPIHandler.shared.upload(image: image, content: postText, location: currentLocation.address, lati: currentLocation.lati, logi: currentLocation.logi){ response in
+                switch response.result{
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    UIFuncs.popUp(title: "Error", info: "Upload failed, \(error.localizedDescription)", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
+                case .success(_):
+                    UIFuncs.popUp(title: "Succ", info: "Post successfully.", type: .success , sender: self, callback: {})
+                    
+                }
+            }
         }else{
             UIFuncs.popUp(title: "Warning", info: "Please select an image first", type: .caution, sender: self, callback:{})
         }
-        
     }
     
 }
@@ -79,7 +150,6 @@ extension UploadViewController: UIImagePickerControllerDelegate,UINavigationCont
         // do something interesting here!
         self.selectedImage = newImage
         self.imageView.image = newImage
-//        print(newImage.size)
         
         dismiss(animated: true)
     }
@@ -106,7 +176,7 @@ extension UploadViewController: UIImagePickerControllerDelegate,UINavigationCont
         }
     }
     
-    func checkPermission(hanler: @escaping () -> Void) {
+    func checkPhotoPermission(hanler: @escaping () -> Void) {
         let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
         switch photoAuthorizationStatus {
         case .authorized:
@@ -122,5 +192,102 @@ extension UploadViewController: UIImagePickerControllerDelegate,UINavigationCont
         default:
             print("Error: no access to photo album.")
         }
+    }
+    
+    @objc func showActionSheet() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+            self.checkPhotoPermission(hanler: self.camera)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+            self.checkPhotoPermission(hanler: self.photoLibrary)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+}
+
+extension UploadViewController:CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways || status == .authorizedWhenInUse{
+            self.getLocationAsyn()
+            self.isUseLocation.isOn = true
+        }else{
+            self.isUseLocation.isOn = false
+        }
+    }
+    
+    func getCoordinate() -> (lati:CLLocationDegrees?,logi:CLLocationDegrees?){
+
+        var lati:CLLocationDegrees?
+        var logi:CLLocationDegrees?
+        if let currentLocation = locationManager.location?.coordinate{
+            lati = currentLocation.latitude
+            logi = currentLocation.longitude
+        }
+
+        return (lati, logi)
+        
+    }
+    
+    func getLocationAsyn(){
+        
+        let coordinate = getCoordinate()
+        
+        var address: String = ""
+        
+        guard let lati = coordinate.lati, let logi = coordinate.logi else{
+            currentLocation.address = address
+            currentLocation = (address:address,lati:nil,logi:nil)
+            return
+        }
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: lati, longitude: logi)
+        
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            if let e = error{
+                print("Reverse geocoder failed with error" + e.localizedDescription)
+                self.currentLocation = (address:address,lati:nil,logi:nil)
+                return
+            }
+            guard let placeMark = placemarks?[0] else{
+                print("Problem with the data received from geocoder")
+                self.currentLocation = (address:address,lati:nil,logi:nil)
+                return
+            }
+            
+            // Address dictionary
+            //print(placeMark.addressDictionary ?? "")
+            
+            // Location name
+            if let locationName = placeMark.name {
+                address += "\(locationName),"
+            }
+            
+//            // Street address
+//            if let street = placeMark.thoroughfare {
+//                address += "\(street),"
+//            }
+            
+            // City
+            if let city = placeMark.locality { // city
+                address += "\(city),"
+            }
+            
+            // Country
+            if let country = placeMark.country{
+                address += "\(country)"
+            }
+            
+            self.currentLocation = (address:address,lati:lati,logi:logi)
+            
+        })
+        
     }
 }
