@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fe4-cu-PgO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Feed-->
+        <scene sceneID="3ZU-PL-Tap">
+            <objects>
+                <viewController id="Fe4-cu-PgO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zrI-WC-VEY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqm-cb-1GA">
+                                <rect key="frame" x="148" y="323.5" width="79" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xqm-cb-1GA" firstAttribute="centerX" secondItem="zrI-WC-VEY" secondAttribute="centerX" id="OBE-fi-k45"/>
+                            <constraint firstItem="Xqm-cb-1GA" firstAttribute="centerY" secondItem="zrI-WC-VEY" secondAttribute="centerY" id="zgm-ki-mMG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="20c-7K-4ws"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="User Feed" image="userfeedIcon" id="fWl-n0-4No"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXQ-hJ-eM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1722.4000000000001" y="1933.5832083958023"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="userfeedIcon" width="24" height="24"/>
+    </resources>
+</document>
