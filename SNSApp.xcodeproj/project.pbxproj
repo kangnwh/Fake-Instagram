@@ -224,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				074194CC216C811400B1B58B /* ProfileModel.swift */,
-				079A1DC52158B32200CD57DC /* FormSectionTitle.swift */,
 				074194C6216C683A00B1B58B /* ImageListModel.swift */,
 				074194D8216C9A8300B1B58B /* SuggestionUserListModel.swift */,
 			);
@@ -234,6 +233,7 @@
 		079A1DC02158AEBB00CD57DC /* Forms */ = {
 			isa = PBXGroup;
 			children = (
+				079A1DC52158B32200CD57DC /* FormSectionTitle.swift */,
 				079A1DC62158B32200CD57DC /* FormSectionTItle.xib */,
 				079A1DC12158AEEB00CD57DC /* SignupFormController.swift */,
 				079A1DC32158AF3100CD57DC /* BaseFormController.swift */,
