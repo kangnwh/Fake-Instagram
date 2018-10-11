@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import PhotosUI
+import AlamofireImage
 
 struct WebAPIJSONHeader{
     static let USERNAME = "username"
@@ -19,11 +20,18 @@ struct WebAPIJSONHeader{
 struct WebAPIUrls{
     public static let IP =  "127.0.0.1" //"13.211.229.245" //
     public static let baseURL = "https://\(IP):5001/api"
+    public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
+    
     public static let loginURL = baseURL + "/login/login"
     public static let signupURL = baseURL + "/login/sign-up"
     public static let postURL = baseURL + "/upload/upload"
     public static let stasticsURL = baseURL + "/UserProfile/poststat"
-    public static let photoBaseURL = baseURL + "/photos"
+    public static let myPhotosURL = baseURL + "/UserProfile/myphotos"
+    public static let suggestionURL = baseURL + "/UserProfile/myphotos"
+    
+    
+    
+    
 }
 
 
@@ -66,7 +74,14 @@ public class WebAPIHandler {
     }()
     
     private init(){
+        let sessionManager = SessionManager(
+            configuration: ImageDownloader.defaultURLSessionConfiguration(),
+            serverTrustPolicyManager: ServerTrustPolicyManager(
+                policies: [WebAPIUrls.IP: .disableEvaluation]
+            )
+        )
         
+        UIImageView.af_sharedImageDownloader = ImageDownloader(sessionManager: sessionManager)
     }
     
     
@@ -107,7 +122,7 @@ public class WebAPIHandler {
     }
     
     public func requestStatistic(viewController :UIViewController,
-                                  callback:@escaping ((DataResponse<StatisticsModel>) -> Void)) -> Void{
+                                  callback:@escaping ((DataResponse<ProfileModel>) -> Void)) -> Void{
         
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.stasticsURL,
@@ -115,10 +130,42 @@ public class WebAPIHandler {
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
-            .responseObject{ (response:DataResponse<StatisticsModel>) in
+            .responseObject{ (response:DataResponse<ProfileModel>) in
                 UIFuncs.dismissLoadingLabel()
                 callback(response)
         }
+    }
+    
+    public func requestMyPhotos(viewController :UIViewController,
+                                       callback:@escaping ((DataResponse<ImageListModel>) -> Void)) -> Void{
+        
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.myPhotosURL,
+                             method: HTTPMethod.post,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            .validate()
+            .responseObject{ (response:DataResponse<ImageListModel>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+        
+    }
+    
+    public func requestSuggestions(viewController :UIViewController,
+                                callback:@escaping ((DataResponse<ImageListModel>) -> Void)) -> Void{
+        
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.myPhotosURL,
+                             method: HTTPMethod.post,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            .validate()
+            .responseObject{ (response:DataResponse<ImageListModel>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+        
     }
     
     public func upload(image: UIImage,content: String,location:String, lati: CLLocationDegrees?, logi: CLLocationDegrees?,callback:@escaping ((DataResponse<Any>) -> Void) ){

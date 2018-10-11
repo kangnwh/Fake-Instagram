@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 extension String{
   
@@ -28,3 +28,4 @@ extension Double{
         return "\(self)".data(using: String.Encoding.utf8)!
     }
 }
+

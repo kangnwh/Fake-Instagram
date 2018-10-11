@@ -12,11 +12,12 @@ import ObjectMapper
 
 
 
-public class StatisticsModel: Mappable{
+public class ProfileModel: Mappable{
     
     var postCount:Int?
     var followerCount:Int?
     var followingCount:Int?
+    var avatarUrl: String?
     
     public required init?(map: Map) {
         self.mapping(map: map)
@@ -26,5 +27,6 @@ public class StatisticsModel: Mappable{
         self.postCount <- map["postCount"]
         self.followerCount <- map["followerCount"]
         self.followingCount <- map["followingCount"]
+        self.avatarUrl <- map["avatar"]
     }
 }

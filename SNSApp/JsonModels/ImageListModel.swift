@@ -16,11 +16,15 @@ public class ImageListModel: Mappable{
     
     var imageUrls:[String]?
     
+    public init() {
+        imageUrls = []
+    }
+    
     public required init?(map: Map) {
         self.mapping(map: map)
     }
     
     public func mapping(map: Map) {
-        self.imageUrls <- map["postCount"]
+        self.imageUrls <- map["image"]
     }
 }

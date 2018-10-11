@@ -112,7 +112,7 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
         }
         
         if let image = selectedImage{
-            
+            image.af_inflate()
             WebAPIHandler.shared.upload(image: image, content: postText, location: currentLocation.address, lati: currentLocation.lati, logi: currentLocation.logi){ response in
                 switch response.result{
                 case .failure(let error):
