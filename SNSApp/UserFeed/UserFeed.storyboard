@@ -12,13 +12,13 @@
         <!--Instagram-->
         <scene sceneID="yd8-ot-RhG">
             <objects>
-                <tableViewController id="QZ1-F0-SGv" customClass="NewsfeedTableViewController" customModule="InstagramUI" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="QZ1-F0-SGv" customClass="NewsfeedTableViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fvh-Z8-HzL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostHeaderCell" rowHeight="57" id="I9Y-wf-eo4" customClass="PostHeaderCell" customModule="InstagramUI" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostHeaderCell" rowHeight="57" id="I9Y-wf-eo4" customClass="PostHeaderCell" customModule="SNSApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I9Y-wf-eo4" id="djU-yO-7Xl">
@@ -53,7 +53,7 @@
                                     <outlet property="usernameLabel" destination="9gU-hM-LHj" id="P2I-Mc-vyw"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="578" id="6Tz-ZR-JXY" customClass="PostCell" customModule="InstagramUI" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="578" id="6Tz-ZR-JXY" customClass="PostCell" customModule="SNSApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="85" width="375" height="578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Tz-ZR-JXY" id="Cgf-rN-FuN">
@@ -138,6 +138,16 @@
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unv-1n-P9A">
+                                            <rect key="frame" x="100" y="440" width="246" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="246" id="9Hq-FW-uIj"/>
+                                                <constraint firstAttribute="height" constant="21" id="ZOK-ZZ-Znu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="flh-lQ-w7h" secondAttribute="trailing" id="0PR-9B-RNq"/>
@@ -150,10 +160,12 @@
                                         <constraint firstItem="h4y-cg-pzB" firstAttribute="leading" secondItem="Cgf-rN-FuN" secondAttribute="leading" constant="12" id="Zlg-Ar-N37"/>
                                         <constraint firstAttribute="bottom" secondItem="h4y-cg-pzB" secondAttribute="bottom" constant="8" id="aje-tB-OH3"/>
                                         <constraint firstItem="EsD-C7-iCe" firstAttribute="leading" secondItem="Cgf-rN-FuN" secondAttribute="leading" constant="12" id="awa-Zz-tSu"/>
+                                        <constraint firstItem="Unv-1n-P9A" firstAttribute="top" secondItem="jzU-mJ-8Hm" secondAttribute="bottom" constant="17" id="iXK-DH-Bx5"/>
                                         <constraint firstItem="jzU-mJ-8Hm" firstAttribute="top" secondItem="1Zi-g4-FZY" secondAttribute="bottom" constant="12" id="jxv-Yp-t2w"/>
                                         <constraint firstAttribute="trailing" secondItem="RnP-Fo-F2E" secondAttribute="trailing" constant="12" id="lTB-JA-3Qf"/>
                                         <constraint firstItem="flh-lQ-w7h" firstAttribute="top" secondItem="Cgf-rN-FuN" secondAttribute="top" id="mUV-pu-WNG"/>
                                         <constraint firstItem="1Zi-g4-FZY" firstAttribute="top" secondItem="flh-lQ-w7h" secondAttribute="bottom" constant="12" id="mqw-P1-GfH"/>
+                                        <constraint firstItem="Unv-1n-P9A" firstAttribute="leading" secondItem="EsD-C7-iCe" secondAttribute="trailing" constant="15" id="qLM-yi-WWl"/>
                                         <constraint firstItem="Uj7-2Z-6G0" firstAttribute="leading" secondItem="Cgf-rN-FuN" secondAttribute="leading" constant="12" id="wxp-6R-epr"/>
                                         <constraint firstItem="h4y-cg-pzB" firstAttribute="top" secondItem="Uj7-2Z-6G0" secondAttribute="bottom" constant="8" id="yE0-i1-cdP"/>
                                         <constraint firstItem="1Zi-g4-FZY" firstAttribute="leading" secondItem="Cgf-rN-FuN" secondAttribute="leading" constant="12" id="yFe-Ff-09Z"/>
@@ -161,6 +173,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addressLabel" destination="Unv-1n-P9A" id="COb-he-Dla"/>
+                                    <outlet property="numberOfCommentButton" destination="Uj7-2Z-6G0" id="UZS-ub-fXS"/>
                                     <outlet property="numberOfLikesButton" destination="EsD-C7-iCe" id="TCe-zG-fCE"/>
                                     <outlet property="postCaptionLabel" destination="RnP-Fo-F2E" id="bjX-oQ-D6D"/>
                                     <outlet property="postImageView" destination="flh-lQ-w7h" id="6i7-9A-8Pr"/>
