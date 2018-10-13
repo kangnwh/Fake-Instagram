@@ -22,15 +22,16 @@ class PostCell: UITableViewCell {
     func updateUI()
     {
         let likes = post.numberOfComments
-        let likeToString = "\(String(describing: likes))"
+       
+        let likeToString = String(describing: likes!)
         
         let comment = post.numberOfComments
-        let commentToString = "\(String(describing: comment))"
+        let commentToString = String(describing:comment!)
 
         self.postImageView.image = post.image
         postCaptionLabel.text = post.caption
-        numberOfLikesButton.setTitle(likeToString + "likes", for: [])
-        numberOfCommentButton.setTitle(commentToString + "comments", for: [])
+        numberOfLikesButton.setTitle(likeToString + " likes", for: [])
+        numberOfCommentButton.setTitle(commentToString + " comments", for: [])
         timeAgoLabel.text = post.timeAgo
         addressLabel.text = post.address
     }

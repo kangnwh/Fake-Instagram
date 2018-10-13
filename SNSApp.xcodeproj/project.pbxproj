@@ -44,6 +44,10 @@
 		079A1DE82158F4E200CD57DC /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DE12158F4E100CD57DC /* Activity.storyboard */; };
 		07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DB80216311E600D778B5 /* UploadViewController.swift */; };
 		07C4DB832163166E00D778B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DB822163166E00D778B5 /* Log.swift */; };
+		097D8E2C2171CF9D004082AB /* Like.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 097D8E2B2171CF9D004082AB /* Like.storyboard */; };
+		097D8E2E2171D247004082AB /* LikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E2D2171D247004082AB /* LikeCell.swift */; };
+		097D8E302171D44E004082AB /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E2F2171D44E004082AB /* Likes.swift */; };
+		097D8E322171D602004082AB /* LikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E312171D602004082AB /* LikeController.swift */; };
 		09800C17216F20F00080B3BC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09800C12216F20F00080B3BC /* User.swift */; };
 		09800C18216F20F00080B3BC /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09800C13216F20F00080B3BC /* PostCell.swift */; };
 		09800C19216F20F00080B3BC /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09800C14216F20F00080B3BC /* PostHeaderCell.swift */; };
@@ -115,6 +119,10 @@
 		079A1DE12158F4E100CD57DC /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		07C4DB80216311E600D778B5 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		07C4DB822163166E00D778B5 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		097D8E2B2171CF9D004082AB /* Like.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Like.storyboard; sourceTree = "<group>"; };
+		097D8E2D2171D247004082AB /* LikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCell.swift; sourceTree = "<group>"; };
+		097D8E2F2171D44E004082AB /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
+		097D8E312171D602004082AB /* LikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeController.swift; sourceTree = "<group>"; };
 		09800C12216F20F00080B3BC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09800C13216F20F00080B3BC /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		09800C14216F20F00080B3BC /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 		072427582144F95A001D0F40 /* SNSApp */ = {
 			isa = PBXGroup;
 			children = (
+				097D8E2A2171CF48004082AB /* Like */,
 				074194C5216C680800B1B58B /* JsonModels */,
 				079A1DDF2158F4E100CD57DC /* Activity */,
 				079A1DD92158F4E100CD57DC /* Discover */,
@@ -313,6 +322,17 @@
 			path = Activity;
 			sourceTree = "<group>";
 		};
+		097D8E2A2171CF48004082AB /* Like */ = {
+			isa = PBXGroup;
+			children = (
+				097D8E2B2171CF9D004082AB /* Like.storyboard */,
+				097D8E2D2171D247004082AB /* LikeCell.swift */,
+				097D8E2F2171D44E004082AB /* Likes.swift */,
+				097D8E312171D602004082AB /* LikeController.swift */,
+			);
+			path = Like;
+			sourceTree = "<group>";
+		};
 		147A19DEE9D1D6D47A4AA6D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +465,7 @@
 				079A1DE82158F4E200CD57DC /* Activity.storyboard in Resources */,
 				0724275F2144F95A001D0F40 /* Main.storyboard in Resources */,
 				079A1DE22158F4E200CD57DC /* Profile.storyboard in Resources */,
+				097D8E2C2171CF9D004082AB /* Like.storyboard in Resources */,
 				079A1DD52158F38500CD57DC /* UserFeed.storyboard in Resources */,
 				074194D1216C8C6A00B1B58B /* PopupImageViewController.xib in Resources */,
 				079A1DE42158F4E200CD57DC /* Discover.storyboard in Resources */,
@@ -530,7 +551,9 @@
 				079A1DCC2158C9F900CD57DC /* SignupViewController.swift in Sources */,
 				07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */,
 				07C4DB832163166E00D778B5 /* Log.swift in Sources */,
+				097D8E322171D602004082AB /* LikeController.swift in Sources */,
 				07397A01216F0B3E00B7B191 /* WebAPIExtension.swift in Sources */,
+				097D8E302171D44E004082AB /* Likes.swift in Sources */,
 				072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */,
 				074194D9216C9A8300B1B58B /* SuggestionUserListModel.swift in Sources */,
 				0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */,
@@ -550,6 +573,7 @@
 				0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */,
 				09800C18216F20F00080B3BC /* PostCell.swift in Sources */,
 				079A1DBF2158897D00CD57DC /* WebAPIHandler.swift in Sources */,
+				097D8E2E2171D247004082AB /* LikeCell.swift in Sources */,
 				09800C17216F20F00080B3BC /* User.swift in Sources */,
 				079A1DD12158F19800CD57DC /* AppDelegateExtension.swift in Sources */,
 				09800C1A216F20F00080B3BC /* Post.swift in Sources */,
