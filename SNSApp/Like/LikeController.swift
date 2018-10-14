@@ -22,7 +22,7 @@ class LikeController: UITableViewController
         
         self.fetchPosts()
         
-        tableView.estimatedRowHeight = Storyboard.likeHeaderHeight
+        tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
     }
@@ -62,19 +62,19 @@ extension LikeController
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.likeCell) as! LikeCell
-        
-        cell.likes = self.likes?[section]
-        cell.backgroundColor = UIColor.white
-        
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+//    {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.likeCell) as! LikeCell
+//
+//        cell.likes = self.likes?[section]
+//        cell.backgroundColor = UIColor.white
+//
+//        return cell
+//    }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return Storyboard.likeHeaderHeight
-    }
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return Storyboard.likeHeaderHeight
+//    }
     
     
     

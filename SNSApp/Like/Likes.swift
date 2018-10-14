@@ -20,7 +20,9 @@ struct Likes
         let likes1 = Likes(createdBy: duc, timeAgo: "1 hr")
         
         likes.append(likes1)
-        
+        likes.append(likes1)
+        likes.append(likes1)
+        likes.append(likes1)
         return likes
     }
 }

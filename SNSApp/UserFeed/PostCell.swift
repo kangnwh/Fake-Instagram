@@ -12,6 +12,15 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postCaptionLabel: UILabel!
     @IBOutlet weak var numberOfCommentButton: UIButton!
     @IBOutlet weak var addressLabel: UILabel!
+    
+    @IBAction func likeButton(_ sender: UIButton) {
+        //TODO:like or unlike
+        sender.setImage(UIImage(named: "icon-like-filled.png"), for: .normal)
+    }
+    
+    @IBAction func leaveCommentButton(_ sender: UIButton) {
+        //TODO: skip to comment page
+    }
     var post: Post! {
         didSet {
             self.updateUI()
@@ -21,13 +30,13 @@ class PostCell: UITableViewCell {
     
     func updateUI()
     {
-        let likes = post.numberOfComments
+        let likes = post.numberOfLikes
        
         let likeToString = String(describing: likes!)
         
         let comment = post.numberOfComments
         let commentToString = String(describing:comment!)
-
+        
         self.postImageView.image = post.image
         postCaptionLabel.text = post.caption
         numberOfLikesButton.setTitle(likeToString + " likes", for: [])
