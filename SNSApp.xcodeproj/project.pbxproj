@@ -56,6 +56,7 @@
 		097D8E48217475CB004082AB /* YoursModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E47217475CB004082AB /* YoursModel.swift */; };
 		097D8E4A21747648004082AB /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E4921747648004082AB /* ActivityTableViewController.swift */; };
 		097D8E4C217482E5004082AB /* YoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E4B217482E5004082AB /* YoursTableViewController.swift */; };
+		097D8E4E21749034004082AB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 097D8E4D21749034004082AB /* .gitignore */; };
 		09800C17216F20F00080B3BC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09800C12216F20F00080B3BC /* User.swift */; };
 		09800C18216F20F00080B3BC /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09800C13216F20F00080B3BC /* PostCell.swift */; };
 		09800C19216F20F00080B3BC /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09800C14216F20F00080B3BC /* PostHeaderCell.swift */; };
@@ -139,6 +140,7 @@
 		097D8E47217475CB004082AB /* YoursModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoursModel.swift; sourceTree = "<group>"; };
 		097D8E4921747648004082AB /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		097D8E4B217482E5004082AB /* YoursTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoursTableViewController.swift; sourceTree = "<group>"; };
+		097D8E4D21749034004082AB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		09800C12216F20F00080B3BC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09800C13216F20F00080B3BC /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		09800C14216F20F00080B3BC /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		0724274D2144F959001D0F40 = {
 			isa = PBXGroup;
 			children = (
+				097D8E4D21749034004082AB /* .gitignore */,
 				0710174B2164250E008C27FD /* kn_todo.md */,
 				0724278F21450166001D0F40 /* README.md */,
 				0724278D2144FF3A001D0F40 /* Podfile */,
@@ -499,6 +502,7 @@
 				079A1DE22158F4E200CD57DC /* Profile.storyboard in Resources */,
 				079A1DD52158F38500CD57DC /* UserFeed.storyboard in Resources */,
 				074194D1216C8C6A00B1B58B /* PopupImageViewController.xib in Resources */,
+				097D8E4E21749034004082AB /* .gitignore in Resources */,
 				079A1DE42158F4E200CD57DC /* Discover.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
