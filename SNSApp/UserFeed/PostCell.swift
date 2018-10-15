@@ -1,5 +1,11 @@
 //  Created by Raelyn Lyu on 2/10/18.
-//  Copyright © 2018 Raelyn Lyu. All rights reserved.
+//
+//  PostCell.swift
+//  SNSApp
+//
+//  Created by Raelyn Lyu on 13/10/18.
+//  Copyright © 2018 Kang Ning. All rights reserved.
+//
 //
 
 import UIKit
@@ -15,6 +21,7 @@ class PostCell: UITableViewCell {
     
     @IBAction func likeButton(_ sender: UIButton) {
         //TODO:like or unlike
+        
         sender.setImage(UIImage(named: "icon-like-filled.png"), for: .normal)
         
     }
@@ -22,7 +29,7 @@ class PostCell: UITableViewCell {
     @IBAction func leaveCommentButton(_ sender: UIButton) {
         //TODO: skip to comment page
     }
-    var post: Post! {
+    var post: PostModel! {  
         didSet {
             self.updateUI()
         }
@@ -31,19 +38,25 @@ class PostCell: UITableViewCell {
     
     func updateUI()
     {
-        let likes = post.numberOfLikes
+        let likes = post.likeCount
        
         let likeToString = String(describing: likes!)
         
-        let comment = post.numberOfComments
+        let comment = post.comments?.count
         let commentToString = String(describing:comment!)
         
-        self.postImageView.image = post.image
-        postCaptionLabel.text = post.caption
+        
+        if let urlStr = post.img {
+            let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + urlStr)!
+            postImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
+        }
+        
+        
+        postCaptionLabel.text = post.postContent
         numberOfLikesButton.setTitle(likeToString + " likes", for: [])
         numberOfCommentButton.setTitle(commentToString + " comments", for: [])
-        timeAgoLabel.text = post.timeAgo
-        addressLabel.text = post.address
+        timeAgoLabel.text = post.postTime
+        addressLabel.text = post.postLocation
     }
 }
 

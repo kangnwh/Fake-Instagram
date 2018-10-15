@@ -199,7 +199,13 @@
                             <outlet property="delegate" destination="QZ1-F0-SGv" id="1lv-mB-Dq7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Instagram" id="z7g-Vw-yCY"/>
+                    <navigationItem key="navigationItem" title="Instagram" id="z7g-Vw-yCY">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="1HK-3U-tiq">
+                            <connections>
+                                <action selector="refresh:" destination="QZ1-F0-SGv" id="D6t-UY-Grs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                 </tableViewController>
