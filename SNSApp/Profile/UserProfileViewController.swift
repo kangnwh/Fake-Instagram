@@ -14,6 +14,7 @@ import PopupDialog
 class UserProfileViewController: UIViewController {
     
     @IBOutlet weak var popImageView: UIImageView!
+    var userId = -1
     
     private var _userStat:ProfileModel!{
         didSet{
@@ -27,7 +28,7 @@ class UserProfileViewController: UIViewController {
         }
     }
     
-    private var _photoUrlList: PostListModel = PostListModel(){
+    private var _photoUrlList: [Post] = []{
         didSet{
             self.imageCollectionView.reloadData()
         }
@@ -40,7 +41,7 @@ class UserProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         setCollectionView()
         loadStatistics()
-        loadImageList()
+        loadPostList()
     }
     
     
@@ -78,8 +79,8 @@ class UserProfileViewController: UIViewController {
         }
     }
     
-    private func loadImageList(){
-        WebAPIHandler.shared.requestMyPhotos(viewController: self){ (response: DataResponse<PostListModel>) in
+    private func loadPostList(){
+        WebAPIHandler.shared.requestUserPosts(viewController: self, userId: self.userId){ (response: DataResponse<[Post]>) in
             if let urlList = response.result.value{
                 DispatchQueue.main.async {
                     self._photoUrlList = urlList
