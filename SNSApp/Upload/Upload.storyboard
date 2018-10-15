@@ -18,20 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cameraGrid" translatesAutoresizingMaskIntoConstraints="NO" id="ZAx-cG-QHn">
+                                <rect key="frame" x="67" y="305" width="240" height="55.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="waH-Rd-80V" userLabel="WholeStack">
-                                <rect key="frame" x="37.5" y="20" width="300" height="478.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="478.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap-to-add" translatesAutoresizingMaskIntoConstraints="NO" id="l8G-Z2-3GD">
-                                        <rect key="frame" x="118" y="0.0" width="64" height="287"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test Comment" borderStyle="roundedRect" placeholder="Provide your comment" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vFC-VE-is0">
-                                        <rect key="frame" x="0.0" y="297" width="300" height="48"/>
+                                        <rect key="frame" x="0.0" y="297" width="375" height="48"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dWJ-cy-Rjy" userLabel="ContextStack">
-                                        <rect key="frame" x="0.0" y="355" width="300" height="47.5"/>
+                                        <rect key="frame" x="37.5" y="355" width="300" height="47.5"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UMK-tj-QGZ">
                                                 <rect key="frame" x="0.0" y="8.5" width="62" height="31"/>
@@ -58,7 +62,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIF-SN-pZt">
-                                        <rect key="frame" x="0.0" y="412.5" width="300" height="66"/>
+                                        <rect key="frame" x="37.5" y="412.5" width="300" height="66"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Upload"/>
                                         <connections>
@@ -68,9 +72,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vFC-VE-is0" firstAttribute="width" secondItem="waH-Rd-80V" secondAttribute="width" id="OAK-ky-fLN"/>
-                                    <constraint firstItem="kIF-SN-pZt" firstAttribute="width" secondItem="waH-Rd-80V" secondAttribute="width" id="WE2-9w-DOa"/>
+                                    <constraint firstItem="l8G-Z2-3GD" firstAttribute="width" secondItem="waH-Rd-80V" secondAttribute="width" id="Pgy-zB-WIt"/>
+                                    <constraint firstItem="kIF-SN-pZt" firstAttribute="width" secondItem="waH-Rd-80V" secondAttribute="width" multiplier="0.8" id="SVa-20-zJ6"/>
                                     <constraint firstItem="vFC-VE-is0" firstAttribute="height" secondItem="waH-Rd-80V" secondAttribute="height" multiplier="0.1" id="X2L-3C-UTS"/>
-                                    <constraint firstItem="dWJ-cy-Rjy" firstAttribute="width" secondItem="waH-Rd-80V" secondAttribute="width" id="bIC-eP-VZJ"/>
+                                    <constraint firstItem="dWJ-cy-Rjy" firstAttribute="width" secondItem="waH-Rd-80V" secondAttribute="width" multiplier="0.8" id="eIk-qO-uN5"/>
                                     <constraint firstItem="dWJ-cy-Rjy" firstAttribute="height" secondItem="waH-Rd-80V" secondAttribute="height" multiplier="0.1" id="qtz-aE-FIn"/>
                                     <constraint firstItem="l8G-Z2-3GD" firstAttribute="height" secondItem="waH-Rd-80V" secondAttribute="height" multiplier="0.6" id="sD2-m0-iWb"/>
                                 </constraints>
@@ -81,14 +86,20 @@
                             <constraint firstItem="waH-Rd-80V" firstAttribute="centerX" secondItem="doL-JD-IcQ" secondAttribute="centerX" id="KWs-hN-14f"/>
                             <constraint firstItem="waH-Rd-80V" firstAttribute="top" secondItem="xgi-Uu-ZgW" secondAttribute="top" id="Z0o-72-lMl"/>
                             <constraint firstItem="waH-Rd-80V" firstAttribute="height" secondItem="xgi-Uu-ZgW" secondAttribute="height" multiplier="0.8" id="b1Q-2k-Sye"/>
-                            <constraint firstItem="waH-Rd-80V" firstAttribute="width" secondItem="xgi-Uu-ZgW" secondAttribute="width" multiplier="0.8" id="lqu-53-gcC"/>
+                            <constraint firstItem="waH-Rd-80V" firstAttribute="width" secondItem="xgi-Uu-ZgW" secondAttribute="width" id="wc6-IT-Cxt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xgi-Uu-ZgW"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ZAx-cG-QHn"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="uploadIcon" id="uvU-vT-Jsh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="ur1-6r-FU7" id="poF-NH-2OE"/>
+                        <outlet property="cameraGrid" destination="ZAx-cG-QHn" id="BTr-qk-V6u"/>
                         <outlet property="contentTextView" destination="vFC-VE-is0" id="hOJ-He-wGG"/>
                         <outlet property="imageView" destination="l8G-Z2-3GD" id="a9W-wn-Jev"/>
                         <outlet property="isUseLocation" destination="UMK-tj-QGZ" id="BBE-L5-Cb1"/>
@@ -101,6 +112,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cameraGrid" width="900" height="600"/>
         <image name="tap-to-add" width="64" height="64"/>
         <image name="uploadIcon" width="24" height="24"/>
     </resources>

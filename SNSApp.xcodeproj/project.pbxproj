@@ -20,7 +20,7 @@
 		0724278E2144FF3A001D0F40 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0724278D2144FF3A001D0F40 /* Podfile */; };
 		07397A01216F0B3E00B7B191 /* WebAPIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07397A00216F0B3D00B7B191 /* WebAPIExtension.swift */; };
 		074194C2216C54EE00B1B58B /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194C1216C54EE00B1B58B /* UserProfileViewController.swift */; };
-		074194C7216C683A00B1B58B /* ImageListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194C6216C683A00B1B58B /* ImageListModel.swift */; };
+		074194C7216C683A00B1B58B /* PostListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194C6216C683A00B1B58B /* PostListModel.swift */; };
 		074194CA216C6C3600B1B58B /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194C8216C6C3600B1B58B /* ProfileImageCell.swift */; };
 		074194CD216C811400B1B58B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194CC216C811400B1B58B /* ProfileModel.swift */; };
 		074194D0216C8C6A00B1B58B /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194CE216C8C6A00B1B58B /* PopupImageViewController.swift */; };
@@ -103,7 +103,7 @@
 		0724278F21450166001D0F40 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		07397A00216F0B3D00B7B191 /* WebAPIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIExtension.swift; sourceTree = "<group>"; };
 		074194C1216C54EE00B1B58B /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		074194C6216C683A00B1B58B /* ImageListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListModel.swift; sourceTree = "<group>"; };
+		074194C6216C683A00B1B58B /* PostListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListModel.swift; sourceTree = "<group>"; };
 		074194C8216C6C3600B1B58B /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		074194CC216C811400B1B58B /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		074194CE216C8C6A00B1B58B /* PopupImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupImageViewController.swift; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				074194CC216C811400B1B58B /* ProfileModel.swift */,
-				074194C6216C683A00B1B58B /* ImageListModel.swift */,
+				074194C6216C683A00B1B58B /* PostListModel.swift */,
 				074194D8216C9A8300B1B58B /* SuggestionUserListModel.swift */,
 			);
 			path = JsonModels;
@@ -553,7 +553,10 @@
 				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -565,7 +568,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -595,7 +601,7 @@
 				097D8E4621747540004082AB /* YoursTableViewCell.swift in Sources */,
 				074194CD216C811400B1B58B /* ProfileModel.swift in Sources */,
 				079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */,
-				074194C7216C683A00B1B58B /* ImageListModel.swift in Sources */,
+				074194C7216C683A00B1B58B /* PostListModel.swift in Sources */,
 				074194D7216C99F100B1B58B /* DiscoverViewController.swift in Sources */,
 				09800C19216F20F00080B3BC /* PostHeaderCell.swift in Sources */,
 				0710174A21636ADD008C27FD /* MyExtensions.swift in Sources */,

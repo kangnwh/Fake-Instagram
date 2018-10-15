@@ -27,7 +27,7 @@ class UserProfileViewController: UIViewController {
         }
     }
     
-    private var _photoUrlList: ImageListModel = ImageListModel(){
+    private var _photoUrlList: PostListModel = PostListModel(){
         didSet{
             self.imageCollectionView.reloadData()
         }
@@ -79,7 +79,7 @@ class UserProfileViewController: UIViewController {
     }
     
     private func loadImageList(){
-        WebAPIHandler.shared.requestMyPhotos(viewController: self){ (response: DataResponse<ImageListModel>) in
+        WebAPIHandler.shared.requestMyPhotos(viewController: self){ (response: DataResponse<PostListModel>) in
             if let urlList = response.result.value{
                 DispatchQueue.main.async {
                     self._photoUrlList = urlList

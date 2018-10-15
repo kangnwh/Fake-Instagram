@@ -8,6 +8,8 @@
 
 import UIKit
 import PhotosUI
+import YPImagePicker
+
 
 class UploadViewController: UIViewController,UITextFieldDelegate {
     
@@ -15,9 +17,16 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
     
     private var selectedImage: UIImage?
     
+    private let context = CIContext()
+    
     @IBOutlet weak var isUseLocation: UISwitch!
+    
     let locationManager = CLLocationManager()
     
+    var picker:YPImagePicker!
+    
+ 
+    @IBOutlet weak var cameraGrid: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextField!
     var currentLocation:(address:String,lati:CLLocationDegrees?,logi:CLLocationDegrees?) = (address:"Not Provided",lati:nil,logi:nil){
@@ -50,6 +59,37 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
         imageView.addGestureRecognizer(tapGesture)
         // make sure imageView can be interacted with by user
         imageView.isUserInteractionEnabled = true
+        
+        // 3rd photo library
+        var config = YPImagePickerConfiguration()
+        config.library.mediaType = .photoAndVideo
+        config.library.onlySquare  = false
+        config.onlySquareImagesFromCamera = true
+        config.targetImageSize = .original
+        config.usesFrontCamera = true
+        config.showsFilters = true
+        config.screens = [.library, .photo]
+        config.hidesStatusBar = false
+        config.usesFrontCamera = false
+        
+        config.showsCrop = .rectangle(ratio: (1/1))
+        config.overlayView = cameraGrid
+        
+        picker = YPImagePicker(configuration: config)
+        
+        picker.didFinishPicking { [picker] items, _ in
+            if let photo = items.singlePhoto {
+                self.imageView.image = photo.image
+                self.selectedImage = photo.image
+//                print(photo.fromCamera) // Image source (camera or library)
+//                print(photo.image) // Final image selected by the user
+//                print(photo.originalImage) // original image selected by the user, unfiltered
+//                print(photo.modifiedImage) // Transformed image, can be nil
+//                print(photo.exifMeta) // Print exif meta data of original image.
+            }
+            
+            self.picker.dismiss(animated: true, completion: nil)
+        }
         
     }
     
@@ -128,15 +168,25 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    
+    
+    @IBAction func imagePickerY(_ sender: Any) {
+        
+    }
+    
 }
 
 
 extension UploadViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         var newImage: UIImage
         
         if let possibleImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
@@ -146,6 +196,9 @@ extension UploadViewController: UIImagePickerControllerDelegate,UINavigationCont
         } else {
             return
         }
+        let originalCIImage = CIImage(data: newImage.pngData()!)
+        
+        self.imageView.image = UIImage(ciImage:originalCIImage!)
         
         // do something interesting here!
         self.selectedImage = newImage
@@ -160,7 +213,10 @@ extension UploadViewController: UIImagePickerControllerDelegate,UINavigationCont
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             let myPickerController = UIImagePickerController()
             myPickerController.delegate = self;
+            myPickerController.modalPresentationStyle = .popover
             myPickerController.sourceType = .camera
+            myPickerController.allowsEditing = true
+            
             self.present(myPickerController, animated: true, completion: nil)
         }
         
@@ -172,6 +228,7 @@ extension UploadViewController: UIImagePickerControllerDelegate,UINavigationCont
             let myPickerController = UIImagePickerController()
             myPickerController.delegate = self;
             myPickerController.sourceType = .photoLibrary
+            myPickerController.allowsEditing = true
             self.present(myPickerController, animated: true, completion: nil)
         }
     }
@@ -195,19 +252,21 @@ extension UploadViewController: UIImagePickerControllerDelegate,UINavigationCont
     }
     
     @objc func showActionSheet() {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-            self.checkPhotoPermission(hanler: self.camera)
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-            self.checkPhotoPermission(hanler: self.photoLibrary)
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        self.present(actionSheet, animated: true, completion: nil)
+        present(picker, animated: true, completion: nil)
+//        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//
+//        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+//            self.checkPhotoPermission(hanler: self.camera)
+//        }))
+//
+//        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
+//            self.checkPhotoPermission(hanler: self.photoLibrary)
+//        }))
+//
+//        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//        self.present(actionSheet, animated: true, completion: nil)
     }
 }
 
@@ -291,3 +350,4 @@ extension UploadViewController:CLLocationManagerDelegate{
         
     }
 }
+
