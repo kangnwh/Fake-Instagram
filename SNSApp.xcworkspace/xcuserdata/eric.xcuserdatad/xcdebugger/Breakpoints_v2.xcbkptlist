@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Upload/UploadViewController.swift"
-            timestampString = "560764056.420873"
+            timestampString = "561274639.160082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "getLocationAsyn()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Upload/UploadViewController.swift"
-            timestampString = "560764056.4209599"
+            timestampString = "561274639.160513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
             landmarkName = "getLocationAsyn()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Upload/UploadViewController.swift"
-            timestampString = "560764056.4210221"
+            timestampString = "561274639.160759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "getLocationAsyn()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Upload/UploadViewController.swift"
-            timestampString = "560764056.4210809"
+            timestampString = "561274639.160997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "currentLocation"
             landmarkType = "24">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Upload/UploadViewController.swift"
-            timestampString = "560764056.421139"
+            timestampString = "561274639.161247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "currentLocation"
             landmarkType = "24">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Upload/UploadViewController.swift"
-            timestampString = "560764056.422565"
+            timestampString = "561274639.16161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "upload(_:)"
             landmarkType = "7">
          </BreakpointContent>

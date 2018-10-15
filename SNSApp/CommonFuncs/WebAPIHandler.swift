@@ -137,7 +137,7 @@ public class WebAPIHandler {
     }
     
     public func requestMyPhotos(viewController :UIViewController,
-                                       callback:@escaping ((DataResponse<ImageListModel>) -> Void)) -> Void{
+                                       callback:@escaping ((DataResponse<PostListModel>) -> Void)) -> Void{
         
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.myPhotosURL,
@@ -145,7 +145,7 @@ public class WebAPIHandler {
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
-            .responseObject{ (response:DataResponse<ImageListModel>) in
+            .responseObject{ (response:DataResponse<PostListModel>) in
                 UIFuncs.dismissLoadingLabel()
                 callback(response)
         }
@@ -153,7 +153,7 @@ public class WebAPIHandler {
     }
     
     public func requestSuggestions(viewController :UIViewController,
-                                callback:@escaping ((DataResponse<ImageListModel>) -> Void)) -> Void{
+                                callback:@escaping ((DataResponse<PostListModel>) -> Void)) -> Void{
         
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.myPhotosURL,
@@ -161,7 +161,7 @@ public class WebAPIHandler {
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
-            .responseObject{ (response:DataResponse<ImageListModel>) in
+            .responseObject{ (response:DataResponse<PostListModel>) in
                 UIFuncs.dismissLoadingLabel()
                 callback(response)
         }

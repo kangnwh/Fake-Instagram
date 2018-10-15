@@ -12,9 +12,13 @@ import ObjectMapper
 
 
 
-public class ImageListModel: Mappable{
+public class PostModel: Mappable{
     
-    var imageUrls:[String]?
+    var imageUrl:String?
+    var content:String?
+    var location: String?
+    var createDate: Date?
+    var comments
     
     public init() {
         imageUrls = []

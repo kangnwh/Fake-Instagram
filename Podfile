@@ -9,6 +9,7 @@ target 'SNSApp' do
     pod 'AlamofireObjectMapper', '~> 5.0'
     pod 'AlamofireImage'
     pod 'PopupDialog', '~> 0.9'
+    pod 'YPImagePicker'
 end
 
 
