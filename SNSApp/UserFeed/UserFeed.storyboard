@@ -213,11 +213,13 @@
             </objects>
             <point key="canvasLocation" x="2236" y="-203.29835082458771"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="VoI-Op-oKA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Sg-1t-vTM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="userfeedIcon" id="FZ5-mK-20U"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6g0-2L-96u">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -367,5 +369,6 @@
         <image name="icon-comment" width="23" height="22"/>
         <image name="icon-like" width="21" height="18"/>
         <image name="icon-share" width="20" height="22"/>
+        <image name="userfeedIcon" width="24" height="24"/>
     </resources>
 </document>
