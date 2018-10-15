@@ -1,6 +1,10 @@
-
-//  Created by Raelyn Lyu on 2/10/18.
-//  Copyright © 2018 Raelyn Lyu. All rights reserved.
+//
+//  PostHeaderCell.swift
+//  SNSApp
+//
+//  Created by Raelyn Lyu on 13/10/18.
+//  Copyright © 2018 Kang Ning. All rights reserved.
+//
 //
 import UIKit
 
@@ -9,7 +13,7 @@ class PostHeaderCell: UITableViewCell
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
-    var post: Post! {
+    var post: PostModel! {
         didSet {
             self.updateUI()
         }
@@ -17,11 +21,14 @@ class PostHeaderCell: UITableViewCell
     
     func updateUI()
     {
-        profileImageView.image = post.createdBy.profileImage
+        if let urlStr = post.avatarImageURL {
+            let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + urlStr)!
+            profileImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "5"))
+        }
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2.0
         profileImageView.layer.masksToBounds = true
         
-        usernameLabel.text = post.createdBy.username
+        usernameLabel.text = post.postUsername
         
        
     }

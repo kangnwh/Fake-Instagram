@@ -17,7 +17,7 @@ struct WebAPIJSONHeader{
     static let PASSWORD = "password"
 }
 
-struct WebAPIUrls{
+public struct WebAPIUrls{
     public static let IP =  "13.211.229.245" //"127.0.0.1" //
     public static let baseURL = "https://\(IP):5001/api"
     public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
@@ -61,7 +61,7 @@ public class WebAPIHandler {
     
     private var headerWithToken:HTTPHeaders?
     
-    private let _httpManager : SessionManager =  {
+    public let _httpManager : SessionManager =  {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             WebAPIUrls.IP: .disableEvaluation
 
@@ -136,8 +136,23 @@ public class WebAPIHandler {
         }
     }
     
-    public func requestUserPosts(viewController :UIViewController,userId: Int,
-                                       callback:@escaping ((DataResponse<[Post]>) -> Void)) -> Void{
+    public func requestLike(viewController :UIViewController,
+                                 callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
+        let postid: Parameters = ["postId":"-1"]
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.stasticsURL,
+                             method: HTTPMethod.post,
+                             parameters: postid,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            .validate()
+            .responseJSON{ (response:DataResponse<Any>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    public func requestMyPhotos(viewController :UIViewController,
+                                       callback:@escaping ((DataResponse<PostListModel>) -> Void)) -> Void{
         
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.myPhotosURL,
@@ -145,7 +160,7 @@ public class WebAPIHandler {
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
-            .responseArray{ (response:DataResponse<[Post]>) in
+            .responseObject{ (response:DataResponse<PostListModel>) in
                 UIFuncs.dismissLoadingLabel()
                 callback(response)
         }
@@ -167,6 +182,24 @@ public class WebAPIHandler {
         }
         
     }
+    
+    public func requestPost(viewController :UIViewController,
+                            callback:@escaping ((DataResponse<[PostModel]>) -> ())) -> Void{
+        let userid: Parameters = ["userId":"-1"]
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/refresh",
+                             method: HTTPMethod.post,
+                             parameters: userid,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            
+            .validate()
+            .responseArray{ (response:DataResponse<[PostModel]>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    
     
     public func upload(image: UIImage,content: String,location:String, lati: CLLocationDegrees?, logi: CLLocationDegrees?,callback:@escaping ((DataResponse<Any>) -> Void) ){
         

@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import UIKit
+import Alamofire
+import PhotosUI
+import AlamofireImage
 
 
 extension WebAPIHandler{

@@ -1,11 +1,16 @@
-//  Created by Raelyn Lyu on 2/10/18.
-//  Copyright © 2018 Raelyn Lyu. All rights reserved.
+//
+//  NewsfeedTableViewController.swift
+//  SNSApp
+//
+//  Created by Raelyn Lyu on 13/10/18.
+//  Copyright © 2018 Kang Ning. All rights reserved.
+//
 //
 import UIKit
 
 class NewsfeedTableViewController: UITableViewController
 {
-    var posts: [Post]?
+    var posts: [PostModel]?
     
     struct Storyboard {
         static let postCell = "PostCell"
@@ -16,18 +21,29 @@ class NewsfeedTableViewController: UITableViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.fetchPosts()
-        
         tableView.estimatedRowHeight = Storyboard.postCellDefaultHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("abd")
+    }
+    
+    @IBAction func refresh(_ sender: Any) {
+        fetchPosts()
+    }
     
     func fetchPosts()
     {
-        self.posts = Post.fetchPosts()
-        self.tableView.reloadData()
+        WebAPIHandler.shared.requestPost(viewController: self){ response in
+            if let posts = response.result.value{
+                self.posts = posts
+                self.tableView.reloadData()
+            }
+            
+        }
+        
     }
 }
 
