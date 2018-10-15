@@ -11,6 +11,7 @@ import UIKit
 class YoursTableViewCell: UITableViewCell {
     
     @IBOutlet weak var YoursImageView: UIImageView!
+    
     @IBOutlet weak var YoursDetailView: UILabel!
     
     var yours: YoursModel! {

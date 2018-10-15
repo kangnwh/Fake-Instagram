@@ -11,9 +11,9 @@ import UIKit
 class YoursTableViewController: UITableViewController {
     var yours: [YoursModel]?
     
-    struct StoryBoard{
+    struct Storyboard{
         static let commentListCell = "CommentListCell"
-        
+        static let postHeaderHeight: CGFloat = 100.0
     }
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class YoursTableViewController: UITableViewController {
         
         self.fetchPosts()
         
-        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.estimatedRowHeight = Storyboard.postHeaderHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
     }

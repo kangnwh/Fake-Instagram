@@ -21,7 +21,6 @@ class PostCell: UITableViewCell {
     
     @IBAction func likeButton(_ sender: UIButton) {
         //TODO:like or unlike
-        
         sender.setImage(UIImage(named: "icon-like-filled.png"), for: .normal)
         
     }
