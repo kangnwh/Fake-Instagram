@@ -151,7 +151,7 @@ public class WebAPIHandler {
                 callback(response)
         }
     }
-    public func requestUserPosts(viewController :UIViewController,
+    public func requestUserPosts(viewController :UIViewController,userId: Int,
                                        callback:@escaping ((DataResponse<[PostModel]>) -> Void)) -> Void{
         
         UIFuncs.showLoadingLabel()

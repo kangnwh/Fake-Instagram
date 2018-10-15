@@ -106,14 +106,14 @@ class UserProfileViewController: UIViewController {
 
 extension UserProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self._photoUrlList.imageUrls?.count ?? 0
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ProfileImageCell{
-            cell.imageUrl = self._photoUrlList.imageUrls![indexPath.row]
-            return cell
-        }
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ProfileImageCell{
+//            cell.imageUrl = self._photoUrlList.imageUrls![indexPath.row]
+//            return cell
+//        }
         return UICollectionViewCell()
     }
     
