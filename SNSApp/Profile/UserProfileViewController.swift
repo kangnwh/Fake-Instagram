@@ -28,7 +28,7 @@ class UserProfileViewController: UIViewController {
         }
     }
     
-    private var _photoUrlList: [PostModel] = []{
+    private var _postList: [PostModel] = []{
         didSet{
             self.imageCollectionView.reloadData()
         }
@@ -40,10 +40,14 @@ class UserProfileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         setCollectionView()
+//        loadStatistics()
+//        loadPostList()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         loadStatistics()
         loadPostList()
     }
-    
     
     
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -83,7 +87,7 @@ class UserProfileViewController: UIViewController {
         WebAPIHandler.shared.requestUserPosts(viewController: self, userId: self.userId){ (response: DataResponse<[PostModel]>) in
             if let urlList = response.result.value{
                 DispatchQueue.main.async {
-                    self._photoUrlList = urlList
+                    self._postList = urlList
                 }
             }else{
                 UIFuncs.popUp(title: "Load Error", info: "User photos load error, error code:\(response.response?.statusCode ?? -1)", type: .warning, sender: self, callback: {})
@@ -106,14 +110,14 @@ class UserProfileViewController: UIViewController {
 
 extension UserProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return self._postList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ProfileImageCell{
-//            cell.imageUrl = self._photoUrlList.imageUrls![indexPath.row]
-//            return cell
-//        }
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ProfileImageCell{
+            cell.post = self._postList[indexPath.row]
+            return cell
+        }
         return UICollectionViewCell()
     }
     
@@ -122,11 +126,7 @@ extension UserProfileViewController: UICollectionViewDataSource, UICollectionVie
             let image = cell.imageView.image
             
             // Create the dialog
-//            let imageController = PopupImageViewController()
-//            imageController.view.frame = self.view.frame
-//            imageController.image = image
-//            let popup = PopupDialog(viewController: imageController)
-            let popup = PopupDialog(title: "", message: "", image: image)
+            let popup = PopupDialog(title: "", message: cell.post.postContent, image: image)
             self.present(popup, animated: true, completion: nil)
         }
     }
