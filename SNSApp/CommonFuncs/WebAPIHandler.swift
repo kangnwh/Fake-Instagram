@@ -151,8 +151,8 @@ public class WebAPIHandler {
                 callback(response)
         }
     }
-    public func requestMyPhotos(viewController :UIViewController,
-                                       callback:@escaping ((DataResponse<PostListModel>) -> Void)) -> Void{
+    public func requestUserPosts(viewController :UIViewController,
+                                       callback:@escaping ((DataResponse<[PostModel]>) -> Void)) -> Void{
         
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.myPhotosURL,
@@ -160,28 +160,28 @@ public class WebAPIHandler {
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
-            .responseObject{ (response:DataResponse<PostListModel>) in
+            .responseArray{ (response:DataResponse<[PostModel]>) in
                 UIFuncs.dismissLoadingLabel()
                 callback(response)
         }
         
     }
     
-    public func requestSuggestions(viewController :UIViewController,
-                                callback:@escaping ((DataResponse<PostListModel>) -> Void)) -> Void{
-        
-        UIFuncs.showLoadingLabel()
-        _httpManager.request(WebAPIUrls.myPhotosURL,
-                             method: HTTPMethod.post,
-                             encoding: JSONEncoding.default,
-                             headers: self.headerWithToken)
-            .validate()
-            .responseObject{ (response:DataResponse<PostListModel>) in
-                UIFuncs.dismissLoadingLabel()
-                callback(response)
-        }
-        
-    }
+//    public func requestSuggestions(viewController :UIViewController,
+//                                callback:@escaping ((DataResponse<PostListModel>) -> Void)) -> Void{
+//
+//        UIFuncs.showLoadingLabel()
+//        _httpManager.request(WebAPIUrls.myPhotosURL,
+//                             method: HTTPMethod.post,
+//                             encoding: JSONEncoding.default,
+//                             headers: self.headerWithToken)
+//            .validate()
+//            .responseObject{ (response:DataResponse<PostListModel>) in
+//                UIFuncs.dismissLoadingLabel()
+//                callback(response)
+//        }
+//
+//    }
     
     public func requestPost(viewController :UIViewController,
                             callback:@escaping ((DataResponse<[PostModel]>) -> ())) -> Void{

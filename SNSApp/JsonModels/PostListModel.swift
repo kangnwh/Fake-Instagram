@@ -11,24 +11,24 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 
-
-public class PostModel: Mappable{
-    
-    var imageUrl:String?
-    var content:String?
-    var location: String?
-    var createDate: Date?
-    var comments
-    
-    public init() {
-        imageUrls = []
-    }
-    
-    public required init?(map: Map) {
-        self.mapping(map: map)
-    }
-    
-    public func mapping(map: Map) {
-        self.imageUrls <- map["image"]
-    }
-}
+//
+//public class PostModel: Mappable{
+//    
+//    var imageUrl:String?
+//    var content:String?
+//    var location: String?
+//    var createDate: Date?
+//    var comments
+//    
+//    public init() {
+//        imageUrls = []
+//    }
+//    
+//    public required init?(map: Map) {
+//        self.mapping(map: map)
+//    }
+//    
+//    public func mapping(map: Map) {
+//        self.imageUrls <- map["image"]
+//    }
+//}
