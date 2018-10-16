@@ -26,7 +26,9 @@ class UserProfileViewController: UIViewController {
             
             if let avatar = _userStat.avatarUrl{
                 let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
+                
                 avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
+                avatarImageView.image = avatarImageView.image?.af_imageRoundedIntoCircle()
             }
         }
     }
@@ -37,7 +39,9 @@ class UserProfileViewController: UIViewController {
         }
     }
     
-
+    
+    @IBOutlet var buttonsNeedBorder: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +50,7 @@ class UserProfileViewController: UIViewController {
         initAvatorPicker()
         
         UIFuncs.setBorder(layer: avatarImageView.layer, width: 1, cornerRadius: 25, color: UIColor.white.cgColor)
+        UIFuncs.setBorder(views: buttonsNeedBorder, width: 1, cornerRadius: 25, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))
     }
     
     override func viewWillAppear (_ animated: Bool) {
@@ -71,6 +76,7 @@ class UserProfileViewController: UIViewController {
         
         // add it to the image view;
         avatarImageView.addGestureRecognizer(tapGesture)
+        
         // make sure imageView can be interacted with by user
         avatarImageView.isUserInteractionEnabled = true
         
@@ -217,7 +223,12 @@ extension UserProfileViewController: UICollectionViewDataSource, UICollectionVie
             let image = cell.imageView.image
             
             // Create the dialog
-            let popup = PopupDialog(title: "", message: cell.post.postContent, image: image)
+//            let p = PopupDialog(title: "", message: cell.post.postContent, image: image, buttonAlignment: .vertical, transitionStyle: .fadeIn, preferredWidth: 340, tapGestureDismissal: true, panGestureDismissal: true, hideStatusBar: false, completion: nil)
+            
+            let popup = PopupDialog(title: cell.post.postContent, message: "Location:\(cell.post.postLocation ?? "N/A")", image: image)
+            let cancleBtn =  CancelButton(title: "OK", action: nil)
+            popup.addButton(cancleBtn)
+            
             self.present(popup, animated: true, completion: nil)
         }
     }

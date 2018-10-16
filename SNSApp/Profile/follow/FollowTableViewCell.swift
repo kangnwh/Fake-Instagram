@@ -22,7 +22,7 @@ class FollowTableViewCell: UITableViewCell {
             usernameLabel.text = self.user.userName
             nicknameLabel.text = self.user.nickName
             
-            if let _ = self.user.isFollowedByCurrentUser{
+            if let f = self.user.isFollowedByCurrentUser, f{
                 followBtn.setTitle("Unfollow", for: .normal)
             }else{
                 followBtn.setTitle("Follow", for: .normal)
@@ -35,7 +35,7 @@ class FollowTableViewCell: UITableViewCell {
     }
     
     @IBAction func following(_ sender: Any) {
-        if self.user.isFollowedByCurrentUser != nil{
+        if let f = self.user.isFollowedByCurrentUser, f{
             
             WebAPIHandler.shared.unFollowUser(userId: self.user.userId!){ response in
                 switch response.result{
@@ -43,7 +43,7 @@ class FollowTableViewCell: UITableViewCell {
                     print(error.localizedDescription)
                 case .success( _):
                     DispatchQueue.main.async {
-                        self.followBtn.setTitle("Unfollow", for: .normal)
+                        self.followBtn.setTitle("Follow", for: .normal)
                         self.user.isFollowedByCurrentUser = nil
                     }
                     
