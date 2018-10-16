@@ -12,6 +12,7 @@ import ObjectMapper
 
 public class FollowUserModel: Mappable{
     
+    var userId: Int?
     var userName:String?
     var nickName:String?
     var avatarUrl: String?
@@ -22,6 +23,10 @@ public class FollowUserModel: Mappable{
     }
     
     public func mapping(map: Map) {
-       
+        userId <- map["userId"]
+        userName <- map["userName"]
+        nickName <- map["nickName"]
+        avatarUrl <- map["avator"]
+        isFollowedByCurrentUser <- map["followedByCurrentUser"]
     }
 }

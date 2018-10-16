@@ -18,7 +18,7 @@ struct WebAPIJSONHeader{
 }
 
 public struct WebAPIUrls{
-    public static let IP =  "13.211.229.245" //"127.0.0.1" //
+    public static let IP =  "127.0.0.1" //"13.211.229.245" //
     public static let baseURL = "https://\(IP):5001/api"
     public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
     
@@ -28,6 +28,8 @@ public struct WebAPIUrls{
     public static let stasticsURL = baseURL + "/UserProfile/poststat"
     public static let myPhotosURL = baseURL + "/UserProfile/myphotos"
     public static let suggestionURL = baseURL + "/UserProfile/myphotos"
+    public static let followedBy = baseURL + "/ActivityFeed/getFollowedUserList"
+    public static let followingWhom = baseURL + "/ActivityFeed/getFollowingUserList"
     
     
     
@@ -153,10 +155,11 @@ public class WebAPIHandler {
     }
     public func requestUserPosts(viewController :UIViewController,userId: Int,
                                        callback:@escaping ((DataResponse<[PostModel]>) -> Void)) -> Void{
-        
+        let parameter:Parameters = ["uId": userId]
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.myPhotosURL,
                              method: HTTPMethod.post,
+                             parameters:parameter,
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
@@ -195,6 +198,30 @@ public class WebAPIHandler {
             
             .validate()
             .responseArray{ (response:DataResponse<[PostModel]>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    
+    func requestFollowInfo(type: FollowListViewController.FollowType, userId:Int,
+                            callback:@escaping ((DataResponse<[FollowUserModel]>) -> ())) -> Void{
+        
+        let userid: Parameters = ["userId":userId]
+        var url = WebAPIUrls.followingWhom
+        
+        if type != .followedBy {
+            url = WebAPIUrls.followedBy
+        }
+        
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(url,
+                             method: HTTPMethod.post,
+                             parameters: userid,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            
+            .validate()
+            .responseArray{ (response:DataResponse<[FollowUserModel]>) in
                 UIFuncs.dismissLoadingLabel()
                 callback(response)
         }

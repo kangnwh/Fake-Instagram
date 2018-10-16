@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Profile/UserProfileViewController.swift"
-            timestampString = "560764056.421203"
+            timestampString = "561353816.59307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Profile/UserProfileViewController.swift"
-            timestampString = "560764056.421661"
+            timestampString = "561353816.593163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "UserProfileViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Profile/UserProfileViewController.swift"
-            timestampString = "560764056.421955"
+            timestampString = "561353816.593235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "loadStatistics()"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "setCollectionView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,28 +138,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Profile/UserProfileViewController.swift"
-            timestampString = "560764056.422246"
+            timestampString = "561353816.5933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "_photoUrlList"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "_postList"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Profile/ProfileImageCell.swift"
-            timestampString = "560764056.42251"
+            timestampString = "561352298.066968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "imageUrl"
+            landmarkName = "post"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,12 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Profile/UserProfileViewController.swift"
-            timestampString = "560764056.422608"
+            timestampString = "561353816.593425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,12 +202,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/Profile/PopupImageViewController.swift"
-            timestampString = "560764056.423313"
+            timestampString = "561353121.746453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/CommonFuncs/WebAPIHandler.swift"
+            timestampString = "561353816.593541"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "requestLike(viewController:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/Profile/UserProfileViewController.swift"
+            timestampString = "561353816.594097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/Profile/follow/FollowListViewController.swift"
+            timestampString = "561353816.5941761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "queryFollowInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SNSApp.FollowListViewController.queryFollowInfo() -&gt; ()"
+                  moduleName = "SNSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eric/Documents/projects/mobile/SNSApp/SNSApp/Profile/follow/FollowListViewController.swift"
+                  timestampString = "561353883.179795"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Array&lt;SNSApp.FollowUserModel&gt;&gt;) -&gt; () in SNSApp.FollowListViewController.queryFollowInfo() -&gt; ()"
+                  moduleName = "SNSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eric/Documents/projects/mobile/SNSApp/SNSApp/Profile/follow/FollowListViewController.swift"
+                  timestampString = "561353883.181917"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/Profile/follow/FollowListViewController.swift"
+            timestampString = "561353816.59427"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "queryFollowInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/Profile/UserProfileViewController.swift"
+            timestampString = "561353882.144582"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "loadPostList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

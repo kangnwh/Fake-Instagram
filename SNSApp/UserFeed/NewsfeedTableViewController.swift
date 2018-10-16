@@ -50,7 +50,6 @@ class NewsfeedTableViewController: UITableViewController
         if let vc = storyboard.instantiateViewController(withIdentifier: "userprofile") as? UserProfileViewController{
             vc.userId = userId
             self.navigationController?.pushViewController(vc, animated: true)
-//            self.navigationController?.present(vc, animated: true, completion: nil)
         }else{
              UIFuncs.popUp(title: "Error", info: "Cannot find profile view", type: .warning, sender: self, callback: {})
         }

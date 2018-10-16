@@ -15,6 +15,20 @@ class FollowTableViewCell: UITableViewCell {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var followBtn: UIButton!
     
+    var followUser: FollowUserModel!{
+        didSet{
+            usernameLabel.text = self.followUser.userName
+            nicknameLabel.text = self.followUser.nickName
+            if let _ = self.followUser.isFollowedByCurrentUser{
+                followBtn.isEnabled = false
+            }
+            if let avatar = followUser.avatarUrl{
+                let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
+                avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
+            }
+        }
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +36,7 @@ class FollowTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+//        super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }

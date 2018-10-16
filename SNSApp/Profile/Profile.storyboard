@@ -55,7 +55,6 @@
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="postDetail:" destination="m89-lx-y0S" eventType="touchUpInside" id="LAG-gY-XuD"/>
-                                                    <segue destination="A2E-ce-eBe" kind="show" id="NBD-H4-IKh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clY-bA-T0L">
@@ -63,6 +62,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="followerCountDetail:" destination="m89-lx-y0S" eventType="touchUpInside" id="vQr-Ms-pqb"/>
+                                                    <segue destination="A2E-ce-eBe" kind="show" identifier="toFollowedBy" id="ekn-jv-VAN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-KX-hbm">
@@ -70,6 +70,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="followingCountDetail:" destination="m89-lx-y0S" eventType="touchUpInside" id="tJ8-jE-tAH"/>
+                                                    <segue destination="A2E-ce-eBe" kind="show" identifier="toFollowingWhom" id="MyB-Cv-6Kr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -154,20 +155,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="2ly-17-yw4">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="554"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" placeholder="search" translatesAutoresizingMaskIntoConstraints="NO" id="Rhg-n8-RyJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="ayK-4T-KCg"/>
-                                        </constraints>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                    </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TTC-5i-Xp4">
-                                        <rect key="frame" x="0.0" y="84" width="375" height="514"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QaW-fX-T5a" customClass="FollowTableViewCell" customModule="SNSApp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="followUserCell" id="QaW-fX-T5a" customClass="FollowTableViewCell" customModule="SNSApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QaW-fX-T5a" id="H7q-cC-76n">
@@ -177,7 +171,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A6p-9v-Hf9">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-Iz-QdU">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KZm-Iz-QdU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="59.5" height="59.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="KZm-Iz-QdU" secondAttribute="height" multiplier="1:1" id="iec-az-6zd"/>
@@ -243,8 +237,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MJc-n5-Zpv"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="followList" destination="TTC-5i-Xp4" id="aXT-wg-nbF"/>
+                        <outlet property="followListTableView" destination="TTC-5i-Xp4" id="aXT-wg-nbF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFn-hp-yuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,4 +272,7 @@
         <image name="profileIcon" width="24" height="24"/>
         <image name="uploadIcon" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MyB-Cv-6Kr"/>
+    </inferredMetricsTieBreakers>
 </document>
