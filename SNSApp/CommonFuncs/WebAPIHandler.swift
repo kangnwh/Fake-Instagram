@@ -18,7 +18,7 @@ struct WebAPIJSONHeader{
 }
 
 public struct WebAPIUrls{
-    public static let IP =  "13.211.229.245" //"127.0.0.1" //
+    public static let IP =  "13.211.229.245"//"10.12.203.15" //"127.0.0.1" //
     public static let baseURL = "https://\(IP):5001/api"
     public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
     
@@ -136,11 +136,25 @@ public class WebAPIHandler {
         }
     }
     
-    public func requestLike(viewController :UIViewController,
-                                 callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
-        let postid: Parameters = ["postId":"-1"]
+    public func requestLike(id:Int,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
+        let postid: Parameters = ["postId":"\(id)"]
+        print(postid)
         UIFuncs.showLoadingLabel()
-        _httpManager.request(WebAPIUrls.stasticsURL,
+        _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/likePhoto",
+                             method: HTTPMethod.post,
+                             parameters: ["postId":10],
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            .validate()
+            .responseJSON{ (response:DataResponse<Any>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    public func requestUnLike(id:String,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
+        let postid: Parameters = ["postId":id]
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/dislikePhoto",
                              method: HTTPMethod.post,
                              parameters: postid,
                              encoding: JSONEncoding.default,

@@ -156,7 +156,7 @@
                                                 <constraint firstAttribute="width" constant="246" id="9Hq-FW-uIj"/>
                                                 <constraint firstAttribute="height" constant="21" id="ZOK-ZZ-Znu"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -234,7 +234,6 @@
         <!--COMMENTS-->
         <scene sceneID="PVq-B0-szd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iaC-vb-XGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="COMMENTS" id="NWE-dH-eoT" customClass="CommentsTableViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="06Z-wQ-lys">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -286,6 +285,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="COMMENTS" id="tDt-c5-ST9" userLabel="COMMENTS"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iaC-vb-XGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3228" y="-191.1544227886057"/>
         </scene>

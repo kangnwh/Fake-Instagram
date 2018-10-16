@@ -11,6 +11,7 @@ import UIKit
 class NewsfeedTableViewController: UITableViewController
 {
     var posts: [PostModel]?
+    var selectedPost :[CommentModel]?
     
     struct Storyboard {
         static let postCell = "PostCell"
@@ -26,14 +27,26 @@ class NewsfeedTableViewController: UITableViewController
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("abd")
-    }
+    
     
     @IBAction func refresh(_ sender: Any) {
         fetchPosts()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let product = posts?[indexPath.section]
+
+        selectedPost = product?.comments
+        print(selectedPost!)
+        performSegue(withIdentifier:"CheckComments" , sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CheckComments" {
+            let commentTVC = segue.destination as! CommentsTableViewController
+            commentTVC.comments = selectedPost
+        }
+    }
     func fetchPosts()
     {
         WebAPIHandler.shared.requestPost(viewController: self){ response in
@@ -45,6 +58,7 @@ class NewsfeedTableViewController: UITableViewController
         }
         
     }
+    
 }
 
 extension NewsfeedTableViewController
@@ -88,7 +102,6 @@ extension NewsfeedTableViewController
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Storyboard.postHeaderHeight
     }
-    
     
     
 }

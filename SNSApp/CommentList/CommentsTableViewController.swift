@@ -9,7 +9,7 @@
 import UIKit
 
 class CommentsTableViewController: UITableViewController {
-    var comments: [Comments]?
+    var comments: [CommentModel]?
     
     struct StoryBoard{
         static let commentListCell = "CommentListCell"
@@ -27,8 +27,8 @@ class CommentsTableViewController: UITableViewController {
     }
 
     func fetchPosts()
-    {
-        self.comments = Comments.fetchPosts()
+    {     
+//        self.comments = CommentModel.fetchPosts()
         self.tableView.reloadData()
     }
 }

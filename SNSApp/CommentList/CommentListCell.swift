@@ -15,7 +15,7 @@ class CommentListCell: UITableViewCell {
     
     @IBOutlet weak var commentBodyLabel: UILabel!
     
-    var comments: Comments! {
+    var comments: CommentModel! {
         didSet {
             self.updateUI()
         }
@@ -24,7 +24,7 @@ class CommentListCell: UITableViewCell {
     func updateUI()
     {
         commentNameLabel.text = comments.username
-        commentBodyLabel.text = comments.body
+        commentBodyLabel.text = comments.content
         
         
     }
