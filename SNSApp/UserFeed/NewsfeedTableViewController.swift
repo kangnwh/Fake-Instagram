@@ -58,7 +58,17 @@ class NewsfeedTableViewController: UITableViewController
         }
         
     }
+    func toProfileView(userId: Int){
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "userprofile") as? UserProfileViewController{
+            vc.userId = userId
+            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.present(vc, animated: true, completion: nil)
+        }else{
+             UIFuncs.popUp(title: "Error", info: "Cannot find profile view", type: .warning, sender: self, callback: {})
+        }
     
+    }
 }
 
 extension NewsfeedTableViewController
@@ -93,8 +103,9 @@ extension NewsfeedTableViewController
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postHeaderCell) as! PostHeaderCell
         
-        cell.post = self.posts?[section]
-        cell.backgroundColor = UIColor.white
+        cell.setUp(cellPost: (self.posts?[section])!, callback: self.toProfileView)
+    
+    
         
         return cell
     }

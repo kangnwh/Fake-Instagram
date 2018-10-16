@@ -19,6 +19,28 @@ class PostHeaderCell: UITableViewCell
         }
     }
     
+    func setUp(cellPost: PostModel, callback: @escaping (_ userId:Int)->Void){
+        
+        self.post = cellPost
+        
+        // add tap gesture for image view to allow select image
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.toProfile))
+        
+        // add it to the image view;
+        profileImageView.addGestureRecognizer(tapGesture)
+        // make sure imageView can be interacted with by user
+        profileImageView.isUserInteractionEnabled = true
+        
+        self.backgroundColor = UIColor.white
+        self.callback = callback
+    }
+    
+    var callback: ((_ userId:Int)->Void)!
+    
+    @objc func toProfile(){
+        self.callback(self.post.postUserId!)
+    }
+    
     func updateUI()
     {
         if let urlStr = post.avatarImageURL {

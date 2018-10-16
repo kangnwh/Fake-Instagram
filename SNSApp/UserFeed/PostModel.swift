@@ -48,7 +48,7 @@ public class PostModel: Mappable {
     }
     
     public func mapping(map: Map) {
-        self.postUserId <- map["postUserId"]
+        self.postUserId <- map["postuserId"]
         self.postId <- map["postId"]
         self.img <- map["img"]
         self.likeCount <- map["likeCount"]
