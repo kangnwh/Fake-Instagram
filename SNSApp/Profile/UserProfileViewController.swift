@@ -10,11 +10,13 @@ import UIKit
 import ObjectMapper
 import Alamofire
 import PopupDialog
+import YPImagePicker
 
 class UserProfileViewController: UIViewController {
     
     @IBOutlet weak var popImageView: UIImageView!
     var userId = -1
+    
     
     private var _userStat:ProfileModel!{
         didSet{
@@ -41,14 +43,78 @@ class UserProfileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         setCollectionView()
-//        loadStatistics()
-//        loadPostList()
+        initAvatorPicker()
+        
+        UIFuncs.setBorder(layer: avatarImageView.layer, width: 1, cornerRadius: 25, color: UIColor.white.cgColor)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear (_ animated: Bool) {
+        if self.userId == -1{
+            avatarImageView.isUserInteractionEnabled = true
+            avatarIndicator.isHidden = false
+        }else{
+            avatarImageView.isUserInteractionEnabled = false
+            avatarIndicator.isHidden = true
+        }
         loadStatistics()
         loadPostList()
     }
+    
+    @IBOutlet weak var gridView: UIImageView!
+    var picker:YPImagePicker!
+    @IBOutlet weak var avatarIndicator: UIImageView!
+    
+    func initAvatorPicker(){
+        
+        // add tap gesture for image view to allow select image
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.pickImage))
+        
+        // add it to the image view;
+        avatarImageView.addGestureRecognizer(tapGesture)
+        // make sure imageView can be interacted with by user
+        avatarImageView.isUserInteractionEnabled = true
+        
+        // 3rd photo library
+        var config = YPImagePickerConfiguration()
+        config.library.mediaType = .photoAndVideo
+        config.library.onlySquare  = false
+        config.onlySquareImagesFromCamera = true
+        config.targetImageSize = .original
+        config.usesFrontCamera = true
+        config.showsFilters = true
+        config.screens = [.library, .photo]
+        config.hidesStatusBar = false
+        config.usesFrontCamera = false
+        
+        config.showsCrop = .rectangle(ratio: (1/1))
+        config.overlayView = gridView
+        
+        picker = YPImagePicker(configuration: config)
+        
+        picker.didFinishPicking { [picker] items, _ in
+            if let photo = items.singlePhoto {
+                WebAPIHandler.shared.updateAvator(image: photo.image){ response in
+                    switch response.result{
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        UIFuncs.popUp(title: "Error", info: "Upload avatar failed", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
+                    case .success:
+                        self.avatarImageView.image = photo.image
+                    }
+                    
+                }
+            }
+            
+            self.picker.dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    @objc func pickImage(){
+        present(picker, animated: true, completion: nil)
+    }
+    
+ 
     
     
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -86,7 +152,7 @@ class UserProfileViewController: UIViewController {
 
     
     private func loadStatistics(){
-        WebAPIHandler.shared.requestStatistic(viewController: self){ (response: DataResponse<ProfileModel>) in
+        WebAPIHandler.shared.requestStatistic(userId: self.userId){ (response: DataResponse<ProfileModel>) in
             if let stat = response.result.value{
                 DispatchQueue.main.async {
                     self._userStat = stat
@@ -98,7 +164,7 @@ class UserProfileViewController: UIViewController {
     }
     
     private func loadPostList(){
-        WebAPIHandler.shared.requestUserPosts(viewController: self, userId: self.userId){ (response: DataResponse<[PostModel]>) in
+        WebAPIHandler.shared.requestUserPosts(userId: self.userId){ (response: DataResponse<[PostModel]>) in
             if let urlList = response.result.value{
                 DispatchQueue.main.async {
                     self._postList = urlList

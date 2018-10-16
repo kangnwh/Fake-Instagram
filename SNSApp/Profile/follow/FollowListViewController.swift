@@ -44,33 +44,25 @@ class FollowListViewController: UIViewController {
                 if let list = response.result.value{
                     self.userList = list
                 }else{
-                    UIFuncs.popUp(title: "Follow Info Error", info: "Failed to load follow infor", type: .warning, sender: self, callback: {})
+                    UIFuncs.popUp(title: "Follow Info Error", info: "Failed to load follow info", type: .warning, sender: self, callback: {})
                 }
             }
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
 extension FollowListViewController: UITableViewDataSource, UITableViewDelegate{
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.userList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "followUserCell") as? FollowTableViewCell{
-            cell.followUser = self.userList[indexPath.row]
+            cell.user = self.userList[indexPath.row]
             return cell
         }
         
@@ -85,7 +77,7 @@ extension FollowListViewController: UITableViewDataSource, UITableViewDelegate{
         
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "userprofile") as? UserProfileViewController{
-            vc.userId = cell.followUser.userId!
+            vc.userId = cell.user.userId!
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
             UIFuncs.popUp(title: "Error", info: "Cannot find profile view", type: .warning, sender: self, callback: {})
