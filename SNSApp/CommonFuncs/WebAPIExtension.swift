@@ -13,6 +13,20 @@ import PhotosUI
 import AlamofireImage
 
 
-extension WebAPIHandler{
-    
-}
+//extension WebAPIHandler{
+//    public func requestFollowingList(viewController :UIViewController,
+//                            callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
+//        let postid: Parameters = ["postId":"-1"]
+//        UIFuncs.showLoadingLabel()
+//        _httpManager.request(WebAPIUrls.stasticsURL,
+//                             parameters: postid,
+//                             method: HTTPMethod.post,
+//                             encoding: JSONEncoding.default,
+//                             headers: self.headerWithToken)
+//            .validate()
+//            .responseJSON{ (response:DataResponse<Any>) in
+//                UIFuncs.dismissLoadingLabel()
+//                callback(response)
+//        }
+//    }
+//}

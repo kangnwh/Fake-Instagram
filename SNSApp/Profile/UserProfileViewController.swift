@@ -18,9 +18,10 @@ class UserProfileViewController: UIViewController {
     
     private var _userStat:ProfileModel!{
         didSet{
-            self.postCountLabel.text = "\(_userStat.postCount!)"
-            self.followerCountLabel.text = "\(_userStat.followerCount!)"
-            self.followingCountLabel.text = "\(_userStat.followingCount!)"
+            self.postCountBtn.setTitle("\(_userStat.postCount!)", for: .normal)
+            self.followingCountBtn.setTitle("\(_userStat.followingCount!)", for: .normal)
+            self.followerCountBtn.setTitle("\(_userStat.followerCount!)", for: .normal)
+            
             if let avatar = _userStat.avatarUrl{
                 let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
                 avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
@@ -51,9 +52,22 @@ class UserProfileViewController: UIViewController {
     
     
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var postCountLabel: UILabel!
-    @IBOutlet weak var followerCountLabel: UILabel!
-    @IBOutlet weak var followingCountLabel: UILabel!
+//    @IBOutlet weak var postCountLabel: UILabel!
+    
+    @IBOutlet weak var postCountBtn: UIButton!
+    @IBAction func postDetail(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var followerCountBtn: UIButton!
+    
+    @IBAction func followerCountDetail(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var followingCountBtn: UIButton!
+    @IBAction func followingCountDetail(_ sender: Any) {
+    }
+    
+    
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
     private func setCollectionView(){
