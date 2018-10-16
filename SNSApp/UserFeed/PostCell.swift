@@ -18,10 +18,32 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postCaptionLabel: UILabel!
     @IBOutlet weak var numberOfCommentButton: UIButton!
     @IBOutlet weak var addressLabel: UILabel!
-    
     @IBAction func likeButton(_ sender: UIButton) {
+        
+        if sender.currentImage == UIImage(named: "icon-like.png"){
+//            let postid = post.postId
+//            WebAPIHandler.shared.requestLike(id:postid!){ response in
+//                switch response.result{
+//                case .failure(let error):
+//                    print("error.localizedDescription")
+//                case .success(let value):
+//                    sender.setImage(UIImage(named:"icon-like-filled.png"), for: .normal)
+//                }
+//            }
+            sender.setImage(UIImage(named:"icon-like-filled.png"), for: .normal)
+            let likes = post.likeCount!+1
+            
+            let likeToString = String(describing: likes)
+            numberOfLikesButton.setTitle(likeToString + " likes", for: [])
+        }else{
+            sender.setImage(UIImage(named:"icon-like.png"), for: .normal)
+            let likes = post.likeCount!
+            
+            let likeToString = String(describing: likes)
+            numberOfLikesButton.setTitle(likeToString + " likes", for: [])
+        }
         //TODO:like or unlike
-        sender.setImage(UIImage(named: "icon-like-filled.png"), for: .normal)
+        
         
     }
     

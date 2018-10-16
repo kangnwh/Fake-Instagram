@@ -7,20 +7,20 @@
 //
 import UIKit
 
-struct Comments
-{
-    var username: String?
-    var body: String?
-    static func fetchPosts() -> [Comments]
-    {
-        var comments = [Comments]()
-        
-        let comments1 = Comments(username: "Raelyn Lyu", body: "sdasgduigfASgffhdFIW IAFHDISO; DFHEWFHO AFHLSFHOWE DAJDOJPDJIEW ASDNASDHO LKEFLSF DKLAJSD")
-        
-        comments.append(comments1)
-        comments.append(comments1)
-        comments.append(comments1)
-        comments.append(comments1)
-        return comments
-    }
-}
+//struct CommentModel
+//{
+//    var username: String?
+//    var body: String?
+//    static func fetchPosts() -> [CommentModel]
+//    {
+//        var comments = [CommentModel]()
+//
+//        let comments1 = CommentModel(username: "Raelyn Lyu", body: "sdasgduigfASgffhdFIW IAFHDISO; DFHEWFHO AFHLSFHOWE DAJDOJPDJIEW ASDNASDHO LKEFLSF DKLAJSD")
+//
+//        comments.append(comments1)
+//        comments.append(comments1)
+//        comments.append(comments1)
+//        comments.append(comments1)
+//        return comments
+//    }
+//}
