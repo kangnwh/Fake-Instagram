@@ -12,12 +12,12 @@ class LikeCell: UITableViewCell {
     
     
     
-    @IBOutlet weak var AvatarView: UIImageView!
+//    @IBOutlet weak var AvatarView: UIImageView!
     
     @IBOutlet weak var NameLabel: UILabel!
     
     @IBOutlet weak var LikeLabel: UILabel!
-    var likes: Likes! {
+    var likes: String! {
         didSet {
             self.updateUI()
         }
@@ -25,11 +25,11 @@ class LikeCell: UITableViewCell {
     
     func updateUI()
     {
-        AvatarView.image = likes.createdBy.profileImage
-        AvatarView.layer.cornerRadius = AvatarView.bounds.width / 2.0
-        AvatarView.layer.masksToBounds = true
-        
-        NameLabel.text = likes.createdBy.username
+//        AvatarView.image = likes.createdBy.profileImage
+//        AvatarView.layer.cornerRadius = AvatarView.bounds.width / 2.0
+//        AvatarView.layer.masksToBounds = true
+//
+        NameLabel.text = likes
         
         
     }

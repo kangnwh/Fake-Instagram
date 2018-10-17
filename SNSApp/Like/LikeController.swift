@@ -10,7 +10,7 @@ import UIKit
 
 class LikeController: UITableViewController
 {
-    var likes: [Likes]?
+    var likes: [String]?
     
     struct Storyboard {
         static let likeCell = "LikeCell"
@@ -20,16 +20,20 @@ class LikeController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fetchPosts()
+//        self.fetchPosts()
         
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
+//        tableView.register(LikeCell.self, forCellReuseIdentifier: "LikeCellA")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchPosts()
+    }
     func fetchPosts()
     {
-        self.likes = Likes.fetchPosts()
+//        self.likes = ["dsdas","dsadas","dasd"]
         self.tableView.reloadData()
     }
 }
@@ -37,7 +41,7 @@ class LikeController: UITableViewController
 extension LikeController
 {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if let likes = likes {
+        if let likes = likes{
             return likes.count
         }
         
@@ -54,7 +58,7 @@ extension LikeController
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.likeCell, for: indexPath) as! LikeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LikeCell", for: indexPath) as! LikeCell
         
         cell.likes = self.likes?[indexPath.section]
         cell.selectionStyle = .none

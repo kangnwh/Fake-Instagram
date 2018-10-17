@@ -11,12 +11,21 @@
 import UIKit
 
 class PostCell: UITableViewCell {
-
+    
+    var callback :(( _ post: PostModel) -> Void )!
+    var callback2 :(( _ post: PostModel) -> Void )!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var numberOfLikesButton: UIButton!
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var postCaptionLabel: UILabel!
+   
+    @IBAction func likeSkipButton(_ sender: Any) {
+        callback2(post)
+    }
     @IBOutlet weak var numberOfCommentButton: UIButton!
+    @IBAction func numberOfCommentsButton(_ sender: Any) {
+        callback(post)
+    }
     @IBOutlet weak var addressLabel: UILabel!
     @IBAction func likeButton(_ sender: UIButton) {
         
