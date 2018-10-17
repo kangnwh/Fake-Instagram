@@ -2,24 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>SNSApp needs to use your location information to your post</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>SNSApp needs to use your location information to your post</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>SNSApp needs to use your location information to your post</string>
-	<key>NSCameraUsageDescription</key>
-	<string>SNSApp needs to use your camera to upload images</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>SNSApp needs to use your photo library to upload images</string>
-	<key>InstagramRedirectURI</key>
-	<string>https://www.google.com</string>
-	<key>InstagramClientId</key>
-	<string>63cdf28a654e4edcb1978dbc1ea6791d</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>SNSApp</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -34,8 +20,24 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>InstagramClientId</key>
+	<string>63cdf28a654e4edcb1978dbc1ea6791d</string>
+	<key>InstagramRedirectURI</key>
+	<string>https://www.google.com</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>SNSApp needs to use your camera to upload images</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>SNSApp needs to use your location information to your post</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>SNSApp needs to use your location information to your post</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>SNSApp needs to use your location information to your post</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>SNSApp needs to use your photo library to upload images</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
