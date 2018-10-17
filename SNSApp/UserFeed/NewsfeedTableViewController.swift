@@ -12,6 +12,7 @@ class NewsfeedTableViewController: UITableViewController
 {
     var posts: [PostModel]?
     var selectedPost :[CommentModel]?
+    var selectedId: Int?
     var selectedLike:[String]?
     struct Storyboard {
         static let postCell = "PostCell"
@@ -39,6 +40,12 @@ class NewsfeedTableViewController: UITableViewController
 //        performSegue(withIdentifier:"CheckComments" , sender: nil)
         
     }
+    func sendToLeaveComment(post:PostModel){
+        
+        selectedId = post.postId
+        //        performSegue(withIdentifier:"CheckComments" , sender: nil)
+        
+    }
     func sendToLikeLst(post:PostModel){
 
         selectedLike = post.likeUserList
@@ -54,6 +61,10 @@ class NewsfeedTableViewController: UITableViewController
             if segue.identifier == "CheckLike" {
             let likeTVC = segue.destination as! LikeController
             likeTVC.likes = selectedLike
+            }else
+                if segue.identifier == "LeaveComments" {
+                    let likeTVC = segue.destination as! LeaveCommentTableViewController
+                    likeTVC.postId = selectedId
         }
     }
     func fetchPosts()

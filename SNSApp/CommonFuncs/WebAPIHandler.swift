@@ -18,7 +18,7 @@ struct WebAPIJSONHeader{
 }
 
 public struct WebAPIUrls{
-    public static let IP = "127.0.0.1" //"13.211.229.245"//"10.12.203.15" //
+    public static let IP = "13.211.229.245" //"13.211.229.245"//"10.12.203.15" //
     public static let baseURL = "https://\(IP):5001/api"
     public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
     
@@ -160,6 +160,20 @@ public class WebAPIHandler {
         let postid: Parameters = ["postId":id]
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/dislikePhoto",
+                             method: HTTPMethod.post,
+                             parameters: postid,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            .validate()
+            .responseJSON{ (response:DataResponse<Any>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    public func postComments(postId:String,commentContent:String,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
+        let postid: Parameters = ["postId":postId, "commentContent":commentContent]
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/comment",
                              method: HTTPMethod.post,
                              parameters: postid,
                              encoding: JSONEncoding.default,

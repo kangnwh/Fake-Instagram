@@ -15,7 +15,7 @@ public class CommentModel:Mappable{
     var userid: Int?
     var username: String?
     var content: String?
-    var datetime: Date?
+    var datetime: String?
 
     
     public required init?(map: Map) {

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -95,6 +96,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="leaveCommentButton:" destination="6Tz-ZR-JXY" eventType="touchUpInside" id="lGK-4W-ULi"/>
+                                                        <segue destination="lTV-VM-NQV" kind="show" identifier="LeaveComments" id="oaH-5C-y1D"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS1-ou-4BV">
@@ -244,41 +246,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CommentListCell" rowHeight="102" id="lJ4-8d-0AJ" customClass="CommentListCell" customModule="SNSApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="102"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CommentListCell" rowHeight="105" id="lJ4-8d-0AJ" customClass="CommentListCell" customModule="SNSApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lJ4-8d-0AJ" id="9mv-Qf-D7i">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lJ4-8d-0AJ" id="9mv-Qf-D7i">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAm-Se-04G">
-                                            <rect key="frame" x="16" y="11" width="96" height="20.5"/>
+                                            <rect key="frame" x="16" y="11.5" width="96" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="tKJ-oK-du2"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lS-94-791">
-                                            <rect key="frame" x="16" y="39.5" width="343" height="50"/>
+                                            <rect key="frame" x="16" y="50" width="42" height="26"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="343" id="3sR-vk-ZSe"/>
+                                                <constraint firstAttribute="height" constant="26" id="CaK-ZX-aNe"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhM-oh-bYe">
+                                            <rect key="frame" x="16" y="83.5" width="33" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="ajB-1H-L5i"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="0lS-94-791" firstAttribute="top" secondItem="aAm-Se-04G" secondAttribute="bottom" constant="8" id="9YP-OD-rco"/>
-                                        <constraint firstItem="aAm-Se-04G" firstAttribute="top" secondItem="9mv-Qf-D7i" secondAttribute="top" constant="11" id="E8f-Jk-dhp"/>
-                                        <constraint firstAttribute="bottom" secondItem="0lS-94-791" secondAttribute="bottom" constant="12" id="Yd8-TX-0GS"/>
-                                        <constraint firstItem="aAm-Se-04G" firstAttribute="leading" secondItem="9mv-Qf-D7i" secondAttribute="leading" constant="16" id="gjD-Tl-5Nm"/>
-                                        <constraint firstItem="0lS-94-791" firstAttribute="leading" secondItem="9mv-Qf-D7i" secondAttribute="leading" constant="16" id="qlW-c0-iGQ"/>
-                                        <constraint firstItem="0lS-94-791" firstAttribute="leading" secondItem="9mv-Qf-D7i" secondAttribute="leading" constant="16" id="rJS-lP-XF5"/>
+                                        <constraint firstItem="aAm-Se-04G" firstAttribute="top" secondItem="9mv-Qf-D7i" secondAttribute="top" constant="11" id="66q-gD-V71"/>
+                                        <constraint firstItem="AhM-oh-bYe" firstAttribute="leading" secondItem="9mv-Qf-D7i" secondAttribute="leading" constant="16" id="GZB-Ii-X2x"/>
+                                        <constraint firstItem="AhM-oh-bYe" firstAttribute="top" secondItem="0lS-94-791" secondAttribute="bottom" constant="7.5" id="Jqh-pN-tK2"/>
+                                        <constraint firstItem="aAm-Se-04G" firstAttribute="leading" secondItem="9mv-Qf-D7i" secondAttribute="leading" constant="16" id="OQ1-nP-K93"/>
+                                        <constraint firstAttribute="bottom" secondItem="AhM-oh-bYe" secondAttribute="bottom" constant="8" id="XlC-j3-h96"/>
+                                        <constraint firstItem="0lS-94-791" firstAttribute="leading" secondItem="9mv-Qf-D7i" secondAttribute="leading" constant="16" id="myc-fJ-EFZ"/>
+                                        <constraint firstItem="0lS-94-791" firstAttribute="top" secondItem="aAm-Se-04G" secondAttribute="bottom" constant="8.5" id="x0q-fn-BRl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentBodyLabel" destination="0lS-94-791" id="y8O-tg-4s4"/>
                                     <outlet property="commentNameLabel" destination="aAm-Se-04G" id="co7-Hg-K6u"/>
+                                    <outlet property="commentTimeLabel" destination="AhM-oh-bYe" id="zrQ-IC-2yW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -292,6 +308,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaC-vb-XGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3228" y="-191.1544227886057"/>
+        </scene>
+        <!--Comment-->
+        <scene sceneID="tOd-q8-HxA">
+            <objects>
+                <tableViewController title="Comment" id="lTV-VM-NQV" customClass="CommentTableViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vsl-ka-IhD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="416" id="0Ms-5J-wPA" customClass="CommentTableViewCell" customModule="SNSApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="416"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ms-5J-wPA" id="qK3-Ch-tDN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="415.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amb-7Y-JhO">
+                                            <rect key="frame" x="11" y="50" width="352" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="commentPlaceholder:" destination="5cA-Oo-zHQ" eventType="editingDidEnd" id="a60-TZ-312"/>
+                                            </connections>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leave your comments here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMO-ib-2uh">
+                                            <rect key="frame" x="16" y="21" width="245" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rre-it-Lrt">
+                                            <rect key="frame" x="11" y="88" width="348" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Submit">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="SubmitActionButton:" destination="0Ms-5J-wPA" eventType="touchUpInside" id="29a-Sv-cFs"/>
+                                                <action selector="submitButton:" destination="5cA-Oo-zHQ" eventType="touchUpInside" id="r1U-xm-g5j"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="SubmitActionButton" destination="qK3-Ch-tDN" id="klk-ED-EPR"/>
+                                    <outlet property="commentPlaceholder" destination="amb-7Y-JhO" id="8CL-Ty-Luv"/>
+                                    <outlet property="submitButton" destination="Rre-it-Lrt" id="mKg-S7-aLt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lTV-VM-NQV" id="Qec-6s-Lug"/>
+                            <outlet property="delegate" destination="lTV-VM-NQV" id="Np9-ua-9Me"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGm-Ff-K9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5cA-Oo-zHQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1834" y="-1287"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SLO-pZ-Ys9">
+            <objects>
+                <viewController id="Vag-is-enI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8XU-4T-iQV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leave your comments here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjF-UD-ntS">
+                                <rect key="frame" x="27" y="272" width="245" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ed-lP-mEK">
+                                <rect key="frame" x="22" y="301" width="352" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="commentPlaceholder:" destination="5cA-Oo-zHQ" eventType="editingDidEnd" id="sAl-ef-tLX"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcR-HG-jyp">
+                                <rect key="frame" x="22" y="339" width="348" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SubmitActionButton:" destination="0Ms-5J-wPA" eventType="touchUpInside" id="Y6l-h1-evk"/>
+                                    <action selector="submitButton:" destination="5cA-Oo-zHQ" eventType="touchUpInside" id="Zr4-mT-cTv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YXb-kx-aLT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vpe-UY-LuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2503" y="-1312"/>
         </scene>
         <!--LIKES-->
         <scene sceneID="S3d-d7-FdR">

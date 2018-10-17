@@ -15,6 +15,7 @@ class CommentListCell: UITableViewCell {
     
     @IBOutlet weak var commentBodyLabel: UILabel!
     
+    @IBOutlet weak var commentTimeLabel: UILabel!
     var comments: CommentModel! {
         didSet {
             self.updateUI()
@@ -25,7 +26,7 @@ class CommentListCell: UITableViewCell {
     {
         commentNameLabel.text = comments.username
         commentBodyLabel.text = comments.content
-        
+        commentTimeLabel.text = comments.datetime
         
     }
 }
