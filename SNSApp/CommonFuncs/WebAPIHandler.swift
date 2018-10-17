@@ -143,12 +143,12 @@ public class WebAPIHandler {
     }
     
     public func requestLike(id:Int,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
-        let postid: Parameters = ["postId":"\(id)"]
-        print(postid)
+//        let postid: Parameters = ["postId":"\(id)"]
+//        print(postid)
         UIFuncs.showLoadingLabel()
-        _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/likePhoto",
+        _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/likePhoto?postId=\(id)",
                              method: HTTPMethod.post,
-                             parameters: ["postId":10],
+//                             parameters: ["postId":10],
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
@@ -158,11 +158,11 @@ public class WebAPIHandler {
         }
     }
     public func requestUnLike(id:String,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
-        let postid: Parameters = ["postId":id]
+//        let postid: Parameters = ["postId":id]
         UIFuncs.showLoadingLabel()
-        _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/dislikePhoto",
-                             method: HTTPMethod.post,
-                             parameters: postid,
+        _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/dislikePhoto?postId=\(id)",
+                             method: HTTPMethod.delete,
+//                             parameters: postid,
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
