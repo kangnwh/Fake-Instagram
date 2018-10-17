@@ -81,11 +81,6 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
             if let photo = items.singlePhoto {
                 self.imageView.image = photo.image
                 self.selectedImage = photo.image
-//                print(photo.fromCamera) // Image source (camera or library)
-//                print(photo.image) // Final image selected by the user
-//                print(photo.originalImage) // original image selected by the user, unfiltered
-//                print(photo.modifiedImage) // Transformed image, can be nil
-//                print(photo.exifMeta) // Print exif meta data of original image.
             }
             
             self.picker.dismiss(animated: true, completion: nil)
@@ -97,17 +92,6 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     
     
     
@@ -254,19 +238,6 @@ extension UploadViewController: UIImagePickerControllerDelegate,UINavigationCont
     @objc func showActionSheet() {
         
         present(picker, animated: true, completion: nil)
-//        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//
-//        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-//            self.checkPhotoPermission(hanler: self.camera)
-//        }))
-//
-//        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (alert:UIAlertAction!) -> Void in
-//            self.checkPhotoPermission(hanler: self.photoLibrary)
-//        }))
-//
-//        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//        self.present(actionSheet, animated: true, completion: nil)
     }
 }
 

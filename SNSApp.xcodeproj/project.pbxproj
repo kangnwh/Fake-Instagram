@@ -27,6 +27,10 @@
 		074194D1216C8C6A00B1B58B /* PopupImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074194CF216C8C6A00B1B58B /* PopupImageViewController.xib */; };
 		074194D7216C99F100B1B58B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194D6216C99F100B1B58B /* DiscoverViewController.swift */; };
 		074194D9216C9A8300B1B58B /* SuggestionUserListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194D8216C9A8300B1B58B /* SuggestionUserListModel.swift */; };
+		0758FBA92176AB9F00D45127 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758FBA82176AB9F00D45127 /* SwipeViewController.swift */; };
+		0758FBAD2176AE5C00D45127 /* SwipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758FBAC2176AE5C00D45127 /* SwipeCell.swift */; };
+		0758FBB22176C2E200D45127 /* SwipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758FBB12176C2E200D45127 /* SwipeService.swift */; };
+		0758FBB42176D20500D45127 /* ReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758FBB32176D20500D45127 /* ReceiverViewController.swift */; };
 		079A1DBF2158897D00CD57DC /* WebAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */; };
 		079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DC12158AEEB00CD57DC /* SignupFormController.swift */; };
 		079A1DC42158AF3100CD57DC /* BaseFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DC32158AF3100CD57DC /* BaseFormController.swift */; };
@@ -113,6 +117,10 @@
 		074194CF216C8C6A00B1B58B /* PopupImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupImageViewController.xib; sourceTree = "<group>"; };
 		074194D6216C99F100B1B58B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		074194D8216C9A8300B1B58B /* SuggestionUserListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionUserListModel.swift; sourceTree = "<group>"; };
+		0758FBA82176AB9F00D45127 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		0758FBAC2176AE5C00D45127 /* SwipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCell.swift; sourceTree = "<group>"; };
+		0758FBB12176C2E200D45127 /* SwipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeService.swift; sourceTree = "<group>"; };
+		0758FBB32176D20500D45127 /* ReceiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverViewController.swift; sourceTree = "<group>"; };
 		079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIHandler.swift; sourceTree = "<group>"; };
 		079A1DC12158AEEB00CD57DC /* SignupFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormController.swift; sourceTree = "<group>"; };
 		079A1DC32158AF3100CD57DC /* BaseFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormController.swift; sourceTree = "<group>"; };
@@ -274,6 +282,17 @@
 			path = JsonModels;
 			sourceTree = "<group>";
 		};
+		0758FBA72176AB8900D45127 /* swipe */ = {
+			isa = PBXGroup;
+			children = (
+				0758FBB12176C2E200D45127 /* SwipeService.swift */,
+				0758FBA82176AB9F00D45127 /* SwipeViewController.swift */,
+				0758FBAC2176AE5C00D45127 /* SwipeCell.swift */,
+				0758FBB32176D20500D45127 /* ReceiverViewController.swift */,
+			);
+			path = swipe;
+			sourceTree = "<group>";
+		};
 		079A1DC02158AEBB00CD57DC /* Forms */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +329,7 @@
 		079A1DD72158F4E100CD57DC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				0758FBA72176AB8900D45127 /* swipe */,
 				07C9A25B2175880D0022066F /* follow */,
 				074194C1216C54EE00B1B58B /* UserProfileViewController.swift */,
 				079A1DD82158F4E100CD57DC /* Profile.storyboard */,
@@ -604,6 +624,7 @@
 			files = (
 				07C9A261217588170022066F /* FollowUserModel.swift in Sources */,
 				079A1DCC2158C9F900CD57DC /* SignupViewController.swift in Sources */,
+				0758FBAD2176AE5C00D45127 /* SwipeCell.swift in Sources */,
 				07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */,
 				07C4DB832163166E00D778B5 /* Log.swift in Sources */,
 				097D8E322171D602004082AB /* LikeController.swift in Sources */,
@@ -621,6 +642,7 @@
 				079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */,
 				074194C7216C683A00B1B58B /* PostListModel.swift in Sources */,
 				074194D7216C99F100B1B58B /* DiscoverViewController.swift in Sources */,
+				0758FBA92176AB9F00D45127 /* SwipeViewController.swift in Sources */,
 				07C9A25E2175880D0022066F /* FollowTableViewCell.swift in Sources */,
 				07C9A263217597AF0022066F /* DiscoverTableViewCell.swift in Sources */,
 				09800C19216F20F00080B3BC /* PostHeaderCell.swift in Sources */,
@@ -639,11 +661,13 @@
 				09800C17216F20F00080B3BC /* User.swift in Sources */,
 				097D8E48217475CB004082AB /* YoursModel.swift in Sources */,
 				079A1DD12158F19800CD57DC /* AppDelegateExtension.swift in Sources */,
+				0758FBB42176D20500D45127 /* ReceiverViewController.swift in Sources */,
 				09800C1A216F20F00080B3BC /* PostModel.swift in Sources */,
 				079A1DC42158AF3100CD57DC /* BaseFormController.swift in Sources */,
 				074194CA216C6C3600B1B58B /* ProfileImageCell.swift in Sources */,
 				097D8E4221746D4C004082AB /* ActivityTableViewCell.swift in Sources */,
 				097D8E3B21730A0E004082AB /* Comments.swift in Sources */,
+				0758FBB22176C2E200D45127 /* SwipeService.swift in Sources */,
 				097D8E3921730864004082AB /* CommentListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,6 +845,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBZ584P6FG;
 				INFOPLIST_FILE = SNSApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -840,6 +865,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBZ584P6FG;
 				INFOPLIST_FILE = SNSApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
