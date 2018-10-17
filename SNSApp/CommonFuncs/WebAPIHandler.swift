@@ -18,17 +18,22 @@ struct WebAPIJSONHeader{
 }
 
 public struct WebAPIUrls{
-    public static let IP =  "13.211.229.245"//"10.12.203.15" //"127.0.0.1" //
+    public static let IP = "127.0.0.1" //"13.211.229.245"//"10.12.203.15" //
     public static let baseURL = "https://\(IP):5001/api"
     public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
     
     public static let loginURL = baseURL + "/login/login"
     public static let signupURL = baseURL + "/login/sign-up"
     public static let postURL = baseURL + "/upload/upload"
+    public static let updateAvatorURL = baseURL + "/upload/uploadAvator"
     public static let stasticsURL = baseURL + "/UserProfile/poststat"
     public static let myPhotosURL = baseURL + "/UserProfile/myphotos"
     public static let suggestionURL = baseURL + "/UserProfile/myphotos"
-    
+    public static let followedBy = baseURL + "/ActivityFeed/getFollowedUserList"
+    public static let followingWhom = baseURL + "/ActivityFeed/getFollowingUserList"
+    public static let discoverUserList = baseURL + "/Discover/index"
+    public static let followUser = baseURL + "/Discover/followUser"
+    public static let unFollowUser = baseURL + "/Discover/cancelFollowUser"
     
     
     
@@ -121,11 +126,11 @@ public class WebAPIHandler {
         }
     }
     
-    public func requestStatistic(viewController :UIViewController,
+    public func requestStatistic(userId: Int,
                                   callback:@escaping ((DataResponse<ProfileModel>) -> Void)) -> Void{
         
         UIFuncs.showLoadingLabel()
-        _httpManager.request(WebAPIUrls.stasticsURL,
+        _httpManager.request(WebAPIUrls.stasticsURL + "?id=\(userId)",
                              method: HTTPMethod.post,
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
@@ -165,12 +170,13 @@ public class WebAPIHandler {
                 callback(response)
         }
     }
-    public func requestUserPosts(viewController :UIViewController,userId: Int,
+    public func requestUserPosts(userId: Int,
                                        callback:@escaping ((DataResponse<[PostModel]>) -> Void)) -> Void{
-        
+        let parameter:Parameters = ["uId": userId]
         UIFuncs.showLoadingLabel()
-        _httpManager.request(WebAPIUrls.myPhotosURL,
+        _httpManager.request(WebAPIUrls.myPhotosURL + "?id=\(userId)",
                              method: HTTPMethod.post,
+                             parameters:parameter,
                              encoding: JSONEncoding.default,
                              headers: self.headerWithToken)
             .validate()
@@ -215,6 +221,81 @@ public class WebAPIHandler {
     }
     
     
+    public func requestDiscoverUserList(
+                            callback:@escaping ((DataResponse<[FollowUserModel]>) -> ())) -> Void{
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.discoverUserList,
+                             method: HTTPMethod.post,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            
+            .validate()
+            .responseArray{ (response:DataResponse<[FollowUserModel]>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    
+    
+    func requestFollowInfo(type: FollowListViewController.FollowType, userId:Int,
+                            callback:@escaping ((DataResponse<[FollowUserModel]>) -> ())) -> Void{
+        
+        var url = WebAPIUrls.followingWhom
+        
+        if type == .followedBy {
+            url = WebAPIUrls.followedBy
+        }
+        
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(url + "?id=\(userId)",
+                             method: HTTPMethod.get,
+//                             parameters: userid,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            
+            .validate()
+            .responseArray{ (response:DataResponse<[FollowUserModel]>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    
+    public func unFollowUser(userId: Int,
+                           callback:@escaping ((DataResponse<Any>) -> ())) -> Void{
+//        let userid: Parameters = ["userId":userId]
+        UIFuncs.showLoadingLabel()
+        
+        _httpManager.request(WebAPIUrls.unFollowUser + "?userId=\(userId)",
+                             method: HTTPMethod.get,
+//                             parameters: userid,
+                             encoding: URLEncoding.httpBody,
+                             headers: self.headerWithToken)
+            
+            .validate()
+            .responseJSON{ (response:DataResponse<Any>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    
+    public func followUser(userId: Int,
+        callback:@escaping ((DataResponse<Any>) -> ())) -> Void{
+//        let userid: Parameters = ["userId":userId]
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.followUser + "?userId=\(userId)",
+                             method: HTTPMethod.get,
+//                             parameters: userid,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            
+            .validate()
+            .responseJSON{ (response:DataResponse<Any>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+    }
+    
+    
     public func upload(image: UIImage,content: String,location:String, lati: CLLocationDegrees?, logi: CLLocationDegrees?,callback:@escaping ((DataResponse<Any>) -> Void) ){
         
         let imageData = image.pngData()!
@@ -244,6 +325,37 @@ public class WebAPIHandler {
                     upload.responseJSON{resonse in
                         UIFuncs.dismissLoadingLabel()
                         callback(resonse)
+                        
+                    }
+                case .failure(let encodingError):
+                    UIFuncs.dismissLoadingLabel()
+                    print(encodingError)
+                }
+        }
+        )
+        
+    }
+    
+    public func updateAvator(image: UIImage,callback:@escaping ((DataResponse<Any>) -> Void) ){
+        
+        let imageData = image.pngData()!
+        
+        UIFuncs.showLoadingLabel()
+        
+        _httpManager.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(imageData, withName: "file",fileName:"mypic.png" ,mimeType:"image/png")
+            },
+            to: WebAPIUrls.updateAvatorURL,
+            method:HTTPMethod.post,
+            headers:self.headerWithToken,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    
+                    upload.responseJSON{response in
+                        UIFuncs.dismissLoadingLabel()
+                        callback(response)
                         
                     }
                 case .failure(let encodingError):

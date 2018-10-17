@@ -25,8 +25,6 @@
 		074194CD216C811400B1B58B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194CC216C811400B1B58B /* ProfileModel.swift */; };
 		074194D0216C8C6A00B1B58B /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194CE216C8C6A00B1B58B /* PopupImageViewController.swift */; };
 		074194D1216C8C6A00B1B58B /* PopupImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074194CF216C8C6A00B1B58B /* PopupImageViewController.xib */; };
-		074194D4216C98AC00B1B58B /* OtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194D2216C98AC00B1B58B /* OtherProfileViewController.swift */; };
-		074194D5216C98AC00B1B58B /* OtherProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074194D3216C98AC00B1B58B /* OtherProfileViewController.xib */; };
 		074194D7216C99F100B1B58B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194D6216C99F100B1B58B /* DiscoverViewController.swift */; };
 		074194D9216C9A8300B1B58B /* SuggestionUserListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074194D8216C9A8300B1B58B /* SuggestionUserListModel.swift */; };
 		079A1DBF2158897D00CD57DC /* WebAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */; };
@@ -44,6 +42,10 @@
 		079A1DE82158F4E200CD57DC /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DE12158F4E100CD57DC /* Activity.storyboard */; };
 		07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DB80216311E600D778B5 /* UploadViewController.swift */; };
 		07C4DB832163166E00D778B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DB822163166E00D778B5 /* Log.swift */; };
+		07C9A25E2175880D0022066F /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A25C2175880D0022066F /* FollowTableViewCell.swift */; };
+		07C9A25F2175880D0022066F /* FollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A25D2175880D0022066F /* FollowListViewController.swift */; };
+		07C9A261217588170022066F /* FollowUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A260217588170022066F /* FollowUserModel.swift */; };
+		07C9A263217597AF0022066F /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A262217597AF0022066F /* DiscoverTableViewCell.swift */; };
 		097D8E2E2171D247004082AB /* LikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E2D2171D247004082AB /* LikeCell.swift */; };
 		097D8E322171D602004082AB /* LikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E312171D602004082AB /* LikeController.swift */; };
 		097D8E3921730864004082AB /* CommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E3821730864004082AB /* CommentListCell.swift */; };
@@ -108,8 +110,6 @@
 		074194CC216C811400B1B58B /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		074194CE216C8C6A00B1B58B /* PopupImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupImageViewController.swift; sourceTree = "<group>"; };
 		074194CF216C8C6A00B1B58B /* PopupImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupImageViewController.xib; sourceTree = "<group>"; };
-		074194D2216C98AC00B1B58B /* OtherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewController.swift; sourceTree = "<group>"; };
-		074194D3216C98AC00B1B58B /* OtherProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherProfileViewController.xib; sourceTree = "<group>"; };
 		074194D6216C99F100B1B58B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		074194D8216C9A8300B1B58B /* SuggestionUserListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionUserListModel.swift; sourceTree = "<group>"; };
 		079A1DBE2158897D00CD57DC /* WebAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIHandler.swift; sourceTree = "<group>"; };
@@ -127,6 +127,10 @@
 		079A1DE12158F4E100CD57DC /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		07C4DB80216311E600D778B5 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		07C4DB822163166E00D778B5 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		07C9A25C2175880D0022066F /* FollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
+		07C9A25D2175880D0022066F /* FollowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowListViewController.swift; sourceTree = "<group>"; };
+		07C9A260217588170022066F /* FollowUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUserModel.swift; sourceTree = "<group>"; };
+		07C9A262217597AF0022066F /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 		097D8E2D2171D247004082AB /* LikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCell.swift; sourceTree = "<group>"; };
 		097D8E312171D602004082AB /* LikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeController.swift; sourceTree = "<group>"; };
 		097D8E3821730864004082AB /* CommentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListCell.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				097D8E2A2171CF48004082AB /* Like */,
 				074194C5216C680800B1B58B /* JsonModels */,
 				079A1DDF2158F4E100CD57DC /* Activity */,
+				074194C6216C683A00B1B58B /* PostListModel.swift */,
 				079A1DD92158F4E100CD57DC /* Discover */,
 				079A1DD72158F4E100CD57DC /* Profile */,
 				079A1DDC2158F4E100CD57DC /* Upload */,
@@ -260,8 +265,8 @@
 		074194C5216C680800B1B58B /* JsonModels */ = {
 			isa = PBXGroup;
 			children = (
+				07C9A260217588170022066F /* FollowUserModel.swift */,
 				074194CC216C811400B1B58B /* ProfileModel.swift */,
-				074194C6216C683A00B1B58B /* PostListModel.swift */,
 				074194D8216C9A8300B1B58B /* SuggestionUserListModel.swift */,
 			);
 			path = JsonModels;
@@ -303,6 +308,7 @@
 		079A1DD72158F4E100CD57DC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				07C9A25B2175880D0022066F /* follow */,
 				074194C1216C54EE00B1B58B /* UserProfileViewController.swift */,
 				079A1DD82158F4E100CD57DC /* Profile.storyboard */,
 				074194C8216C6C3600B1B58B /* ProfileImageCell.swift */,
@@ -315,10 +321,9 @@
 		079A1DD92158F4E100CD57DC /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				074194D2216C98AC00B1B58B /* OtherProfileViewController.swift */,
-				074194D3216C98AC00B1B58B /* OtherProfileViewController.xib */,
 				074194D6216C99F100B1B58B /* DiscoverViewController.swift */,
 				079A1DDB2158F4E100CD57DC /* Discover.storyboard */,
+				07C9A262217597AF0022066F /* DiscoverTableViewCell.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -344,6 +349,15 @@
 				097D8E4B217482E5004082AB /* YoursTableViewController.swift */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		07C9A25B2175880D0022066F /* follow */ = {
+			isa = PBXGroup;
+			children = (
+				07C9A25C2175880D0022066F /* FollowTableViewCell.swift */,
+				07C9A25D2175880D0022066F /* FollowListViewController.swift */,
+			);
+			path = follow;
 			sourceTree = "<group>";
 		};
 		097D8E2A2171CF48004082AB /* Like */ = {
@@ -489,7 +503,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				072427672144F95C001D0F40 /* LaunchScreen.storyboard in Resources */,
-				074194D5216C98AC00B1B58B /* OtherProfileViewController.xib in Resources */,
 				072427642144F95C001D0F40 /* Assets.xcassets in Resources */,
 				0724278E2144FF3A001D0F40 /* Podfile in Resources */,
 				079A1DC92158B32200CD57DC /* FormSectionTItle.xib in Resources */,
@@ -586,6 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C9A261217588170022066F /* FollowUserModel.swift in Sources */,
 				079A1DCC2158C9F900CD57DC /* SignupViewController.swift in Sources */,
 				07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */,
 				07C4DB832163166E00D778B5 /* Log.swift in Sources */,
@@ -603,9 +617,11 @@
 				079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */,
 				074194C7216C683A00B1B58B /* PostListModel.swift in Sources */,
 				074194D7216C99F100B1B58B /* DiscoverViewController.swift in Sources */,
+				07C9A25E2175880D0022066F /* FollowTableViewCell.swift in Sources */,
+				07C9A263217597AF0022066F /* DiscoverTableViewCell.swift in Sources */,
 				09800C19216F20F00080B3BC /* PostHeaderCell.swift in Sources */,
 				0710174A21636ADD008C27FD /* MyExtensions.swift in Sources */,
-				074194D4216C98AC00B1B58B /* OtherProfileViewController.swift in Sources */,
+				07C9A25F2175880D0022066F /* FollowListViewController.swift in Sources */,
 				079A1DCF2158E51D00CD57DC /* DateHelper.swift in Sources */,
 				097D8E44217473E6004082AB /* ActivityModel.swift in Sources */,
 				074194C2216C54EE00B1B58B /* UserProfileViewController.swift in Sources */,

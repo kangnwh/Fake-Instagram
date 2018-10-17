@@ -11,7 +11,12 @@ import UIKit
 class DiscoverViewController: UIViewController {
     
     
-
+    var userList: [FollowUserModel] = []{
+        didSet{
+            self.suggestionTableView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var suggestionTableView: UITableView!
     
     override func viewDidLoad() {
@@ -20,26 +25,49 @@ class DiscoverViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        loadDiscoverUserList()
     }
-
     
     
-
+    func loadDiscoverUserList(){
+        WebAPIHandler.shared.requestDiscoverUserList{ response in
+            DispatchQueue.main.async {
+                if let r = response.result.value{
+                    self.userList = r
+                }
+            }
+            
+        }
+    }
 }
 
 extension DiscoverViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.userList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "suggestionCell") as? DiscoverTableViewCell{
+            cell.user = self.userList[indexPath.row]
+            return cell
+        }
+        
         return UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+            guard let cell = tableView.cellForRow(at: indexPath) as? DiscoverTableViewCell else{
+                return
+            }
+        
+            let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+            if let vc = storyboard.instantiateViewController(withIdentifier: "userprofile") as? UserProfileViewController{
+                vc.userId = cell.user.userId!
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                UIFuncs.popUp(title: "Error", info: "Cannot find profile view", type: .warning, sender: self, callback: {})
+            }
+    }
 }

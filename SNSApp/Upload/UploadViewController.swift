@@ -29,7 +29,7 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var cameraGrid: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextField!
-    var currentLocation:(address:String,lati:CLLocationDegrees?,logi:CLLocationDegrees?) = (address:"Not Provided",lati:nil,logi:nil){
+    var currentLocation:(address:String,lati:CLLocationDegrees?,logi:CLLocationDegrees?) = (address:"N/A",lati:nil,logi:nil){
         didSet{
             if isUseLocation.isOn{
                 addressLabel.text = currentLocation.address
@@ -119,7 +119,7 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
                 sender.isOn = false
             }
         }else{
-            self.currentLocation = (address:"Not Provided",lati:nil,logi:nil)
+            self.currentLocation = (address:"N/A",lati:nil,logi:nil)
         }
     }
     

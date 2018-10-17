@@ -1,5 +1,5 @@
 //
-//  FollowTableViewCell.swift
+//  DiscoverTableViewCell.swift
 //  SNSApp
 //
 //  Created by Kang Ning on 16/10/18.
@@ -8,25 +8,24 @@
 
 import UIKit
 
-class FollowTableViewCell: UITableViewCell {
+class DiscoverTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var useridLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var nicknameLabel: UILabel!
-    @IBOutlet weak var followBtn: UIButton!
+    @IBOutlet weak var followingBtn: UIButton!
     
-    var removeFromTableView: ((_ index:Int) -> Void)?
     
-    var user: FollowUserModel!{
+    var user:FollowUserModel!{
         didSet{
-            usernameLabel.text = self.user.userName
-            nicknameLabel.text = self.user.nickName
-            
-            if let f = self.user.isFollowedByCurrentUser, f{
-                followBtn.setTitle("Unfollow", for: .normal)
+            useridLabel.text = self.user.userName
+            usernameLabel.text = self.user.nickName
+            if let _ = self.user.isFollowedByCurrentUser{
+                followingBtn.setTitle("Unfollow", for: .normal)
             }else{
-                followBtn.setTitle("Follow", for: .normal)
+                followingBtn.setTitle("Follow", for: .normal)
             }
+            
             if let avatar = user.avatarUrl{
                 let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
                 avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
@@ -35,7 +34,7 @@ class FollowTableViewCell: UITableViewCell {
     }
     
     @IBAction func following(_ sender: Any) {
-        if let f = self.user.isFollowedByCurrentUser, f{
+        if self.user.isFollowedByCurrentUser != nil{
             
             WebAPIHandler.shared.unFollowUser(userId: self.user.userId!){ response in
                 switch response.result{
@@ -43,8 +42,7 @@ class FollowTableViewCell: UITableViewCell {
                     print(error.localizedDescription)
                 case .success( _):
                     DispatchQueue.main.async {
-                        self.followBtn.setTitle("Follow", for: .normal)
-                        self.user.isFollowedByCurrentUser = nil
+                        self.followingBtn.setTitle("Unfollow", for: .normal)
                     }
                     
                 }
@@ -58,8 +56,7 @@ class FollowTableViewCell: UITableViewCell {
                     print(error.localizedDescription)
                 case .success( _):
                     DispatchQueue.main.async {
-                        self.followBtn.setTitle("Unfollow", for: .normal)
-                        self.user.isFollowedByCurrentUser = true
+                        self.followingBtn.setTitle("Unfollow", for: .normal)
                     }
                     
                 }
@@ -67,9 +64,9 @@ class FollowTableViewCell: UITableViewCell {
             }
         }
         
-        
-        
     }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
