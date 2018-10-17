@@ -124,6 +124,7 @@
                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <connections>
+                                                <action selector="likeSkipButton:" destination="6Tz-ZR-JXY" eventType="touchUpInside" id="hRd-Sr-66h"/>
                                                 <segue destination="ytj-MO-nT4" kind="show" identifier="CheckLike" id="uqc-0m-C22"/>
                                             </connections>
                                         </button>
@@ -134,6 +135,7 @@
                                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
+                                                <action selector="numberOfCommentsButton:" destination="6Tz-ZR-JXY" eventType="touchUpInside" id="UOX-N4-lRh"/>
                                                 <segue destination="NWE-dH-eoT" kind="show" identifier="CheckComments" id="e8K-7D-3GT"/>
                                             </connections>
                                         </button>
@@ -186,7 +188,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="Unv-1n-P9A" id="COb-he-Dla"/>
-                                    <outlet property="numberOfCommentButton" destination="Uj7-2Z-6G0" id="UZS-ub-fXS"/>
+                                    <outlet property="numberOfCommentButton" destination="Uj7-2Z-6G0" id="o8B-K2-oVO"/>
                                     <outlet property="numberOfLikesButton" destination="EsD-C7-iCe" id="TCe-zG-fCE"/>
                                     <outlet property="postCaptionLabel" destination="RnP-Fo-F2E" id="bjX-oQ-D6D"/>
                                     <outlet property="postImageView" destination="flh-lQ-w7h" id="6i7-9A-8Pr"/>
@@ -307,17 +309,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duc" translatesAutoresizingMaskIntoConstraints="NO" id="bku-m4-84g">
-                                            <rect key="frame" x="12" y="10" width="36" height="36"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="AcK-yJ-9ea"/>
-                                                <constraint firstAttribute="width" constant="36" id="K5v-3k-NI4"/>
-                                                <constraint firstAttribute="height" constant="36" id="Vym-hQ-YX0"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="hZ7-E0-zAs"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duc Tran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqD-oh-Wud">
-                                            <rect key="frame" x="56" y="19" width="64" height="18"/>
+                                            <rect key="frame" x="56" y="19" width="64" height="18.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -330,20 +323,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bku-m4-84g" firstAttribute="leading" secondItem="UMT-Ik-lVC" secondAttribute="leading" constant="12" id="7kh-ON-xRj"/>
-                                        <constraint firstItem="bku-m4-84g" firstAttribute="top" secondItem="UMT-Ik-lVC" secondAttribute="top" constant="10" id="DE7-JM-kEu"/>
-                                        <constraint firstItem="NqD-oh-Wud" firstAttribute="leading" secondItem="bku-m4-84g" secondAttribute="trailing" constant="8" id="J6v-eC-G3w"/>
                                         <constraint firstItem="YBJ-uo-VHK" firstAttribute="top" secondItem="UMT-Ik-lVC" secondAttribute="top" constant="17" id="RJB-cI-tBs"/>
                                         <constraint firstAttribute="bottom" secondItem="NqD-oh-Wud" secondAttribute="bottom" constant="19" id="Sqm-ot-r0H"/>
-                                        <constraint firstItem="bku-m4-84g" firstAttribute="leading" secondItem="UMT-Ik-lVC" secondAttribute="leading" constant="12" id="bK5-8a-SqW"/>
-                                        <constraint firstItem="bku-m4-84g" firstAttribute="top" secondItem="UMT-Ik-lVC" secondAttribute="top" constant="10" id="fpu-w3-4VK"/>
-                                        <constraint firstAttribute="bottom" secondItem="bku-m4-84g" secondAttribute="bottom" constant="10" id="g0d-yU-VIE"/>
+                                        <constraint firstItem="NqD-oh-Wud" firstAttribute="leading" secondItem="UMT-Ik-lVC" secondAttribute="leadingMargin" constant="40" id="ZWu-k4-2EP"/>
                                         <constraint firstItem="YBJ-uo-VHK" firstAttribute="leading" secondItem="NqD-oh-Wud" secondAttribute="trailing" constant="8" id="gv7-Lg-aqn"/>
                                         <constraint firstItem="NqD-oh-Wud" firstAttribute="top" secondItem="UMT-Ik-lVC" secondAttribute="top" constant="19" id="uBG-yT-AFk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="AvatarView" destination="bku-m4-84g" id="TlL-ft-ZhD"/>
                                     <outlet property="LikeLabel" destination="YBJ-uo-VHK" id="Nhc-Ya-6Ff"/>
                                     <outlet property="NameLabel" destination="NqD-oh-Wud" id="pbT-pW-IeE"/>
                                 </connections>

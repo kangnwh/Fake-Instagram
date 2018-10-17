@@ -12,7 +12,7 @@ class NewsfeedTableViewController: UITableViewController
 {
     var posts: [PostModel]?
     var selectedPost :[CommentModel]?
-    
+    var selectedLike:[String]?
     struct Storyboard {
         static let postCell = "PostCell"
         static let postHeaderCell = "PostHeaderCell"
@@ -33,18 +33,27 @@ class NewsfeedTableViewController: UITableViewController
         fetchPosts()
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let product = posts?[indexPath.section]
+    func sendToCommentLst(post:PostModel){
 
-        selectedPost = product?.comments
-        print(selectedPost!)
-        performSegue(withIdentifier:"CheckComments" , sender: nil)
+        selectedPost = post.comments
+//        performSegue(withIdentifier:"CheckComments" , sender: nil)
+        
     }
+    func sendToLikeLst(post:PostModel){
+
+        selectedLike = post.likeUserList
+//        performSegue(withIdentifier:"CheckLike" , sender: nil)
+    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CheckComments" {
             let commentTVC = segue.destination as! CommentsTableViewController
             commentTVC.comments = selectedPost
+        }else
+            if segue.identifier == "CheckLike" {
+            let likeTVC = segue.destination as! LikeController
+            likeTVC.likes = selectedLike
         }
     }
     func fetchPosts()
@@ -94,6 +103,8 @@ extension NewsfeedTableViewController
         
         cell.post = self.posts?[indexPath.section]
         cell.selectionStyle = .none
+        cell.callback = self.sendToCommentLst
+        cell.callback2 = self.sendToLikeLst
         
         return cell
     }

@@ -51,7 +51,6 @@
 		07C9A261217588170022066F /* FollowUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A260217588170022066F /* FollowUserModel.swift */; };
 		07C9A263217597AF0022066F /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A262217597AF0022066F /* DiscoverTableViewCell.swift */; };
 		097D8E2E2171D247004082AB /* LikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E2D2171D247004082AB /* LikeCell.swift */; };
-		097D8E302171D44E004082AB /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E2F2171D44E004082AB /* Likes.swift */; };
 		097D8E322171D602004082AB /* LikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E312171D602004082AB /* LikeController.swift */; };
 		097D8E3921730864004082AB /* CommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E3821730864004082AB /* CommentListCell.swift */; };
 		097D8E3B21730A0E004082AB /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E3A21730A0E004082AB /* Comments.swift */; };
@@ -141,7 +140,6 @@
 		07C9A260217588170022066F /* FollowUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUserModel.swift; sourceTree = "<group>"; };
 		07C9A262217597AF0022066F /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 		097D8E2D2171D247004082AB /* LikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCell.swift; sourceTree = "<group>"; };
-		097D8E2F2171D44E004082AB /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
 		097D8E312171D602004082AB /* LikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeController.swift; sourceTree = "<group>"; };
 		097D8E3821730864004082AB /* CommentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListCell.swift; sourceTree = "<group>"; };
 		097D8E3A21730A0E004082AB /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
@@ -386,7 +384,6 @@
 			isa = PBXGroup;
 			children = (
 				097D8E2D2171D247004082AB /* LikeCell.swift */,
-				097D8E2F2171D44E004082AB /* Likes.swift */,
 				097D8E312171D602004082AB /* LikeController.swift */,
 			);
 			path = Like;
@@ -630,7 +627,6 @@
 				097D8E322171D602004082AB /* LikeController.swift in Sources */,
 				07397A01216F0B3E00B7B191 /* WebAPIExtension.swift in Sources */,
 				097D8E3D21730C09004082AB /* CommentsTableViewController.swift in Sources */,
-				097D8E302171D44E004082AB /* Likes.swift in Sources */,
 				072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */,
 				074194D9216C9A8300B1B58B /* SuggestionUserListModel.swift in Sources */,
 				0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */,
