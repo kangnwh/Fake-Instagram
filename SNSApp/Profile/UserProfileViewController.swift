@@ -151,7 +151,7 @@ class UserProfileViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = 5
-        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        layout.itemSize = CGSize(width: (screenWidth-25)/3, height: screenWidth/3)
         
         imageCollectionView.collectionViewLayout = layout
     }
@@ -194,6 +194,10 @@ class UserProfileViewController: UIViewController {
                 if let followView = segue.destination as? FollowListViewController{
                     followView.userId = self.userId
                     followView.listType = .followingWho
+                }
+            case "toSwipe":
+                if let dest = segue.destination as? SwipeViewController{
+                    dest._postList = self._postList
                 }
             default:
                 break

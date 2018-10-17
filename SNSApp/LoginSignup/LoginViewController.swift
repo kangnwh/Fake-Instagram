@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
                     UIFuncs.popUp(title: "Error", info: "Login failed, \(error.localizedDescription)", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
                 case .success(let value):
                     WebAPIHandler.shared.setToken(token: (value as! String))
+                    WebAPIHandler.shared.username = self.usernameText.text!
                     self.launchMain()
                 
             }
