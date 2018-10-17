@@ -30,6 +30,8 @@ class FollowTableViewCell: UITableViewCell {
             if let avatar = user.avatarUrl{
                 let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
                 avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
+                avatarImageView.image = avatarImageView.image?.af_imageRoundedIntoCircle()
+                avatarImageView.setNeedsDisplay()
             }
         }
     }

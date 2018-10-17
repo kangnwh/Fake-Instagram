@@ -45,6 +45,13 @@
 		079A1DE52158F4E200CD57DC /* Upload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079A1DDD2158F4E100CD57DC /* Upload.storyboard */; };
 		07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DB80216311E600D778B5 /* UploadViewController.swift */; };
 		07C4DB832163166E00D778B5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DB822163166E00D778B5 /* Log.swift */; };
+		07C81BC0217758C000A9E306 /* YoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81BB9217758C000A9E306 /* YoursTableViewCell.swift */; };
+		07C81BC1217758C000A9E306 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81BBA217758C000A9E306 /* ActivityTableViewController.swift */; };
+		07C81BC2217758C000A9E306 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C81BBB217758C000A9E306 /* Activity.storyboard */; };
+		07C81BC3217758C000A9E306 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81BBC217758C000A9E306 /* ActivityTableViewCell.swift */; };
+		07C81BC4217758C000A9E306 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81BBD217758C000A9E306 /* ActivityModel.swift */; };
+		07C81BC5217758C000A9E306 /* YoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81BBE217758C000A9E306 /* YoursTableViewController.swift */; };
+		07C81BC6217758C000A9E306 /* YoursModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81BBF217758C000A9E306 /* YoursModel.swift */; };
 		07C9A25E2175880D0022066F /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A25C2175880D0022066F /* FollowTableViewCell.swift */; };
 		07C9A25F2175880D0022066F /* FollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A25D2175880D0022066F /* FollowListViewController.swift */; };
 		07C9A261217588170022066F /* FollowUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A260217588170022066F /* FollowUserModel.swift */; };
@@ -128,6 +135,13 @@
 		079A1DDD2158F4E100CD57DC /* Upload.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Upload.storyboard; sourceTree = "<group>"; };
 		07C4DB80216311E600D778B5 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		07C4DB822163166E00D778B5 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		07C81BB9217758C000A9E306 /* YoursTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoursTableViewCell.swift; sourceTree = "<group>"; };
+		07C81BBA217758C000A9E306 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
+		07C81BBB217758C000A9E306 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		07C81BBC217758C000A9E306 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		07C81BBD217758C000A9E306 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		07C81BBE217758C000A9E306 /* YoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoursTableViewController.swift; sourceTree = "<group>"; };
+		07C81BBF217758C000A9E306 /* YoursModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoursModel.swift; sourceTree = "<group>"; };
 		07C9A25C2175880D0022066F /* FollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
 		07C9A25D2175880D0022066F /* FollowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowListViewController.swift; sourceTree = "<group>"; };
 		07C9A260217588170022066F /* FollowUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUserModel.swift; sourceTree = "<group>"; };
@@ -204,7 +218,7 @@
 		072427582144F95A001D0F40 /* SNSApp */ = {
 			isa = PBXGroup;
 			children = (
-				07C81BA9217726C400A9E306 /* Activity */,
+				07C81BB8217758C000A9E306 /* Activity */,
 				097D8E4F2176F6CB004082AB /* PostComments */,
 				097D8E352173066F004082AB /* CommentList */,
 				097D8E2A2171CF48004082AB /* Like */,
@@ -346,9 +360,16 @@
 			path = Upload;
 			sourceTree = "<group>";
 		};
-		07C81BA9217726C400A9E306 /* Activity */ = {
+		07C81BB8217758C000A9E306 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				07C81BB9217758C000A9E306 /* YoursTableViewCell.swift */,
+				07C81BBA217758C000A9E306 /* ActivityTableViewController.swift */,
+				07C81BBB217758C000A9E306 /* Activity.storyboard */,
+				07C81BBC217758C000A9E306 /* ActivityTableViewCell.swift */,
+				07C81BBD217758C000A9E306 /* ActivityModel.swift */,
+				07C81BBE217758C000A9E306 /* YoursTableViewController.swift */,
+				07C81BBF217758C000A9E306 /* YoursModel.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -519,6 +540,7 @@
 				079A1DE52158F4E200CD57DC /* Upload.storyboard in Resources */,
 				0724275F2144F95A001D0F40 /* Main.storyboard in Resources */,
 				079A1DE22158F4E200CD57DC /* Profile.storyboard in Resources */,
+				07C81BC2217758C000A9E306 /* Activity.storyboard in Resources */,
 				079A1DD52158F38500CD57DC /* UserFeed.storyboard in Resources */,
 				074194D1216C8C6A00B1B58B /* PopupImageViewController.xib in Resources */,
 				097D8E4E21749034004082AB /* .gitignore in Resources */,
@@ -609,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C9A261217588170022066F /* FollowUserModel.swift in Sources */,
+				07C81BC1217758C000A9E306 /* ActivityTableViewController.swift in Sources */,
 				079A1DCC2158C9F900CD57DC /* SignupViewController.swift in Sources */,
 				0758FBAD2176AE5C00D45127 /* SwipeCell.swift in Sources */,
 				07C4DB81216311E600D778B5 /* UploadViewController.swift in Sources */,
@@ -616,22 +639,27 @@
 				097D8E322171D602004082AB /* LikeController.swift in Sources */,
 				07397A01216F0B3E00B7B191 /* WebAPIExtension.swift in Sources */,
 				097D8E3D21730C09004082AB /* CommentsTableViewController.swift in Sources */,
+				07C81BC0217758C000A9E306 /* YoursTableViewCell.swift in Sources */,
 				072427622144F95A001D0F40 /* SNSApp.xcdatamodeld in Sources */,
 				074194D9216C9A8300B1B58B /* SuggestionUserListModel.swift in Sources */,
 				0724278C2144FE17001D0F40 /* UIFuncs.swift in Sources */,
 				0724275C2144F95A001D0F40 /* LoginViewController.swift in Sources */,
+				07C81BC5217758C000A9E306 /* YoursTableViewController.swift in Sources */,
 				09800C1B216F20F00080B3BC /* NewsfeedTableViewController.swift in Sources */,
 				074194CD216C811400B1B58B /* ProfileModel.swift in Sources */,
 				079A1DC22158AEEB00CD57DC /* SignupFormController.swift in Sources */,
 				074194C7216C683A00B1B58B /* PostListModel.swift in Sources */,
 				074194D7216C99F100B1B58B /* DiscoverViewController.swift in Sources */,
 				0758FBA92176AB9F00D45127 /* SwipeViewController.swift in Sources */,
+				07C81BC4217758C000A9E306 /* ActivityModel.swift in Sources */,
 				07C9A25E2175880D0022066F /* FollowTableViewCell.swift in Sources */,
 				07C9A263217597AF0022066F /* DiscoverTableViewCell.swift in Sources */,
 				09800C19216F20F00080B3BC /* PostHeaderCell.swift in Sources */,
+				07C81BC6217758C000A9E306 /* YoursModel.swift in Sources */,
 				0710174A21636ADD008C27FD /* MyExtensions.swift in Sources */,
 				07C9A25F2175880D0022066F /* FollowListViewController.swift in Sources */,
 				096D704A2176FACD00CD60EB /* LeaveCommentTableViewController.swift in Sources */,
+				07C81BC3217758C000A9E306 /* ActivityTableViewCell.swift in Sources */,
 				079A1DCF2158E51D00CD57DC /* DateHelper.swift in Sources */,
 				074194C2216C54EE00B1B58B /* UserProfileViewController.swift in Sources */,
 				079A1DC82158B32200CD57DC /* FormSectionTitle.swift in Sources */,

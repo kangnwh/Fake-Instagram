@@ -190,6 +190,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="Unv-1n-P9A" id="COb-he-Dla"/>
+                                    <outlet property="likeButton" destination="sjn-6I-uYC" id="19c-7k-WNv"/>
                                     <outlet property="numberOfCommentButton" destination="Uj7-2Z-6G0" id="o8B-K2-oVO"/>
                                     <outlet property="numberOfLikesButton" destination="EsD-C7-iCe" id="TCe-zG-fCE"/>
                                     <outlet property="postCaptionLabel" destination="RnP-Fo-F2E" id="bjX-oQ-D6D"/>
@@ -217,11 +218,11 @@
             </objects>
             <point key="canvasLocation" x="2236" y="-203.29835082458771"/>
         </scene>
-        <!--Item-->
+        <!--User Feed-->
         <scene sceneID="VoI-Op-oKA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Sg-1t-vTM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="userfeedIcon" id="FZ5-mK-20U"/>
+                    <tabBarItem key="tabBarItem" title="User Feed" image="userfeedIcon" id="FZ5-mK-20U"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6g0-2L-96u">
@@ -318,21 +319,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leave your comments here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjF-UD-ntS">
-                                <rect key="frame" x="16" y="272" width="245" height="21"/>
+                                <rect key="frame" x="11" y="174" width="245" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ed-lP-mEK">
-                                <rect key="frame" x="11" y="301" width="352" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcR-HG-jyp">
-                                <rect key="frame" x="11" y="339" width="348" height="30"/>
+                                <rect key="frame" x="11" y="355" width="348" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit">
@@ -343,12 +337,19 @@
                                     <action selector="SubmitActionButton:" destination="Vag-is-enI" eventType="touchUpInside" id="MKE-de-GcK"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vIv-Dw-KIT">
+                                <rect key="frame" x="67" y="203" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YXb-kx-aLT"/>
                     </view>
                     <connections>
-                        <outlet property="commentPlaceholder" destination="3Ed-lP-mEK" id="ZFD-0N-p7q"/>
+                        <outlet property="commentPlaceholder" destination="vIv-Dw-KIT" id="WCx-U7-vhe"/>
                         <outlet property="submitButton" destination="ZcR-HG-jyp" id="sGI-tX-21I"/>
                     </connections>
                 </viewController>

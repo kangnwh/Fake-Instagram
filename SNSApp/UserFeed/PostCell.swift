@@ -12,6 +12,7 @@ import UIKit
 
 class PostCell: UITableViewCell {
     
+    @IBOutlet weak var likeButton: UIButton!
     var callback :(( _ post: PostModel) -> Void )!
     var callback2 :(( _ post: PostModel) -> Void )!
     var callback3 :(( _ postId: Int) -> Void )!
@@ -31,32 +32,39 @@ class PostCell: UITableViewCell {
         callback(post)
     }
     @IBOutlet weak var addressLabel: UILabel!
+    
     @IBAction func likeButton(_ sender: UIButton) {
         
         if sender.currentImage == UIImage(named: "icon-like.png"){
-//            let postid = post.postId
-//            WebAPIHandler.shared.requestLike(id:postid!){ response in
-//                switch response.result{
-//                case .failure(let error):
-//                    print("error.localizedDescription")
-//                case .success(let value):
+            let postid = post.postId
+            WebAPIHandler.shared.requestLike(id:postid!){ response in
+                switch response.result{
+                case .failure(let error):
+                    NSLog(error.localizedDescription)
+                case .success:
 //                    sender.setImage(UIImage(named:"icon-like-filled.png"), for: .normal)
-//                }
-//            }
-            sender.setImage(UIImage(named:"icon-like-filled.png"), for: .normal)
-            let likes = post.likeCount!+1
+                    sender.setImage(UIImage(named:"icon-like-filled.png"), for: .normal)
+                    let likes = self.post.likeCount!+1
+                    let likeToString = String(describing: likes)
+                    self.numberOfLikesButton.setTitle(likeToString + " likes", for: [])
+                }
+            }
             
-            let likeToString = String(describing: likes)
-            numberOfLikesButton.setTitle(likeToString + " likes", for: [])
         }else{
-            sender.setImage(UIImage(named:"icon-like.png"), for: .normal)
-            let likes = post.likeCount!
-            
-            let likeToString = String(describing: likes)
-            numberOfLikesButton.setTitle(likeToString + " likes", for: [])
+            WebAPIHandler.shared.requestUnLike(id: post.postId!){ response in
+                switch response.result{
+                case .failure(let error):
+                    NSLog(error.localizedDescription)
+                case .success:
+                    sender.setImage(UIImage(named:"icon-like.png"), for: .normal)
+                    let likes = self.post.likeCount!
+                    
+                    let likeToString = String(describing: likes)
+                    self.numberOfLikesButton.setTitle(likeToString + " likes", for: [])
+            }
+           
         }
-        //TODO:like or unlike
-        
+        }
         
     }
     
@@ -83,6 +91,11 @@ class PostCell: UITableViewCell {
             postImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
         }
         
+        if (post.likeUserList?.contains(WebAPIHandler.shared.username!))! {
+            likeButton.setImage(UIImage(named:"icon-like-filled.png"), for: .normal)
+        }else{
+            likeButton.setImage(UIImage(named:"icon-like.png"), for: .normal)
+        }
         
         postCaptionLabel.text = post.postContent
         numberOfLikesButton.setTitle(likeToString + " likes", for: [])

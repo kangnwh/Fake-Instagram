@@ -14,18 +14,14 @@ class LeaveCommentTableViewController: UIViewController {
         
     }
     
-    @IBOutlet weak var commentPlaceholder: UITextField!
+    @IBOutlet weak var commentPlaceholder: UITextView!
     
     @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.fetchPosts()
-        
-//        tableView.estimatedRowHeight = tableView.rowHeight
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.separatorColor = UIColor.clear
+        UIFuncs.setBorder(layer: commentPlaceholder.layer, width: 2, cornerRadius: 5, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))
+        UIFuncs.setBorder(layer: submitButton.layer, width: 1, cornerRadius: 15, color: UIColor.clear.cgColor)
     }
     
     @IBAction func SubmitActionButton(_ sender: Any) {
@@ -33,37 +29,11 @@ class LeaveCommentTableViewController: UIViewController {
         WebAPIHandler.shared.postComments(postId: self.postId!,commentContent: context!){ response in
             switch response.result{
             case .failure(let error):
-                print("error.localizedDescription")
-            case .success(let value):
-                print("success")
+                NSLog(error.localizedDescription)
+            case .success(_):
+                self.navigationController?.popViewController(animated: true)
             }
         }
     
-//    func fetchPosts()
-//    {
-//        //        self.comments = CommentModel.fetchPosts()
-//        self.tableView.reloadData()
-//    }
-}
-//extension LeaveCommentTableViewController
-//{
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-//    {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: StoryBoard.commentListCell, for: indexPath) as! CommentListCell
-//
-//        cell.comments = self.comments?[indexPath.section]
-//        cell.selectionStyle = .none
-//
-//        return cell
-//    }
-    
-//}
+    }
 }

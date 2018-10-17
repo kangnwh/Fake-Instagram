@@ -34,6 +34,11 @@ class NewsfeedTableViewController: UITableViewController
         fetchPosts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchPosts()
+        UIFuncs.dismissLoadingLabel()
+    }
+    
     func sendToCommentLst(post:PostModel){
 
         selectedPost = post.comments

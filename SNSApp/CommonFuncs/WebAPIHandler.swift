@@ -18,7 +18,7 @@ struct WebAPIJSONHeader{
 }
 
 public struct WebAPIUrls{
-    public static let IP = "13.211.229.245"//"10.12.203.15" //"127.0.0.1" //
+    public static let IP = "13.211.229.245"//"10.12.203.15" // "127.0.0.1" //
     public static let baseURL = "https://\(IP):5001/api"
     public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
     
@@ -34,6 +34,7 @@ public struct WebAPIUrls{
     public static let discoverUserList = baseURL + "/Discover/index"
     public static let followUser = baseURL + "/Discover/followUser"
     public static let unFollowUser = baseURL + "/Discover/cancelFollowUser"
+    public static let queryUser = baseURL + "/Discover/queryUser"
     
     
     
@@ -157,7 +158,7 @@ public class WebAPIHandler {
                 callback(response)
         }
     }
-    public func requestUnLike(id:String,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
+    public func requestUnLike(id:Int,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
 //        let postid: Parameters = ["postId":id]
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/dislikePhoto?postId=\(id)",
@@ -202,21 +203,21 @@ public class WebAPIHandler {
         
     }
     
-//    public func requestSuggestions(viewController :UIViewController,
-//                                callback:@escaping ((DataResponse<PostListModel>) -> Void)) -> Void{
-//
-//        UIFuncs.showLoadingLabel()
-//        _httpManager.request(WebAPIUrls.myPhotosURL,
-//                             method: HTTPMethod.post,
-//                             encoding: JSONEncoding.default,
-//                             headers: self.headerWithToken)
-//            .validate()
-//            .responseObject{ (response:DataResponse<PostListModel>) in
-//                UIFuncs.dismissLoadingLabel()
-//                callback(response)
-//        }
-//
-//    }
+    public func requestUserInfo(username:String ,
+                                callback:@escaping ((DataResponse<[FollowUserModel]>) -> Void)) -> Void{
+
+        UIFuncs.showLoadingLabel()
+        _httpManager.request(WebAPIUrls.queryUser + "?username=\(username)",
+                             method: HTTPMethod.get,
+                             encoding: JSONEncoding.default,
+                             headers: self.headerWithToken)
+            .validate()
+            .responseArray{ (response:DataResponse<[FollowUserModel]>) in
+                UIFuncs.dismissLoadingLabel()
+                callback(response)
+        }
+
+    }
     
     public func requestPost(viewController :UIViewController,
                             callback:@escaping ((DataResponse<[PostModel]>) -> ())) -> Void{

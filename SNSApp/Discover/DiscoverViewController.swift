@@ -11,6 +11,8 @@ import UIKit
 class DiscoverViewController: UIViewController {
     
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var userList: [FollowUserModel] = []{
         didSet{
             self.suggestionTableView.reloadData()
@@ -40,6 +42,8 @@ class DiscoverViewController: UIViewController {
             
         }
     }
+    
+    
 }
 
 extension DiscoverViewController: UITableViewDataSource,UITableViewDelegate{
@@ -69,5 +73,16 @@ extension DiscoverViewController: UITableViewDataSource,UITableViewDelegate{
             }else{
                 UIFuncs.popUp(title: "Error", info: "Cannot find profile view", type: .warning, sender: self, callback: {})
             }
+    }
+}
+
+extension DiscoverViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        WebAPIHandler.shared.requestUserInfo(username: searchBar.text!){response in
+            if let ul = response.result.value{
+                self.userList = ul
+            }
+            
+        }
     }
 }

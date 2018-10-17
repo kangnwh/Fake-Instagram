@@ -27,8 +27,9 @@ class UserProfileViewController: UIViewController {
             if let avatar = _userStat.avatarUrl{
                 let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
                 
-                avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
+                avatarImageView.af_setImage(withURL: url, placeholderImage:#imageLiteral(resourceName: "icon-profile"))
                 avatarImageView.image = avatarImageView.image?.af_imageRoundedIntoCircle()
+                avatarImageView.setNeedsDisplay()
             }
         }
     }
@@ -225,9 +226,6 @@ extension UserProfileViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? ProfileImageCell{
             let image = cell.imageView.image
-            
-            // Create the dialog
-//            let p = PopupDialog(title: "", message: cell.post.postContent, image: image, buttonAlignment: .vertical, transitionStyle: .fadeIn, preferredWidth: 340, tapGestureDismissal: true, panGestureDismissal: true, hideStatusBar: false, completion: nil)
             
             let popup = PopupDialog(title: cell.post.postContent, message: "Location:\(cell.post.postLocation ?? "N/A")", image: image)
             let cancleBtn =  CancelButton(title: "OK", action: nil)
