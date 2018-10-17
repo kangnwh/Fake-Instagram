@@ -46,7 +46,6 @@
 		07C9A25F2175880D0022066F /* FollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A25D2175880D0022066F /* FollowListViewController.swift */; };
 		07C9A261217588170022066F /* FollowUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A260217588170022066F /* FollowUserModel.swift */; };
 		07C9A263217597AF0022066F /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9A262217597AF0022066F /* DiscoverTableViewCell.swift */; };
-		096D70482176F98F00CD60EB /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D70472176F98F00CD60EB /* CommentTableViewCell.swift */; };
 		096D704A2176FACD00CD60EB /* LeaveCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D70492176FACD00CD60EB /* LeaveCommentTableViewController.swift */; };
 		097D8E2E2171D247004082AB /* LikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E2D2171D247004082AB /* LikeCell.swift */; };
 		097D8E322171D602004082AB /* LikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097D8E312171D602004082AB /* LikeController.swift */; };
@@ -133,7 +132,6 @@
 		07C9A25D2175880D0022066F /* FollowListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowListViewController.swift; sourceTree = "<group>"; };
 		07C9A260217588170022066F /* FollowUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUserModel.swift; sourceTree = "<group>"; };
 		07C9A262217597AF0022066F /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
-		096D70472176F98F00CD60EB /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		096D70492176FACD00CD60EB /* LeaveCommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveCommentTableViewController.swift; sourceTree = "<group>"; };
 		097D8E2D2171D247004082AB /* LikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCell.swift; sourceTree = "<group>"; };
 		097D8E312171D602004082AB /* LikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeController.swift; sourceTree = "<group>"; };
@@ -387,7 +385,6 @@
 		097D8E4F2176F6CB004082AB /* PostComments */ = {
 			isa = PBXGroup;
 			children = (
-				096D70472176F98F00CD60EB /* CommentTableViewCell.swift */,
 				096D70492176FACD00CD60EB /* LeaveCommentTableViewController.swift */,
 			);
 			path = PostComments;
@@ -646,7 +643,6 @@
 				0724275A2144F95A001D0F40 /* AppDelegate.swift in Sources */,
 				09800C18216F20F00080B3BC /* PostCell.swift in Sources */,
 				079A1DBF2158897D00CD57DC /* WebAPIHandler.swift in Sources */,
-				096D70482176F98F00CD60EB /* CommentTableViewCell.swift in Sources */,
 				097D8E2E2171D247004082AB /* LikeCell.swift in Sources */,
 				09800C17216F20F00080B3BC /* User.swift in Sources */,
 				097D8E48217475CB004082AB /* YoursModel.swift in Sources */,

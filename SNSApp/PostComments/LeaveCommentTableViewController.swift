@@ -7,39 +7,54 @@
 //
 import UIKit
 
-class LeaveCommentTableViewController: UITableViewController {
+class LeaveCommentTableViewController: UIViewController {
     var postId : Int?
     struct StoryBoard{
         static let commentListCell = "CommentTableViewCell"
         
     }
     
+    @IBOutlet weak var commentPlaceholder: UITextField!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fetchPosts()
+//        self.fetchPosts()
         
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorColor = UIColor.clear
+//        tableView.estimatedRowHeight = tableView.rowHeight
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.separatorColor = UIColor.clear
     }
     
-    func fetchPosts()
-    {
-        //        self.comments = CommentModel.fetchPosts()
-        self.tableView.reloadData()
-    }
+    @IBAction func SubmitActionButton(_ sender: Any) {
+        let context = commentPlaceholder.text
+        WebAPIHandler.shared.postComments(postId: self.postId!,commentContent: context!){ response in
+            switch response.result{
+            case .failure(let error):
+                print("error.localizedDescription")
+            case .success(let value):
+                print("success")
+            }
+        }
+    
+//    func fetchPosts()
+//    {
+//        //        self.comments = CommentModel.fetchPosts()
+//        self.tableView.reloadData()
+//    }
 }
-extension LeaveCommentTableViewController
-{
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
+//extension LeaveCommentTableViewController
+//{
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
+
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 //    {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: StoryBoard.commentListCell, for: indexPath) as! CommentListCell
@@ -50,5 +65,6 @@ extension LeaveCommentTableViewController
 //        return cell
 //    }
     
-}
+//}
 
+}

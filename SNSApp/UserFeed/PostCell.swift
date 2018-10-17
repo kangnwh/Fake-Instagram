@@ -14,11 +14,15 @@ class PostCell: UITableViewCell {
     
     var callback :(( _ post: PostModel) -> Void )!
     var callback2 :(( _ post: PostModel) -> Void )!
+    var callback3 :(( _ postId: Int) -> Void )!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var numberOfLikesButton: UIButton!
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var postCaptionLabel: UILabel!
    
+    @IBAction func leaveCommentButton(_ sender: Any) {
+        callback3(post.postId!)
+    }
     @IBAction func likeSkipButton(_ sender: Any) {
         callback2(post)
     }
@@ -56,10 +60,8 @@ class PostCell: UITableViewCell {
         
     }
     
-    @IBAction func leaveCommentButton(_ sender: UIButton) {
-        //TODO: skip to comment page
-    }
-    var post: PostModel! {  
+
+    var post: PostModel! {
         didSet {
             self.updateUI()
         }

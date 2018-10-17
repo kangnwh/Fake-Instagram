@@ -95,8 +95,8 @@
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="leaveCommentButton:" destination="6Tz-ZR-JXY" eventType="touchUpInside" id="lGK-4W-ULi"/>
-                                                        <segue destination="lTV-VM-NQV" kind="show" identifier="LeaveComments" id="oaH-5C-y1D"/>
+                                                        <action selector="leaveCommentButton:" destination="6Tz-ZR-JXY" eventType="touchUpInside" id="3Qq-jN-QLc"/>
+                                                        <segue destination="Vag-is-enI" kind="show" identifier="LeaveComments" id="DEI-jW-DYH"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS1-ou-4BV">
@@ -309,99 +309,30 @@
             </objects>
             <point key="canvasLocation" x="3228" y="-191.1544227886057"/>
         </scene>
-        <!--Comment-->
-        <scene sceneID="tOd-q8-HxA">
-            <objects>
-                <tableViewController title="Comment" id="lTV-VM-NQV" customClass="CommentTableViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vsl-ka-IhD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="416" id="0Ms-5J-wPA" customClass="CommentTableViewCell" customModule="SNSApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="416"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ms-5J-wPA" id="qK3-Ch-tDN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="415.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amb-7Y-JhO">
-                                            <rect key="frame" x="11" y="50" width="352" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <action selector="commentPlaceholder:" destination="5cA-Oo-zHQ" eventType="editingDidEnd" id="a60-TZ-312"/>
-                                            </connections>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leave your comments here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMO-ib-2uh">
-                                            <rect key="frame" x="16" y="21" width="245" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rre-it-Lrt">
-                                            <rect key="frame" x="11" y="88" width="348" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Submit">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="SubmitActionButton:" destination="0Ms-5J-wPA" eventType="touchUpInside" id="29a-Sv-cFs"/>
-                                                <action selector="submitButton:" destination="5cA-Oo-zHQ" eventType="touchUpInside" id="r1U-xm-g5j"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="SubmitActionButton" destination="qK3-Ch-tDN" id="klk-ED-EPR"/>
-                                    <outlet property="commentPlaceholder" destination="amb-7Y-JhO" id="8CL-Ty-Luv"/>
-                                    <outlet property="submitButton" destination="Rre-it-Lrt" id="mKg-S7-aLt"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lTV-VM-NQV" id="Qec-6s-Lug"/>
-                            <outlet property="delegate" destination="lTV-VM-NQV" id="Np9-ua-9Me"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yGm-Ff-K9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="5cA-Oo-zHQ" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1834" y="-1287"/>
-        </scene>
-        <!--View Controller-->
+        <!--Leave Comment Table View Controller-->
         <scene sceneID="SLO-pZ-Ys9">
             <objects>
-                <viewController id="Vag-is-enI" sceneMemberID="viewController">
+                <viewController id="Vag-is-enI" customClass="LeaveCommentTableViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8XU-4T-iQV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leave your comments here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjF-UD-ntS">
-                                <rect key="frame" x="27" y="272" width="245" height="21"/>
+                                <rect key="frame" x="16" y="272" width="245" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ed-lP-mEK">
-                                <rect key="frame" x="22" y="301" width="352" height="30"/>
+                                <rect key="frame" x="11" y="301" width="352" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="commentPlaceholder:" destination="5cA-Oo-zHQ" eventType="editingDidEnd" id="sAl-ef-tLX"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcR-HG-jyp">
-                                <rect key="frame" x="22" y="339" width="348" height="30"/>
+                                <rect key="frame" x="11" y="339" width="348" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit">
@@ -409,14 +340,17 @@
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="SubmitActionButton:" destination="0Ms-5J-wPA" eventType="touchUpInside" id="Y6l-h1-evk"/>
-                                    <action selector="submitButton:" destination="5cA-Oo-zHQ" eventType="touchUpInside" id="Zr4-mT-cTv"/>
+                                    <action selector="SubmitActionButton:" destination="Vag-is-enI" eventType="touchUpInside" id="MKE-de-GcK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YXb-kx-aLT"/>
                     </view>
+                    <connections>
+                        <outlet property="commentPlaceholder" destination="3Ed-lP-mEK" id="ZFD-0N-p7q"/>
+                        <outlet property="submitButton" destination="ZcR-HG-jyp" id="sGI-tX-21I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpe-UY-LuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

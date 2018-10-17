@@ -40,9 +40,9 @@ class NewsfeedTableViewController: UITableViewController
 //        performSegue(withIdentifier:"CheckComments" , sender: nil)
         
     }
-    func sendToLeaveComment(post:PostModel){
+    func sendToLeaveComment(post:Int){
         
-        selectedId = post.postId
+        selectedId = post
         //        performSegue(withIdentifier:"CheckComments" , sender: nil)
         
     }
@@ -116,7 +116,7 @@ extension NewsfeedTableViewController
         cell.selectionStyle = .none
         cell.callback = self.sendToCommentLst
         cell.callback2 = self.sendToLikeLst
-        
+        cell.callback3 = self.sendToLeaveComment
         return cell
     }
     

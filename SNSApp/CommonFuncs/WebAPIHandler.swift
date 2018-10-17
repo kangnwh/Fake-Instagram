@@ -170,7 +170,7 @@ public class WebAPIHandler {
                 callback(response)
         }
     }
-    public func postComments(postId:String,commentContent:String,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
+    public func postComments(postId:Int,commentContent:String,callback:@escaping ((DataResponse<Any>) -> Void)) -> Void{
         let postid: Parameters = ["postId":postId, "commentContent":commentContent]
         UIFuncs.showLoadingLabel()
         _httpManager.request(WebAPIUrls.baseURL + "/UserFeed/comment",
