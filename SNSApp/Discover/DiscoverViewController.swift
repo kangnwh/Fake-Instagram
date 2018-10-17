@@ -85,4 +85,8 @@ extension DiscoverViewController: UISearchBarDelegate{
             
         }
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
 }
