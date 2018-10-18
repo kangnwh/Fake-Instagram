@@ -20,7 +20,7 @@ class DiscoverTableViewCell: UITableViewCell {
         didSet{
             useridLabel.text = self.user.userName
             usernameLabel.text = self.user.nickName
-            if let _ = self.user.isFollowedByCurrentUser{
+            if let f = self.user.isFollowedByCurrentUser, f{
                 followingBtn.setTitle("Unfollow", for: .normal)
             }else{
                 followingBtn.setTitle("Follow", for: .normal)
@@ -34,7 +34,7 @@ class DiscoverTableViewCell: UITableViewCell {
     }
     
     @IBAction func following(_ sender: Any) {
-        if self.user.isFollowedByCurrentUser != nil{
+        if let f = self.user.isFollowedByCurrentUser, f{
             
             WebAPIHandler.shared.unFollowUser(userId: self.user.userId!){ response in
                 switch response.result{

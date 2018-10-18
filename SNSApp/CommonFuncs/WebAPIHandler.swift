@@ -18,7 +18,7 @@ struct WebAPIJSONHeader{
 }
 
 public struct WebAPIUrls{
-    public static let IP = "13.211.229.245"//"10.12.203.15" // "127.0.0.1" //
+    public static let IP = "13.211.229.245"//"10.12.203.15" //"127.0.0.1" //
     public static let baseURL = "https://\(IP):5001/api"
     public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
     

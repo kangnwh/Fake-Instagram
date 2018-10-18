@@ -25,6 +25,13 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         UIFuncs.setBorder(layer: loginButton.layer, width: 1, cornerRadius: 5, color: #colorLiteral(red: 0, green: 0.6196078431, blue: 0.7058823529, alpha: 1))
         UIFuncs.setBorder(layer: registerButton.layer, width: 1, cornerRadius: 5, color: #colorLiteral(red: 0, green: 0.6196078431, blue: 0.7058823529, alpha: 1))
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +79,10 @@ class LoginViewController: UIViewController {
         }
         
         
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

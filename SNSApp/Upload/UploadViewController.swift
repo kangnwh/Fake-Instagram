@@ -88,6 +88,10 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.imageView.image = #imageLiteral(resourceName: "tap-to-add")
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

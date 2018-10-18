@@ -87,9 +87,9 @@ class PostCell: UITableViewCell {
         let commentToString = String(describing:comment!)
         
         
-        if let urlStr = post.img {
+        if let urlStr = post.img, postImageView ==  #imageLiteral(resourceName: "loading") {
             let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + urlStr)!
-            postImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
+            postImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "loading"))
         }
         
         if (post.likeUserList?.contains(WebAPIHandler.shared.username!))! {

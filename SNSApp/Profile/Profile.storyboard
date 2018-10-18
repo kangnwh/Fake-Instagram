@@ -198,7 +198,7 @@
                                                             <constraint firstAttribute="width" secondItem="5hw-I5-PQi" secondAttribute="height" multiplier="1:1" id="3Rc-We-Vs3"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ga0-Rg-gxE">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yp_iconLoop" translatesAutoresizingMaskIntoConstraints="NO" id="ga0-Rg-gxE">
                                                         <rect key="frame" x="89.5" y="89.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="0XX-db-FnZ"/>
@@ -532,7 +532,7 @@
         <image name="cameraGrid" width="1000" height="800"/>
         <image name="loading" width="48" height="48"/>
         <image name="profileIcon" width="24" height="24"/>
-        <image name="uploadIcon" width="24" height="24"/>
+        <image name="yp_iconLoop" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ekn-jv-VAN"/>
