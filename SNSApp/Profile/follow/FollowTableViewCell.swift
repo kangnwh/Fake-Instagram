@@ -33,6 +33,12 @@ class FollowTableViewCell: UITableViewCell {
                 avatarImageView.image = avatarImageView.image?.af_imageRoundedIntoCircle()
                 avatarImageView.setNeedsDisplay()
             }
+            
+            if user.userName == WebAPIHandler.shared.username{
+                followBtn.isEnabled = false
+                followBtn.setTitle("Yourself", for: .disabled)
+                followBtn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            }
         }
     }
     

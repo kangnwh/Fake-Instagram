@@ -10,6 +10,7 @@
 
 import UIKit
 import AlamofireImage
+import Alamofire
 
 class PostCell: UITableViewCell {
     
@@ -21,6 +22,8 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var numberOfLikesButton: UIButton!
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var postCaptionLabel: UILabel!
+    
+    private var isImageLoaded = false
    
     @IBAction func leaveCommentButton(_ sender: Any) {
         callback3(post.postId!)
@@ -87,9 +90,10 @@ class PostCell: UITableViewCell {
         let commentToString = String(describing:comment!)
         
         
-        if let urlStr = post.img, postImageView ==  #imageLiteral(resourceName: "loading") {
+        if let urlStr = post.img, !isImageLoaded{
             let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + urlStr)!
             postImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "loading"))
+            isImageLoaded = true
         }
         
         if (post.likeUserList?.contains(WebAPIHandler.shared.username!))! {

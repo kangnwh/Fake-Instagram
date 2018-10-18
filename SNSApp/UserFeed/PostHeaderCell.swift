@@ -44,8 +44,8 @@ class PostHeaderCell: UITableViewCell
     func updateUI()
     {
         if let urlStr = post.avatarImageURL {
-            let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + urlStr)!
-            profileImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "5"))
+            let url = URL(string: WebAPIUrls.photoResourceBaseURL + urlStr)!
+            profileImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "yp_iconLoop"))
         }
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2.0
         profileImageView.layer.masksToBounds = true

@@ -117,7 +117,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lT5-j0-Apa"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IR2-ow-OLo"/>
+                    <navigationItem key="navigationItem" id="IR2-ow-OLo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="01a-jg-CfE">
+                            <connections>
+                                <action selector="refresh:" destination="Kef-wA-8BI" id="JFo-m9-Ax6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="mWz-tu-k7d" id="1Zn-h3-nez"/>

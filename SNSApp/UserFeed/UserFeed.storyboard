@@ -61,7 +61,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="577.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="flh-lQ-w7h">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="flh-lQ-w7h">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="flh-lQ-w7h" secondAttribute="height" multiplier="1:1" id="zyl-7N-ELP"/>
@@ -415,11 +415,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2" width="1080" height="1080"/>
         <image name="duc" width="150" height="150"/>
         <image name="icon-comment" width="23" height="22"/>
         <image name="icon-like" width="21" height="18"/>
         <image name="icon-share" width="20" height="22"/>
+        <image name="loading" width="48" height="48"/>
         <image name="userfeedIcon" width="24" height="24"/>
     </resources>
 </document>

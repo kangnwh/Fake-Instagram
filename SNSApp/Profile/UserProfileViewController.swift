@@ -20,7 +20,11 @@ class UserProfileViewController: UIViewController {
     
     private var _userStat:ProfileModel!{
         didSet{
+            
+            self.usernameLabel.text = self._userStat.username!
+            
             self.postCountBtn.setTitle("\(_userStat.postCount!)", for: .normal)
+            
             self.followingCountBtn.setTitle("\(_userStat.followingCount!)", for: .normal)
             self.followerCountBtn.setTitle("\(_userStat.followerCount!)", for: .normal)
             
@@ -28,8 +32,10 @@ class UserProfileViewController: UIViewController {
                 let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
                 
                 avatarImageView.af_setImage(withURL: url, placeholderImage:#imageLiteral(resourceName: "icon-profile"))
-                avatarImageView.image = avatarImageView.image?.af_imageRoundedIntoCircle()
+                let tempImage = avatarImageView.image?.af_imageRoundedIntoCircle()
+                avatarImageView.image = tempImage
                 avatarImageView.setNeedsDisplay()
+                
             }
         }
     }
@@ -43,15 +49,16 @@ class UserProfileViewController: UIViewController {
     
     @IBOutlet var buttonsNeedBorder: [UIButton]!
     
+    @IBOutlet weak var usernameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setCollectionView()
         initAvatorPicker()
-        
+    
         UIFuncs.setBorder(layer: avatarImageView.layer, width: 1, cornerRadius: 25, color: UIColor.white.cgColor)
-        UIFuncs.setBorder(views: buttonsNeedBorder, width: 1, cornerRadius: 25, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))
+        UIFuncs.setBorder(views: buttonsNeedBorder, width: 1, cornerRadius: 15, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))
     }
     
     override func viewWillAppear (_ animated: Bool) {

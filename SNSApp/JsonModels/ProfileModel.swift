@@ -14,6 +14,7 @@ import ObjectMapper
 
 public class ProfileModel: Mappable{
     
+    var username:String?
     var postCount:Int?
     var followerCount:Int?
     var followingCount:Int?
@@ -24,6 +25,7 @@ public class ProfileModel: Mappable{
     }
     
     public func mapping(map: Map) {
+        self.username <- map["username"]
         self.postCount <- map["postCount"]
         self.followerCount <- map["followerCount"]
         self.followingCount <- map["followingCount"]

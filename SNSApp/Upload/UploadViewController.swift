@@ -88,9 +88,9 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.imageView.image = #imageLiteral(resourceName: "tap-to-add")
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.imageView.image = #imageLiteral(resourceName: "tap-to-add")
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -148,6 +148,10 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
                     UIFuncs.popUp(title: "Error", info: "Upload failed, \(error.localizedDescription)", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
                 case .success(_):
                     UIFuncs.popUp(title: "Succ", info: "Post successfully.", type: .success , sender: self, callback: {})
+                    self.imageView.image = #imageLiteral(resourceName: "tap-to-add")
+                    self.contentTextView.text = ""
+                    self.selectedImage = nil
+                    self.isUseLocation.isOn = false
                     
                 }
             }

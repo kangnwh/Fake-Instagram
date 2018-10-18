@@ -28,7 +28,7 @@ class DiscoverTableViewCell: UITableViewCell {
             
             if let avatar = user.avatarUrl{
                 let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
-                avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
+                avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "icon-profile-filled"))
             }
         }
     }
@@ -36,13 +36,15 @@ class DiscoverTableViewCell: UITableViewCell {
     @IBAction func following(_ sender: Any) {
         if let f = self.user.isFollowedByCurrentUser, f{
             
+            // already following, click to unfollow
             WebAPIHandler.shared.unFollowUser(userId: self.user.userId!){ response in
                 switch response.result{
                 case .failure(let error):
                     print(error.localizedDescription)
                 case .success( _):
                     DispatchQueue.main.async {
-                        self.followingBtn.setTitle("Unfollow", for: .normal)
+                        self.user.isFollowedByCurrentUser = false
+                        self.followingBtn.setTitle("Follow", for: .normal)
                     }
                     
                 }
@@ -50,12 +52,14 @@ class DiscoverTableViewCell: UITableViewCell {
             }
             
         }else{
+            // does not follow, click to follow
             WebAPIHandler.shared.followUser(userId: self.user.userId!){ response in
                 switch response.result{
                 case .failure(let error):
                     print(error.localizedDescription)
                 case .success( _):
                     DispatchQueue.main.async {
+                         self.user.isFollowedByCurrentUser = true
                         self.followingBtn.setTitle("Unfollow", for: .normal)
                     }
                     

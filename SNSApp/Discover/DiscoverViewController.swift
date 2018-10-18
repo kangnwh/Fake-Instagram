@@ -25,12 +25,12 @@ class DiscoverViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         loadDiscoverUserList()
     }
     
+    @IBAction func refresh(_ sender: Any) {
+        loadDiscoverUserList()
+    }
     
     func loadDiscoverUserList(){
         WebAPIHandler.shared.requestDiscoverUserList{ response in
