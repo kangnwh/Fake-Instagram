@@ -15,8 +15,12 @@ class ProfileImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     public var post: PostModel! {
         didSet{
-            let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + post.img!)!
-            imageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
+            if let imgName = post.img{
+//                let urlStr = WebAPIUrls.photoResourceBaseURL + imgName
+                WebAPIHandler.shared.fetchImage(url: imgName, identifier: imgName){ image in
+                    self.imageView.image = image
+                }
+            }
         }
     }
     

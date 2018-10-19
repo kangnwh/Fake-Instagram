@@ -29,9 +29,13 @@ class FollowTableViewCell: UITableViewCell {
             }
             if let avatar = user.avatarUrl{
                 let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
-                avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "uploadIcon"))
-                avatarImageView.image = avatarImageView.image?.af_imageRoundedIntoCircle()
-                avatarImageView.setNeedsDisplay()
+                avatarImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "loading"))
+                WebAPIHandler.shared.fetchImage(url: avatar, identifier: avatar){ image in
+                
+                    self.avatarImageView.image = image.af_imageRoundedIntoCircle()  //avatarImageView.image?.af_imageRoundedIntoCircle()
+                    self.avatarImageView.setNeedsDisplay()
+                }
+                
             }
             
             if user.userName == WebAPIHandler.shared.username{

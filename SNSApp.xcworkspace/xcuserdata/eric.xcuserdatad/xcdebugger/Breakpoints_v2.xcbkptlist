@@ -9,13 +9,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/AlamofireImage/Source/UIImageView+AlamofireImage.swift"
-            timestampString = "561543983.007056"
+            filePath = "SNSApp/CommonFuncs/WebAPIHandler.swift"
+            timestampString = "561620149.6181771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "af_setImage(withURL:placeholderImage:filter:progress:progressQueue:imageTransition:runImageTransitionIfCached:completion:)"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "fetchImage(url:identifier:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/CommonFuncs/WebAPIHandler.swift"
+            timestampString = "561620149.618765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "393"
+            endingLineNumber = "393"
+            landmarkName = "fetchImage(url:identifier:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +41,78 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SNSApp/UserFeed/NewsfeedTableViewController.swift"
-            timestampString = "561547703.010193"
+            filePath = "SNSApp/CommonFuncs/WebAPIHandler.swift"
+            timestampString = "561620149.618896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "fetchPosts()"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
+            landmarkName = "fetchImage(url:identifier:callback:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/Profile/UserProfileViewController.swift"
+            timestampString = "561620149.619002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "_userStat"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/Profile/UserProfileViewController.swift"
+            timestampString = "561620149.620584"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "_userStat"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SNSApp.UserProfileViewController.(_userStat in _74AFD4EDC6103CCBEE32EF4076DE5D4B).didset : Swift.Optional&lt;SNSApp.ProfileModel&gt;"
+                  moduleName = "SNSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eric/Documents/projects/mobile/SNSApp/SNSApp/Profile/UserProfileViewController.swift"
+                  timestampString = "561619874.162163"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "3660">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIImage) -&gt; () in SNSApp.UserProfileViewController.(_userStat in _74AFD4EDC6103CCBEE32EF4076DE5D4B).didset : Swift.Optional&lt;SNSApp.ProfileModel&gt;"
+                  moduleName = "SNSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eric/Documents/projects/mobile/SNSApp/SNSApp/Profile/UserProfileViewController.swift"
+                  timestampString = "561619874.165156"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

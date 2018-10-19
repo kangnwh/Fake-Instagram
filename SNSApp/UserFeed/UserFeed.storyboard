@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Instagram-->
+        <!--SNSApp-->
         <scene sceneID="yd8-ot-RhG">
             <objects>
                 <tableViewController id="QZ1-F0-SGv" customClass="NewsfeedTableViewController" customModule="SNSApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -204,7 +204,7 @@
                             <outlet property="delegate" destination="QZ1-F0-SGv" id="1lv-mB-Dq7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Instagram" id="z7g-Vw-yCY">
+                    <navigationItem key="navigationItem" title="SNSApp" id="z7g-Vw-yCY">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="1HK-3U-tiq">
                             <connections>
                                 <action selector="refresh:" destination="QZ1-F0-SGv" id="D6t-UY-Grs"/>

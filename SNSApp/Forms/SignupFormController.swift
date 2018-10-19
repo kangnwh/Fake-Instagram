@@ -34,7 +34,7 @@ class SignupFormController: BaseFormController {
             <<< TextRow(){ row in
                 row.tag = USERNAME_STR
                 row.cell.textField.placeholder = USERNAME_STR
-                row.value = "Ning"
+//                row.value = "Ning"
 
         }
         
@@ -42,12 +42,12 @@ class SignupFormController: BaseFormController {
             <<< PasswordRow(){ row in
                 row.tag = PASSWORD_STR
                 row.cell.textField.placeholder = PASSWORD_STR
-                row.value = "111111"
+//                row.value = "111111"
             }
             <<< PasswordRow(){ row in
                 row.tag = PASSWORD_CONFIRM_STR
                 row.cell.textField.placeholder = PASSWORD_CONFIRM_STR
-                row.value = "111111"
+//                row.value = "111111"
         }
             
         form +++ BaseFormController.createNormalFormSection(title: "Basic information")
@@ -55,7 +55,7 @@ class SignupFormController: BaseFormController {
                 row.title = NICKNAME_STR
                 row.tag = NICKNAME_STR
                 row.cell.textField.placeholder = NICKNAME_STR
-                row.value = "Eric"
+//                row.value = "Eric"
 
             }
         
@@ -63,7 +63,7 @@ class SignupFormController: BaseFormController {
                 row.title = EMAIL_STR
                 row.tag = EMAIL_STR
                 row.cell.textField.placeholder = EMAIL_STR
-                row.value = "a@ad.com"
+//                row.value = "a@ad.com"
 
             }
 //
@@ -72,7 +72,7 @@ class SignupFormController: BaseFormController {
                 row.title = PHONE_STR
                 row.tag = PHONE_STR
                 row.cell.textField.placeholder = PHONE_STR
-                row.value = "111111"
+//                row.value = "111111"
 
             }
 //
@@ -81,6 +81,7 @@ class SignupFormController: BaseFormController {
                 row.title = DOB_STR
                 row.tag = DOB_STR
                 row.value = Date()
+                row.maximumDate = Date()
             }
 //
 ////        form +++ BaseFormController.createNormalFormSection(title: EMAIL_STR)

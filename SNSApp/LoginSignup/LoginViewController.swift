@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var registerButton: UIButton!
     
+    @IBOutlet weak var infoLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,6 +33,8 @@ class LoginViewController: UIViewController {
         //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
+        
+        infoLabel.text = " Ning Kang\n Nian Li\n Xinrui Lyu\n Xin Wu\n"
     }
 
     override func didReceiveMemoryWarning() {

@@ -23,7 +23,6 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var postCaptionLabel: UILabel!
     
-    private var isImageLoaded = false
    
     @IBAction func leaveCommentButton(_ sender: Any) {
         callback3(post.postId!)
@@ -48,9 +47,9 @@ class PostCell: UITableViewCell {
                 case .success:
 //                    sender.setImage(UIImage(named:"icon-like-filled.png"), for: .normal)
                     sender.setImage(UIImage(named:"icon-like-filled.png"), for: .normal)
-                    let likes = self.post.likeCount!+1
-                    let likeToString = String(describing: likes)
-                    self.numberOfLikesButton.setTitle(likeToString + " likes", for: [])
+                    self.post.likeCount = self.post.likeCount! + 1
+//                    let likeToString = String(describing: likes)
+                    self.numberOfLikesButton.setTitle("\(self.post.likeCount!) likes", for: [])
                 }
             }
             
@@ -61,10 +60,9 @@ class PostCell: UITableViewCell {
                     NSLog(error.localizedDescription)
                 case .success:
                     sender.setImage(UIImage(named:"icon-like.png"), for: .normal)
-                    let likes = self.post.likeCount!
-                    
-                    let likeToString = String(describing: likes)
-                    self.numberOfLikesButton.setTitle(likeToString + " likes", for: [])
+                    self.post.likeCount = self.post.likeCount! - 1
+//                    let likeToString = String(describing: likes)
+                    self.numberOfLikesButton.setTitle("\(self.post.likeCount!) likes", for: [])
             }
            
         }
@@ -90,10 +88,15 @@ class PostCell: UITableViewCell {
         let commentToString = String(describing:comment!)
         
         
-        if let urlStr = post.img, !isImageLoaded{
-            let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + urlStr)!
-            postImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "loading"))
-            isImageLoaded = true
+        
+        if let urlStr = post.img{
+            self.postImageView.image = #imageLiteral(resourceName: "loading")
+//            let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + urlStr)!
+//            postImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "loading"))
+            WebAPIHandler.shared.fetchImage(url: urlStr, identifier: nil){ image in
+                self.postImageView.image = image
+            }
+            
         }
         
         if (post.likeUserList?.contains(WebAPIHandler.shared.username!))! {

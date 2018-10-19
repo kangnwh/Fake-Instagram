@@ -132,13 +132,37 @@ class UploadViewController: UIViewController,UITextFieldDelegate {
     }
     
     
+    @IBAction func brightness(_ sender: UISlider) {
+    
+//        var brightnessFilter = CIFilter(name: "CIColorControls");
+//        brightnessFilter!.setValue(self.selectedImage!, forKey: "inputImage")
+//        brightnessFilter!.setValue(NSNumber(value: sender.value), forKey: "inputBrightness");
+//        if let im = brightnessFilter?.outputImage,let imageRef = context.createCGImage(im, from: im.extent){
+//            let newUIImage = UIImage(cgImage: imageRef)
+//            self.selectedImage = newUIImage
+//            self.imageView.image = newUIImage
+//        }
+        let filterParameters = ["inputBrightness": sender.value]
+        
+        imageView.image = self.selectedImage?.af_imageFiltered(withCoreImageFilter: "CIColorControls", parameters: filterParameters)
+    }
+    
+    
+    @IBAction func contrast(_ sender: UISlider) {
+        let filterParameters = ["inputContrast": sender.value]
+        
+        imageView.image = self.selectedImage?.af_imageFiltered(withCoreImageFilter: "CIColorControls", parameters: filterParameters)
+        
+    }
+    
+    
     @IBAction func upload(_ sender: Any) {
  
         var postText = ""
         if let content = contentTextView.text{
             postText = content
         }
-        
+        self.selectedImage = imageView.image
         if let image = selectedImage{
             image.af_inflate()
             WebAPIHandler.shared.upload(image: image, content: postText, location: currentLocation.address, lati: currentLocation.lati, logi: currentLocation.logi){ response in

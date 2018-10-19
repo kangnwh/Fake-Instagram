@@ -29,13 +29,12 @@ class UserProfileViewController: UIViewController {
             self.followerCountBtn.setTitle("\(_userStat.followerCount!)", for: .normal)
             
             if let avatar = _userStat.avatarUrl{
-                let url = URL(string: WebAPIUrls.photoResourceBaseURL + "/" + avatar)!
+//                let url = URL(string: WebAPIUrls.photoResourceBaseURL + avatar)!
                 
-                avatarImageView.af_setImage(withURL: url, placeholderImage:#imageLiteral(resourceName: "icon-profile"))
-                let tempImage = avatarImageView.image?.af_imageRoundedIntoCircle()
-                avatarImageView.image = tempImage
-                avatarImageView.setNeedsDisplay()
-                
+                WebAPIHandler.shared.fetchImage(url: avatar, identifier: avatar){ image in
+                    let cor = image.af_imageRoundedIntoCircle()
+                    self.avatarImageView.image = cor
+                }
             }
         }
     }
@@ -107,13 +106,16 @@ class UserProfileViewController: UIViewController {
         
         picker.didFinishPicking { [picker] items, _ in
             if let photo = items.singlePhoto {
-                WebAPIHandler.shared.updateAvator(image: photo.image){ response in
+                let avatar = photo.image
+                avatar.af_inflate()
+                WebAPIHandler.shared.updateAvator(image: avatar){ response in
                     switch response.result{
                     case .failure(let error):
                         print(error.localizedDescription)
                         UIFuncs.popUp(title: "Error", info: "Upload avatar failed", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
                     case .success:
-                        self.avatarImageView.image = photo.image
+                        let cor = avatar.af_imageRoundedIntoCircle()
+                        self.avatarImageView.image = cor
                     }
                     
                 }

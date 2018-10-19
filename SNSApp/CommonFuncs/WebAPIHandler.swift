@@ -18,7 +18,7 @@ struct WebAPIJSONHeader{
 }
 
 public struct WebAPIUrls{
-    public static let IP = "13.211.229.245"//"10.12.203.15" //"127.0.0.1" //
+    public static let IP = "13.211.229.245"//"127.0.0.1" 
     public static let baseURL = "https://\(IP):5001/api"
     public static let photoResourceBaseURL = "https://\(IP):5001/photos/"
     
@@ -28,7 +28,7 @@ public struct WebAPIUrls{
     public static let updateAvatorURL = baseURL + "/upload/uploadAvator"
     public static let stasticsURL = baseURL + "/UserProfile/poststat"
     public static let myPhotosURL = baseURL + "/UserProfile/myphotos"
-    public static let suggestionURL = baseURL + "/UserProfile/myphotos"
+//    public static let suggestionURL = baseURL + "/UserProfile/myphotos"
     public static let followedBy = baseURL + "/ActivityFeed/getFollowedUserList"
     public static let followingWhom = baseURL + "/ActivityFeed/getFollowingUserList"
     public static let discoverUserList = baseURL + "/Discover/index"
@@ -66,7 +66,10 @@ public class WebAPIHandler {
         "Content-Type":"application/json"
     ]
     
+    var downloader:ImageDownloader!
+    
     private var headerWithToken:HTTPHeaders?
+    let imageCache = AutoPurgingImageCache()
     
     public let _httpManager : SessionManager =  {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
@@ -87,7 +90,7 @@ public class WebAPIHandler {
                 policies: [WebAPIUrls.IP: .disableEvaluation]
             )
         )
-        
+        downloader = ImageDownloader(sessionManager: sessionManager, downloadPrioritization: .lifo, maximumActiveDownloads: 10, imageCache: self.imageCache) //ImageDownloader(sessionManager: sessionManager)
         UIImageView.af_sharedImageDownloader = ImageDownloader(sessionManager: sessionManager)
     }
     
@@ -383,6 +386,23 @@ public class WebAPIHandler {
         
     }
     
-    
+    public func fetchImage(url:String, identifier:String?, callback: @escaping (UIImage) -> Void ){
+        
+        let urlRequest = URLRequest(url: URL(string: WebAPIUrls.photoResourceBaseURL + url)!)
+        
+        if let cachedImage = imageCache.image(withIdentifier: url){
+            callback(cachedImage)
+        }
+        
+//        let downloader = ImageDownloader()
+        downloader.download(urlRequest) { response in
+            if let image = response.result.value {
+                image.af_inflate()
+                self.imageCache.add(image, withIdentifier: (response.request?.url?.lastPathComponent)!)
+//                self.imageCache.add(image, withIdentifier: identifier ?? "full")
+                callback(image)
+            }
+        }
+    }
 
 }
