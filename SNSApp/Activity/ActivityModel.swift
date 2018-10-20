@@ -17,8 +17,8 @@ struct ActivityModel
     {
         var activities = [ActivityModel]()
         
-        let activities1 = ActivityModel(image: #imageLiteral(resourceName: "duc"), body: "Eric starts following Nicholas Li")
-        let activities2 = ActivityModel(image: #imageLiteral(resourceName: "duc"), body: "Eric starts following Cissy Wang")
+        let activities1 = ActivityModel(image: #imageLiteral(resourceName: "duc"), body: "Ning starts following Nicholas Li")
+        let activities2 = ActivityModel(image: #imageLiteral(resourceName: "duc"), body: "Ning starts following xinwu")
         
         activities.append(activities1)
         activities.append(activities2)

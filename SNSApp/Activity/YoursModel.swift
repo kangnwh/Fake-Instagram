@@ -16,8 +16,8 @@ struct YoursModel
     {
         var yours = [YoursModel]()
         
-        let yours1 = YoursModel(image:#imageLiteral(resourceName: "icon-checkbox-filled"),body: "Eric starts following You")
-        let yours2 = YoursModel(image:#imageLiteral(resourceName: "icon-checkbox-filled"),body: "Eric likes youe photo")
+        let yours1 = YoursModel(image:#imageLiteral(resourceName: "duc"),body: "Ning comments on your post")
+        let yours2 = YoursModel(image:#imageLiteral(resourceName: "duc"),body: "Ning likes youe photo")
         
         
         yours.append(yours1)
