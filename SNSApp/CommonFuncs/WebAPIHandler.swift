@@ -317,13 +317,13 @@ public class WebAPIHandler {
     
     public func upload(image: UIImage,content: String,location:String, lati: CLLocationDegrees?, logi: CLLocationDegrees?,callback:@escaping ((DataResponse<Any>) -> Void) ){
         
-        let imageData = image.pngData()!
+        let imageData = image.jpeg(.medium)!
         
         UIFuncs.showLoadingLabel()
         
         _httpManager.upload(
             multipartFormData: { multipartFormData in
-                multipartFormData.append(imageData, withName: "file",fileName:"mypic.png" ,mimeType:"image/png")
+                multipartFormData.append(imageData, withName: "file",fileName:"mypic.jpeg" ,mimeType:"image/jpeg")
                 multipartFormData.append(content.utf8(), withName: "content")
                 multipartFormData.append(location.utf8(), withName: "location")
                 if let latiDouble = lati{
