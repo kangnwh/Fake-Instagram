@@ -75,6 +75,7 @@ extension ReceiverViewController: SwipeServiceDelegate{
         DispatchQueue.main.async {
             NSLog("%@", "image received")
             self.imageView.image = image
+            self.imageView.setNeedsDisplay()
         }
     }
     

@@ -43,7 +43,7 @@ class SignupViewController: UIViewController {
                 
             case .failure(let error):
                 print(error.localizedDescription)
-                UIFuncs.popUp(title: "Error", info: "Signup failed, \(error.localizedDescription)", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
+                UIFuncs.popUp(title: "Error", info: "Signup failed, \(String(data: response.data!, encoding: String.Encoding.utf8)!)", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
                 return
                 
             case .success( _):
@@ -55,7 +55,7 @@ class SignupViewController: UIViewController {
                         
                     case .failure(let error):
                         print(error.localizedDescription)
-                        UIFuncs.popUp(title: "Error", info: "Login failed, \(error.localizedDescription)", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
+                        UIFuncs.popUp(title: "Error", info: "Login failed, \(String(data: response.data!, encoding: String.Encoding.utf8)!)", type: UIFuncs.BlockPopType.warning , sender: self, callback: {})
                         return
                         
                     case .success(let value):

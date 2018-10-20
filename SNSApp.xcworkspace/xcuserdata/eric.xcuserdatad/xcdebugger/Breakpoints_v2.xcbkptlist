@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/CommonFuncs/WebAPIHandler.swift"
-            timestampString = "561643874.408744"
+            timestampString = "561724262.853268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "394"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/CommonFuncs/WebAPIHandler.swift"
-            timestampString = "561643874.409125"
+            timestampString = "561724262.854226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "393"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SNSApp/CommonFuncs/WebAPIHandler.swift"
-            timestampString = "561643874.409391"
+            timestampString = "561724262.854454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "399"
@@ -90,12 +90,12 @@
                   moduleName = "SNSApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/eric/Documents/projects/mobile/SNSApp/SNSApp/Profile/UserProfileViewController.swift"
-                  timestampString = "561619874.162163"
+                  timestampString = "561725533.964677"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
-                  offsetFromSymbolStart = "3660">
+                  offsetFromSymbolStart = "4122">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -105,12 +105,76 @@
                   moduleName = "SNSApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/eric/Documents/projects/mobile/SNSApp/SNSApp/Profile/UserProfileViewController.swift"
-                  timestampString = "561619874.165156"
+                  timestampString = "561725533.967898"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
                   endingLineNumber = "35"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/Profile/swipe/ReceiverViewController.swift"
+            timestampString = "561725936.665813"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "receiveImage(manager:image:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SNSApp/LoginSignup/LoginViewController.swift"
+            timestampString = "561725936.66588"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "login(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in SNSApp.LoginViewController.login(Any) -&gt; ()"
+                  moduleName = "SNSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eric/Documents/projects/mobile/SNSApp/SNSApp/LoginSignup/LoginViewController.swift"
+                  timestampString = "561725533.9863091"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "533">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in SNSApp.LoginViewController.login(Any) -&gt; ()"
+                  moduleName = "SNSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eric/Documents/projects/mobile/SNSApp/SNSApp/LoginSignup/LoginViewController.swift"
+                  timestampString = "561725533.989293"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>
