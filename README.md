@@ -4,6 +4,12 @@ This is the app part (IOS Swift) of Fake Instagram. This should be used together
 
 
 
+## Demo
+
+YouTube Link: https://youtu.be/xIZUexAuOMY
+
+
+
 
 ## How to setup environment
 
