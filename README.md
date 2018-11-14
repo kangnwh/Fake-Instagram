@@ -48,3 +48,12 @@ pod update  # if Podfile changes
 
 open `$iosapp_dir/SNSApp/CommonFuncs/WebAPIHandler.swift` update `line 21` to use your own IP address (which may be 127.0.0.1).
 
+
+
+## Controbutors
+
+- [ningk1, ningk1@student.unimelb.edu.au]
+- [xlyu2, xlyu2@student.unimelb.edu.au]
+- [nianl, nianl@student.unimelb.edu.au]
+- [xwu11, xwu11@student.unimelb.edu.au] 
+
